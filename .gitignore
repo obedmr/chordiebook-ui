@@ -49,6 +49,7 @@ flycheck_*.el
 
 ### Go ###
 # Binaries for programs and plugins
+chordiebook-ui
 *.exe
 *.exe~
 *.dll
@@ -476,6 +477,7 @@ Session.vim
 tags
 # Persistent undo
 [._]*.un~
+
 
 
 # End of https://www.gitignore.io/api/go,vim,node,emacs,python,reactnative
