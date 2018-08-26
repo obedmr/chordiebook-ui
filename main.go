@@ -42,6 +42,7 @@ func main() {
 			URL := urlPrefix + *obj.Key
 			songName := strings.Join(strings.Split(*obj.Key, "_"), " ")
 			songName = strings.Split(songName, ".")[0]
+			songName = strings.Title(songName)
 			songs = append(songs, Song{songName, URL})
 		}
 		return true
