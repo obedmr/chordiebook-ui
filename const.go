@@ -1,5 +1,6 @@
 package main
 
+// TPL is a template for index.html file
 const TPL = `
 <!DOCTYPE html>
 <html>
