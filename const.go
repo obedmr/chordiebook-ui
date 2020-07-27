@@ -46,9 +46,10 @@ const TPL = `
         <table id="myTable" class="table table-striped table-bordered">
           <thead class="thead-dark">
             <th scope="col">Name</th>
-            <th scope="col">URL</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
           </thead>
-          {{range .Songs}}<tr><td>{{ .Name }}</td><td><a href="{{ .URL }}" target="_blank">URL</a></td></tr>{{end}}
+          {{range .Songs}}<tr><td>{{ .Name }}</td><td><a href="{{ .ChordsURL }}" target="_blank">Chords</a></td><td><a href="{{ .LyricsURL }}" target="_blank">Lyrics</a></td></tr>{{end}}
         </table>
       </div>
     </main>

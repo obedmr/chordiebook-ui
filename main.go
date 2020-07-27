@@ -12,9 +12,15 @@ import (
 )
 
 type Song struct {
-	Name string
-	URL  string
+	Name      string
+	ChordsURL string
+	LyricsURL string
 }
+
+const (
+	ChordsPath = "with-chords/"
+	LyricsPath = "only-lyrics/"
+)
 
 func checkError(err error) {
 	if err != nil {
@@ -39,11 +45,15 @@ func main() {
 		Bucket: &bucket,
 	}, func(p *s3.ListObjectsOutput, last bool) (shouldContinue bool) {
 		for _, obj := range p.Contents {
-			URL := urlPrefix + *obj.Key
-			songName := strings.Join(strings.Split(*obj.Key, "_"), " ")
-			songName = strings.Split(songName, ".")[0]
-			songName = strings.Title(songName)
-			songs = append(songs, Song{songName, URL})
+			if strings.HasPrefix(*obj.Key, ChordsPath) {
+				name := strings.Replace(*obj.Key, ChordsPath, "", -1)
+				chordsURL := urlPrefix + ChordsPath + name
+				lyricsURL := urlPrefix + LyricsPath + name
+				songName := strings.Join(strings.Split(name, "_"), " ")
+				songName = strings.Split(songName, ".")[0]
+				songName = strings.Title(songName)
+				songs = append(songs, Song{songName, chordsURL, lyricsURL})
+			}
 		}
 		return true
 	})
