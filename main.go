@@ -18,8 +18,8 @@ type Song struct {
 }
 
 const (
-	ChordsPath = "with-chords/"
-	LyricsPath = "only-lyrics/"
+	ChordsPath = "pdf-chords/"
+	LyricsPath = "pdf-lyrics/"
 )
 
 func checkError(err error) {
