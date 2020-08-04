@@ -15,11 +15,13 @@ type Song struct {
 	Name      string
 	ChordsURL string
 	LyricsURL string
+	OpenLPURL string
 }
 
 const (
 	ChordsPath = "pdf-chords/"
 	LyricsPath = "pdf-lyrics/"
+	OpenLPPath = "openlp/"
 )
 
 func checkError(err error) {
@@ -49,10 +51,12 @@ func main() {
 				name := strings.Replace(*obj.Key, ChordsPath, "", -1)
 				chordsURL := urlPrefix + ChordsPath + name
 				lyricsURL := urlPrefix + LyricsPath + name
+				openLPURL := urlPrefix + OpenLPPath + name
+				openLPURL = strings.ReplaceAll(openLPURL, ".pdf", ".xml")
 				songName := strings.Join(strings.Split(name, "_"), " ")
 				songName = strings.Split(songName, ".")[0]
 				songName = strings.Title(songName)
-				songs = append(songs, Song{songName, chordsURL, lyricsURL})
+				songs = append(songs, Song{songName, chordsURL, lyricsURL, openLPURL})
 			}
 		}
 		return true

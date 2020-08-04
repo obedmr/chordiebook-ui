@@ -48,8 +48,9 @@ const TPL = `
             <th scope="col">Name</th>
             <th scope="col">Chords</th>
             <th scope="col">Lyrics</th>
+            <th scope="col">OpenLP</th>
           </thead>
-          {{range .Songs}}<tr><td>{{ .Name }}</td><td><a href="{{ .ChordsURL }}" target="_blank">Chords</a></td><td><a href="{{ .LyricsURL }}" target="_blank">Lyrics</a></td></tr>{{end}}
+          {{range .Songs}}<tr><td>{{ .Name }}</td><td><a href="{{ .ChordsURL }}" target="_blank">Chords</a></td><td><a href="{{ .LyricsURL }}" target="_blank">Lyrics</a></td><td><a href="{{ .OpenLPURL }}" target="_blank">OpenLP</a></td></tr>{{end}}
         </table>
       </div>
     </main>
