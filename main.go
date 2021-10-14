@@ -73,10 +73,10 @@ func main() {
 				//fmt.Printf("%#v", obj)
 				themes := getTheme(svc, bucket, obj)
 				name := strings.Replace(*obj.Key, OpenLPPath, "", -1)
-				chordsURL := urlPrefix + ChordsPath + name
-				lyricsURL := urlPrefix + LyricsPath + name
-				openLPURL := urlPrefix + OpenLPPath + name
-				openLPURL = strings.ReplaceAll(openLPURL, ".pdf", ".xml")
+				name = strings.ReplaceAll(name, ".xml", "")
+				chordsURL := urlPrefix + ChordsPath + name + ".pdf"
+				lyricsURL := urlPrefix + LyricsPath + name + ".pdf"
+				openLPURL := urlPrefix + OpenLPPath + name + ".xml"
 				songName := strings.Join(strings.Split(name, "_"), " ")
 				songName = strings.Split(songName, ".")[0]
 				songName = strings.Title(songName)
