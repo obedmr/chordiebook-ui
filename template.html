@@ -1,11 +1,8 @@
-package main
-
-// TPL is a template for index.html file
-const TPL = `
 <!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
   </head>
   <body>
@@ -43,17 +40,28 @@ const TPL = `
       <div class="jumbotron">
         <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for songs...">
         </br>
-        <table id="myTable" class="table table-striped table-bordered">
+        <table id="myTable" class="table table-striped table-bordered table-sm">
           <thead class="thead-dark">
             <th scope="col">Name</th>
+	    <th scope="col">Themes</th>
             <th scope="col">Chords</th>
             <th scope="col">Lyrics</th>
             <th scope="col">OpenLP</th>
           </thead>
-          {{range .Songs}}<tr><td>{{ .Name }}</td><td><a href="{{ .ChordsURL }}" target="_blank">Chords</a></td><td><a href="{{ .LyricsURL }}" target="_blank">Lyrics</a></td><td><a href="{{ .OpenLPURL }}" target="_blank">OpenLP</a></td></tr>{{end}}
+          {{range .Songs}}
+	  <tr>
+	    <td>{{ .Name }}</td>
+	    <td> {{range .Themes}}{{.}}{{end}}</td>
+	    <td><a href="{{ .ChordsURL }}"
+		   target="_blank">Chords</a></td>
+	    <td><a href="{{ .LyricsURL }}"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="{{ .OpenLPURL }}"
+		   target="_blank">OpenLP</a></td>
+	  </tr>
+	  {{end}}
         </table>
       </div>
     </main>
   </body>
 </html>
-`
