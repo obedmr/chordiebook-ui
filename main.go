@@ -24,10 +24,9 @@ type Song struct {
 }
 
 const (
-	ChordsPath   = "pdf-chords/"
-	LyricsPath   = "pdf-lyrics/"
-	ChordProPath = "chordpro/"
-	OpenLPPath   = "openlp/"
+	ChordsPath = "pdf-chords/"
+	LyricsPath = "pdf-lyrics/"
+	OpenLPPath = "openlp/"
 )
 
 func checkError(err error) {
@@ -78,7 +77,7 @@ func main() {
 				chordsURL := urlPrefix + ChordsPath + name + ".pdf"
 				lyricsURL := urlPrefix + LyricsPath + name + ".pdf"
 				openLPURL := urlPrefix + OpenLPPath + name + ".xml"
-				chordProURL := urlPrefix + ChordProPath + name + ".cho"
+				chordProURL := urlPrefix + name + ".cho"
 				songName := strings.Join(strings.Split(name, "_"), " ")
 				songName = strings.Split(songName, ".")[0]
 				songName = strings.Title(songName)
