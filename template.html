@@ -80,6 +80,7 @@
           <thead class="table-dark">
 	    <th data-field="state" data-checkbox="true" data-sortable="true"></th>
             <th scope="col" data-sortable="true">Name</th>
+	    <th scope="col" data-sortable="true">Key</th>
 	    <th scope="col" data-sortable="true">Themes</th>
             <th scope="col">Chords</th>
             <th scope="col">Lyrics</th>
@@ -90,6 +91,7 @@
 	  <tr>
 	    <td>Selected</td>
 	    <td>{{ .Name }}</td>
+	    <td>{{ .Key }}</td>
 	    <td> {{range .Themes}}{{.}}{{end}}</td>
 	    <td><a href="{{ .ChordsURL }}"
 		   target="_blank">Chords</a></td>
