@@ -47,6 +47,7 @@
             <th scope="col">Chords</th>
             <th scope="col">Lyrics</th>
             <th scope="col">OpenLP</th>
+	    <th scope="col">ChordPro</th>
           </thead>
           {{range .Songs}}
 	  <tr>
@@ -58,6 +59,8 @@
 		   target="_blank">Lyrics</a></td>
 	    <td><a href="{{ .OpenLPURL }}"
 		   target="_blank">OpenLP</a></td>
+	    <td><a href="{{ .ChordProURL }}"
+		   target="_blank">ChordPro</a></td>
 	  </tr>
 	  {{end}}
         </table>

@@ -15,17 +15,19 @@ import (
 )
 
 type Song struct {
-	Name      string
-	Themes    []string
-	ChordsURL string
-	LyricsURL string
-	OpenLPURL string
+	Name        string
+	Themes      []string
+	ChordsURL   string
+	LyricsURL   string
+	OpenLPURL   string
+	ChordProURL string
 }
 
 const (
-	ChordsPath = "pdf-chords/"
-	LyricsPath = "pdf-lyrics/"
-	OpenLPPath = "openlp/"
+	ChordsPath   = "pdf-chords/"
+	LyricsPath   = "pdf-lyrics/"
+	ChordProPath = "chordpro/"
+	OpenLPPath   = "openlp/"
 )
 
 func checkError(err error) {
@@ -70,17 +72,17 @@ func main() {
 	}, func(p *s3.ListObjectsOutput, last bool) (shouldContinue bool) {
 		for _, obj := range p.Contents {
 			if strings.HasPrefix(*obj.Key, OpenLPPath) {
-				//fmt.Printf("%#v", obj)
 				themes := getTheme(svc, bucket, obj)
 				name := strings.Replace(*obj.Key, OpenLPPath, "", -1)
 				name = strings.ReplaceAll(name, ".xml", "")
 				chordsURL := urlPrefix + ChordsPath + name + ".pdf"
 				lyricsURL := urlPrefix + LyricsPath + name + ".pdf"
 				openLPURL := urlPrefix + OpenLPPath + name + ".xml"
+				chordProURL := urlPrefix + ChordProPath + name + ".cho"
 				songName := strings.Join(strings.Split(name, "_"), " ")
 				songName = strings.Split(songName, ".")[0]
 				songName = strings.Title(songName)
-				songs = append(songs, Song{songName, themes, chordsURL, lyricsURL, openLPURL})
+				songs = append(songs, Song{songName, themes, chordsURL, lyricsURL, openLPURL, chordProURL})
 			}
 		}
 		return true
