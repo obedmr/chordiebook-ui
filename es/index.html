@@ -1,0 +1,2840 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="bg-dark collapse" id="navbarHeader" style="">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong>ChordieBook</strong>
+          </a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main role="main" class="container">
+      <div class="jumbotron">
+	</br>
+        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for songs...">
+	<div class="d-grid gap-2">
+	  <button type="button" class="btn btn-primary btn-lg btn-block"
+		  onClick=download()>Descargar canciones seleccionadas</button>
+	</div>
+	<div class="row" id="downloadType">
+	  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio1" autocomplete="off" value="0" checked>
+	    <label class="btn btn-outline-primary" for="btnradio1">Acordes</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio2" autocomplete="off" value="1">
+	    <label class="btn btn-outline-primary" for="btnradio2">Letras</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio3" autocomplete="off" value="2">
+	    <label class="btn btn-outline-primary" for="btnradio3">OpenLP</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio4" autocomplete="off" value="3">
+	    <label class="btn btn-outline-primary" for="btnradio4">ChordPro</label>
+	  </div>
+	</div>
+	</br>
+        <table id="myTable"
+	       class="table table-striped table-bordered table-sm"
+	       data-toggle="table"
+	       data-classes="table table-hover table-condensed"
+	       data-striped="true"
+	       data-sort-name="Quality"
+	       data-sort-order="desc"
+	       data-pagination="false"
+	       >
+          <thead class="table-dark">
+	    <th data-field="state" data-checkbox="true" data-sortable="true"></th>
+            <th scope="col" data-sortable="true">Nombre</th>
+	    <th scope="col" data-sortable="true">Nota</th>
+	    <th scope="col" data-sortable="true">Tipo(s)</th>
+            <th scope="col">Acordes</th>
+            <th scope="col">Lyrics</th>
+            <th scope="col">OpenLP</th>
+	    <th scope="col">ChordPro</th>
+          </thead>
+          
+	  <tr>
+	    <td>Selected</td>
+	    <td>A Ti</td>
+	    <td>F</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/A_ti.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/A_ti.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/A_ti.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/A_ti.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Adonai</td>
+	    <td>Em</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Adonai.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Adonai.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Adonai.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Adonai.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Al Mundo Paz Hay Libertad</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Al_mundo_paz_hay_libertad.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Al_mundo_paz_hay_libertad.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Al_mundo_paz_hay_libertad.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Al_mundo_paz_hay_libertad.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Algo Esta Cayendo Aqui</td>
+	    <td>G</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Algo_esta_cayendo_aqui.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Algo_esta_cayendo_aqui.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Algo_esta_cayendo_aqui.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Algo_esta_cayendo_aqui.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Canto Y Danzo</td>
+	    <td>D</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Canto_y_danzo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Canto_y_danzo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Canto_y_danzo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Canto_y_danzo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Cristo No Esta Muerto</td>
+	    <td>G</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Cristo_no_esta_muerto.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Cristo_no_esta_muerto.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Cristo_no_esta_muerto.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Cristo_no_esta_muerto.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Cuan Glorioso Es Que Me Ama A Mi</td>
+	    <td>Eb</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Cuan_glorioso_es_que_me_ama_a_mi.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Cuan_glorioso_es_que_me_ama_a_mi.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Cuan_glorioso_es_que_me_ama_a_mi.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Cuan_glorioso_es_que_me_ama_a_mi.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Digno Digno Eres Tu</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Digno_Digno_eres_Tu.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Digno_Digno_eres_Tu.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Digno_Digno_eres_Tu.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Digno_Digno_eres_Tu.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Dios De Lo Imposible</td>
+	    <td>A#m</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_de_lo_imposible.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_de_lo_imposible.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_de_lo_imposible.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Dios_de_lo_imposible.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Dios De Pactos</td>
+	    <td>A</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_de_pactos.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_de_pactos.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_de_pactos.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Dios_de_pactos.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Dios Esta Aqui</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_esta_aqui.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_esta_aqui.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_esta_aqui.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Dios_esta_aqui.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Dios Manda Lluvia</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_manda_lluvia.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_manda_lluvia.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_manda_lluvia.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Dios_manda_lluvia.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Dios Poderoso</td>
+	    <td>Gm</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_poderoso.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_poderoso.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_poderoso.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Dios_poderoso.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Espiritu De Dios Esta En Este Lugar</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_Espiritu_de_Dios_esta_en_este_lugar.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_Espiritu_de_Dios_esta_en_este_lugar.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_Espiritu_de_Dios_esta_en_este_lugar.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/El_Espiritu_de_Dios_esta_en_este_lugar.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Nombre De Jesus</td>
+	    <td></td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_Nombre_de_Jesus.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_Nombre_de_Jesus.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_Nombre_de_Jesus.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/El_Nombre_de_Jesus.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Te Llama</td>
+	    <td>D</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_te_llama.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_te_llama.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_te_llama.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/El_te_llama.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Espiritu Santo</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Espiritu_Santo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Espiritu_Santo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Espiritu_Santo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Espiritu_Santo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Himno Nacional Mexicano</td>
+	    <td>Genérico</td>
+	    <td> Genérico</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Himno_nacional_Mexicano.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Himno_nacional_Mexicano.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Himno_nacional_Mexicano.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Himno_nacional_Mexicano.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Jehova Es Mi Guerrero</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jehova_es_mi_guerrero.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jehova_es_mi_guerrero.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jehova_es_mi_guerrero.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Jehova_es_mi_guerrero.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Jehova Es Poderoso Guerrero</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jehova_es_poderoso_guerrero.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jehova_es_poderoso_guerrero.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jehova_es_poderoso_guerrero.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Jehova_es_poderoso_guerrero.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Jesus Mi Salvador</td>
+	    <td>G</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jesus_mi_Salvador.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jesus_mi_Salvador.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jesus_mi_Salvador.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Jesus_mi_Salvador.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Jonas</td>
+	    <td>D</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jonas.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jonas.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jonas.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Jonas.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>La Gracia Del Senor</td>
+	    <td>Db</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/La_Gracia_del_Senor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/La_Gracia_del_Senor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/La_Gracia_del_Senor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/La_Gracia_del_Senor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>La Gracia Del Señor</td>
+	    <td></td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/La_Gracia_del_Se%c3%b1or.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/La_Gracia_del_Se%c3%b1or.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/La_Gracia_del_Se%c3%b1or.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/La_Gracia_del_Se%c3%b1or.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Majestuoso Poderoso</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Majestuoso_Poderoso.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Majestuoso_Poderoso.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Majestuoso_Poderoso.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Majestuoso_Poderoso.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Mexico Dios Te Bendiga</td>
+	    <td>C</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mexico_Dios_te_bendiga.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Mexico_Dios_te_bendiga.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Mexico_Dios_te_bendiga.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Mexico_Dios_te_bendiga.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Mexico Vamos A Cambiar</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mexico_vamos_a_cambiar.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Mexico_vamos_a_cambiar.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Mexico_vamos_a_cambiar.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Mexico_vamos_a_cambiar.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Mi Esperanza Esta En Jesus</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mi_esperanza_esta_en_Jesus.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Mi_esperanza_esta_en_Jesus.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Mi_esperanza_esta_en_Jesus.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Mi_esperanza_esta_en_Jesus.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Rey De Mi Corazon</td>
+	    <td>Ab</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Rey_de_mi_corazon.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Rey_de_mi_corazon.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Rey_de_mi_corazon.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Rey_de_mi_corazon.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Rey Vencedor</td>
+	    <td>F</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Rey_vencedor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Rey_vencedor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Rey_vencedor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Rey_vencedor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Senor Senor Jesus</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Senor_Senor_Jesus.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Senor_Senor_Jesus.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Senor_Senor_Jesus.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Senor_Senor_Jesus.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Bondad</td>
+	    <td>F</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_bondad.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_bondad.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_bondad.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Tu_bondad.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Eres El Alfa Y Omega</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_eres_el_alfa_y_omega.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_eres_el_alfa_y_omega.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_eres_el_alfa_y_omega.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Tu_eres_el_alfa_y_omega.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Y Yo</td>
+	    <td>Cm</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_y_yo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_y_yo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_y_yo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/Tu_y_yo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>A Quien Ire</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/a_quien_ire.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/a_quien_ire.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/a_quien_ire.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/a_quien_ire.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>A Ti La Gloria</td>
+	    <td>A</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/a_ti_la_gloria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/a_ti_la_gloria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/a_ti_la_gloria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/a_ti_la_gloria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Al Estar Aqui</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_estar_aqui.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/al_estar_aqui.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/al_estar_aqui.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/al_estar_aqui.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Al Que Es Digno</td>
+	    <td>D</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_que_es_digno.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/al_que_es_digno.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/al_que_es_digno.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/al_que_es_digno.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Al Que Me Cine De Poder</td>
+	    <td>F</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_que_me_cine_de_poder.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/al_que_me_cine_de_poder.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/al_que_me_cine_de_poder.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/al_que_me_cine_de_poder.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Aleluya</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/aleluya.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/aleluya.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/aleluya.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/aleluya.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Amo A Cristo</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amo_a_Cristo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/amo_a_Cristo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/amo_a_Cristo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/amo_a_Cristo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Amor De Cristo</td>
+	    <td></td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amor_de_Cristo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/amor_de_Cristo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/amor_de_Cristo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/amor_de_Cristo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Amor Sin Comparacion</td>
+	    <td>Em</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amor_sin_comparacion.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/amor_sin_comparacion.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/amor_sin_comparacion.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/amor_sin_comparacion.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Amor Sin Condicion</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amor_sin_condicion.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/amor_sin_condicion.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/amor_sin_condicion.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/amor_sin_condicion.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Asi Como David Danzaba</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/asi_como_David_danzaba.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/asi_como_David_danzaba.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/asi_como_David_danzaba.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/asi_como_David_danzaba.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Bajo Tu Abrigo</td>
+	    <td>G</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bajo_tu_abrigo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bajo_tu_abrigo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bajo_tu_abrigo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/bajo_tu_abrigo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Bendice A Tu Pueblo Senor</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bendice_a_tu_pueblo_Senor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bendice_a_tu_pueblo_Senor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bendice_a_tu_pueblo_Senor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/bendice_a_tu_pueblo_Senor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Bendiceme</td>
+	    <td>C</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bendiceme.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bendiceme.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bendiceme.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/bendiceme.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Bendicime</td>
+	    <td></td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bendicime.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bendicime.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bendicime.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/bendicime.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Bueno Es Dios</td>
+	    <td>D</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bueno_es_Dios.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bueno_es_Dios.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bueno_es_Dios.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/bueno_es_Dios.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Bueno Es Alabar</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bueno_es_alabar.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bueno_es_alabar.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bueno_es_alabar.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/bueno_es_alabar.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Cantare Al Senor Por Siempre</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cantare_al_Senor_por_siempre.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cantare_al_Senor_por_siempre.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cantare_al_Senor_por_siempre.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/cantare_al_Senor_por_siempre.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Celebrad A Cristo</td>
+	    <td>E</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/celebrad_a_Cristo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/celebrad_a_Cristo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/celebrad_a_Cristo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/celebrad_a_Cristo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Con Mi Dios</td>
+	    <td>Em</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/con_mi_Dios.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/con_mi_Dios.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/con_mi_Dios.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/con_mi_Dios.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Conmigo Danza</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/conmigo_danza.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/conmigo_danza.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/conmigo_danza.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/conmigo_danza.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Creo En Ti</td>
+	    <td>Bm</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/creo_en_ti.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/creo_en_ti.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/creo_en_ti.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/creo_en_ti.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Cuan Bello Es El Senor</td>
+	    <td>Dmaj7</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuan_bello_es_el_Senor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuan_bello_es_el_Senor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuan_bello_es_el_Senor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/cuan_bello_es_el_Senor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Cuan Grande Es Dios</td>
+	    <td></td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuan_grande_es_Dios.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuan_grande_es_Dios.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuan_grande_es_Dios.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/cuan_grande_es_Dios.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Cuando Pienso En Lo Mucho</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuando_pienso_en_lo_mucho.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuando_pienso_en_lo_mucho.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuando_pienso_en_lo_mucho.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/cuando_pienso_en_lo_mucho.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Cuando Yo Pienso</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuando_yo_pienso.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuando_yo_pienso.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuando_yo_pienso.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/cuando_yo_pienso.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Dale Palmas</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/dale_palmas.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/dale_palmas.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/dale_palmas.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/dale_palmas.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Damos Honor A Ti</td>
+	    <td>E</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/damos_honor_a_ti.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/damos_honor_a_ti.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/damos_honor_a_ti.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/damos_honor_a_ti.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>David David Danzaba</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/david_david_danzaba.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/david_david_danzaba.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/david_david_danzaba.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/david_david_danzaba.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>De Tu Amor Necesita Mexico</td>
+	    <td>E</td>
+	    <td> Adoración, Himno</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/de_Tu_amor_necesita_Mexico.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/de_Tu_amor_necesita_Mexico.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/de_Tu_amor_necesita_Mexico.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/de_Tu_amor_necesita_Mexico.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>De Gloria En Gloria</td>
+	    <td>F</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/de_gloria_en_gloria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/de_gloria_en_gloria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/de_gloria_en_gloria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/de_gloria_en_gloria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Senor Es Mi Rey</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_Senor_es_mi_Rey.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_Senor_es_mi_Rey.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_Senor_es_mi_Rey.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_Senor_es_mi_Rey.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Senor Marchando Va</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_Senor_marchando_va.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_Senor_marchando_va.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_Senor_marchando_va.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_Senor_marchando_va.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Amor De Cristo</td>
+	    <td>E</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_amor_de_Cristo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_amor_de_Cristo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_amor_de_Cristo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_amor_de_Cristo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Amor De Dios Es Maravilloso</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_amor_de_Dios_es_maravilloso.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_amor_de_Dios_es_maravilloso.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_amor_de_Dios_es_maravilloso.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_amor_de_Dios_es_maravilloso.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Arca De Noe</td>
+	    <td>D</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_arca_de_Noe.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_arca_de_Noe.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_arca_de_Noe.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_arca_de_Noe.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Ejercito De Dios</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_ejercito_de_Dios.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_ejercito_de_Dios.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_ejercito_de_Dios.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_ejercito_de_Dios.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Gozo De Mi Vida Eres Tu</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_gozo_de_mi_vida_eres_tu.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_gozo_de_mi_vida_eres_tu.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_gozo_de_mi_vida_eres_tu.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_gozo_de_mi_vida_eres_tu.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Guerrero David</td>
+	    <td>G</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_guerrero_David.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_guerrero_David.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_guerrero_David.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_guerrero_David.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Padre Abraham</td>
+	    <td>E</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_padre_Abraham.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_padre_Abraham.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_padre_Abraham.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_padre_Abraham.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Poderoso De Israel</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_poderoso_de_Israel.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_poderoso_de_Israel.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_poderoso_de_Israel.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_poderoso_de_Israel.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>El Tren Del Evangelio</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_tren_del_evangelio.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_tren_del_evangelio.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_tren_del_evangelio.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/el_tren_del_evangelio.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>En Los Montes En Los Valles</td>
+	    <td></td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/en_los_montes_en_los_valles.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/en_los_montes_en_los_valles.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/en_los_montes_en_los_valles.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/en_los_montes_en_los_valles.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>En Tu Presencia</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/en_tu_presencia.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/en_tu_presencia.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/en_tu_presencia.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/en_tu_presencia.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Enviame A Mi</td>
+	    <td>E</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/enviame_a_mi.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/enviame_a_mi.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/enviame_a_mi.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/enviame_a_mi.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Eres Rey De Los Cielos</td>
+	    <td>A</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/eres_rey_de_los_cielos.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/eres_rey_de_los_cielos.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/eres_rey_de_los_cielos.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/eres_rey_de_los_cielos.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Esfuerzate Y Se Muy Valiente</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/esfuerzate_y_se_muy_valiente.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/esfuerzate_y_se_muy_valiente.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/esfuerzate_y_se_muy_valiente.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/esfuerzate_y_se_muy_valiente.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Espiritu De Dios Llena Mi Ser</td>
+	    <td>Am</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/espiritu_de_Dios_llena_mi_ser.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/espiritu_de_Dios_llena_mi_ser.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/espiritu_de_Dios_llena_mi_ser.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/espiritu_de_Dios_llena_mi_ser.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Estad Por Cristo Firmes</td>
+	    <td>G</td>
+	    <td> Adoración, Himno</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/estad_por_Cristo_firmes.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/estad_por_Cristo_firmes.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/estad_por_Cristo_firmes.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/estad_por_Cristo_firmes.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Estamos Aqui Para Adorar</td>
+	    <td>G</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/estamos_aqui_para_adorar.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/estamos_aqui_para_adorar.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/estamos_aqui_para_adorar.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/estamos_aqui_para_adorar.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Este Es Mi Deseo</td>
+	    <td>F</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/este_es_mi_deseo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/este_es_mi_deseo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/este_es_mi_deseo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/este_es_mi_deseo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Esto Es Una Fiesta</td>
+	    <td>D</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/esto_es_una_fiesta.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/esto_es_una_fiesta.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/esto_es_una_fiesta.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/esto_es_una_fiesta.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Exquisita Presencia</td>
+	    <td>C</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/exquisita_presencia.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/exquisita_presencia.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/exquisita_presencia.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/exquisita_presencia.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Fiesta</td>
+	    <td>Cm</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/fiesta.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/fiesta.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/fiesta.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/fiesta.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Fija Tus Ojos En Cristo</td>
+	    <td>A</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/fija_tus_ojos_en_Cristo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/fija_tus_ojos_en_Cristo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/fija_tus_ojos_en_Cristo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/fija_tus_ojos_en_Cristo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Generacion Que Danza</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/generacion_que_danza.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/generacion_que_danza.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/generacion_que_danza.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/generacion_que_danza.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Glorificate</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/glorificate.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/glorificate.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/glorificate.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/glorificate.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Glorioso Intercambio</td>
+	    <td>Db2</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/glorioso_intercambio.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/glorioso_intercambio.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/glorioso_intercambio.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/glorioso_intercambio.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Gracia Sublime Es</td>
+	    <td>B</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracia_sublime_es.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/gracia_sublime_es.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/gracia_sublime_es.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/gracia_sublime_es.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Gracias</td>
+	    <td>Am</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracias.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/gracias.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/gracias.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/gracias.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Gracias Cristo</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracias_Cristo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/gracias_Cristo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/gracias_Cristo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/gracias_Cristo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Granito De Mostaza</td>
+	    <td>E</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/granito_de_mostaza.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/granito_de_mostaza.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/granito_de_mostaza.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/granito_de_mostaza.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Habitacion</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/habitacion.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/habitacion.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/habitacion.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/habitacion.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Has Cambiado Mi Lamento</td>
+	    <td>Em</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/has_cambiado_mi_lamento.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/has_cambiado_mi_lamento.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/has_cambiado_mi_lamento.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/has_cambiado_mi_lamento.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Has Ganado La Victoria</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/has_ganado_la_victoria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/has_ganado_la_victoria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/has_ganado_la_victoria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/has_ganado_la_victoria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Hay Libertad</td>
+	    <td>D</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_libertad.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_libertad.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_libertad.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/hay_libertad.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Hay Libertad En La Casa De Dios</td>
+	    <td></td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_libertad_en_la_casa_de_Dios.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_libertad_en_la_casa_de_Dios.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_libertad_en_la_casa_de_Dios.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/hay_libertad_en_la_casa_de_Dios.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Hay Momentos Tan Especiales</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_momentos_tan_especiales.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_momentos_tan_especiales.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_momentos_tan_especiales.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/hay_momentos_tan_especiales.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Hay Poder</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_poder.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_poder.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_poder.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/hay_poder.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Hay Un Pueblo</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_un_pueblo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_un_pueblo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_un_pueblo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/hay_un_pueblo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Hay Victoria</td>
+	    <td>D</td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_victoria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_victoria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_victoria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/hay_victoria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Heme Aqui</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/heme_aqui.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/heme_aqui.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/heme_aqui.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/heme_aqui.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Hoy Es Tiempo</td>
+	    <td>Bm</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hoy_es_tiempo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hoy_es_tiempo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hoy_es_tiempo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/hoy_es_tiempo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Inexplicable</td>
+	    <td></td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/inexplicable.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/inexplicable.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/inexplicable.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/inexplicable.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>La Casa De Dios</td>
+	    <td>D</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_casa_de_Dios.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/la_casa_de_Dios.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/la_casa_de_Dios.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/la_casa_de_Dios.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>La Nina De Tus Ojos</td>
+	    <td>C</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_nina_de_tus_ojos.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/la_nina_de_tus_ojos.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/la_nina_de_tus_ojos.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/la_nina_de_tus_ojos.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>La Unica Razon</td>
+	    <td>Bm</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_unica_razon.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/la_unica_razon.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/la_unica_razon.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/la_unica_razon.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Las Naciones Proclamen</td>
+	    <td>C</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/las_naciones_proclamen.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/las_naciones_proclamen.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/las_naciones_proclamen.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/las_naciones_proclamen.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Levantate Senor</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_Senor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/levantate_Senor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/levantate_Senor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/levantate_Senor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Levantate Levantate Senor</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_levantate_Senor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/levantate_levantate_Senor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/levantate_levantate_Senor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/levantate_levantate_Senor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Levantate Y Salvame</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_y_salvame.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/levantate_y_salvame.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/levantate_y_salvame.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/levantate_y_salvame.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Libre</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/libre.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/libre.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/libre.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Libre 2</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_2.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/libre_2.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/libre_2.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/libre_2.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Libre En Cristo</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_en_Cristo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/libre_en_Cristo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/libre_en_Cristo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/libre_en_Cristo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Libre Soy</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_soy.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/libre_soy.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/libre_soy.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/libre_soy.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Llename Senor</td>
+	    <td>G</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/llename_Senor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/llename_Senor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/llename_Senor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/llename_Senor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Los Conejitos Brincan</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/los_conejitos_brincan.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/los_conejitos_brincan.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/los_conejitos_brincan.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/los_conejitos_brincan.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Maravilloso Es</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/maravilloso_es.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/maravilloso_es.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/maravilloso_es.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/maravilloso_es.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Me Asombras</td>
+	    <td>C</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/me_asombras.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/me_asombras.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/me_asombras.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/me_asombras.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Me Gusta Alabarle</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/me_gusta_alabarle.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/me_gusta_alabarle.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/me_gusta_alabarle.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/me_gusta_alabarle.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Medley</td>
+	    <td>E</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/medley.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/medley.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/medley.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/medley.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Mereces La Gloria</td>
+	    <td>G</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mereces_la_gloria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mereces_la_gloria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mereces_la_gloria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/mereces_la_gloria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Mi Buen Padre</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_buen_Padre.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mi_buen_Padre.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mi_buen_Padre.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/mi_buen_Padre.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Mi Esperanza Esta En Jesus</td>
+	    <td>F</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_esperanza_esta_en_Jesus.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mi_esperanza_esta_en_Jesus.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mi_esperanza_esta_en_Jesus.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/mi_esperanza_esta_en_Jesus.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Mi Espiritu Te Anhela</td>
+	    <td>F</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_espiritu_te_anhela.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mi_espiritu_te_anhela.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mi_espiritu_te_anhela.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/mi_espiritu_te_anhela.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Mirad Cuan Bueno</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mirad_cuan_bueno.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mirad_cuan_bueno.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mirad_cuan_bueno.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/mirad_cuan_bueno.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Nada En La Tierra</td>
+	    <td>C</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/nada_en_la_tierra.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/nada_en_la_tierra.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/nada_en_la_tierra.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/nada_en_la_tierra.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>No Hay Nadie Como Tu</td>
+	    <td>G</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/no_hay_nadie_como_tu.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/no_hay_nadie_como_tu.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/no_hay_nadie_como_tu.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/no_hay_nadie_como_tu.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>No Quites Tus Ojos De Mi</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/no_quites_tus_ojos_de_mi.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/no_quites_tus_ojos_de_mi.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/no_quites_tus_ojos_de_mi.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/no_quites_tus_ojos_de_mi.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Perfume A Tus Pies</td>
+	    <td>E</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/perfume_a_tus_pies.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/perfume_a_tus_pies.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/perfume_a_tus_pies.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/perfume_a_tus_pies.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Poderoso Dios</td>
+	    <td>Dm</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/poderoso_Dios.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/poderoso_Dios.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/poderoso_Dios.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/poderoso_Dios.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Poderoso Dios 2</td>
+	    <td>C</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/poderoso_Dios_2.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/poderoso_Dios_2.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/poderoso_Dios_2.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/poderoso_Dios_2.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Popurri Ranchero</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/popurri_ranchero.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/popurri_ranchero.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/popurri_ranchero.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/popurri_ranchero.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Porque Para Siempre</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/porque_para_siempre.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/porque_para_siempre.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/porque_para_siempre.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/porque_para_siempre.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Preciosa Sangre</td>
+	    <td></td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/preciosa_sangre.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/preciosa_sangre.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/preciosa_sangre.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/preciosa_sangre.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Pueblos Todos</td>
+	    <td>A</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/pueblos_todos.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/pueblos_todos.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/pueblos_todos.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pueblos_todos.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Que Chevere</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/que_chevere.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/que_chevere.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/que_chevere.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/que_chevere.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Que No Se Acabe El Gozo</td>
+	    <td></td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/que_no_se_acabe_el_gozo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/que_no_se_acabe_el_gozo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/que_no_se_acabe_el_gozo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/que_no_se_acabe_el_gozo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Quiero Cantar Una Linda Cancion</td>
+	    <td>C</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/quiero_cantar_una_linda_cancion.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/quiero_cantar_una_linda_cancion.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/quiero_cantar_una_linda_cancion.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/quiero_cantar_una_linda_cancion.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Quiero Llenar Tu Trono De Alabanzas</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/quiero_llenar_tu_trono_de_alabanzas.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/quiero_llenar_tu_trono_de_alabanzas.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/quiero_llenar_tu_trono_de_alabanzas.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/quiero_llenar_tu_trono_de_alabanzas.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Remolineando</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/remolineando.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/remolineando.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/remolineando.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/remolineando.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Renuevame</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/renuevame.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/renuevame.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/renuevame.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/renuevame.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Renuncio A Mi</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/renuncio_a_mi.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/renuncio_a_mi.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/renuncio_a_mi.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/renuncio_a_mi.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Sentado En Su Trono</td>
+	    <td>G</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/sentado_en_su_trono.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/sentado_en_su_trono.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/sentado_en_su_trono.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/sentado_en_su_trono.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Solo De Jesus La Sangre</td>
+	    <td>B</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/solo_de_Jesus_la_Sangre.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/solo_de_Jesus_la_Sangre.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/solo_de_Jesus_la_Sangre.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/solo_de_Jesus_la_Sangre.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Solo Hay Uno</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/solo_hay_uno.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/solo_hay_uno.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/solo_hay_uno.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/solo_hay_uno.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Somos Pueblo</td>
+	    <td>Bm</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/somos_pueblo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/somos_pueblo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/somos_pueblo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/somos_pueblo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Somos Soldaditos</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/somos_soldaditos.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/somos_soldaditos.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/somos_soldaditos.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/somos_soldaditos.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Soy Feliz</td>
+	    <td>F</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/soy_feliz.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/soy_feliz.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/soy_feliz.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/soy_feliz.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Superheroe</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/superheroe.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/superheroe.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/superheroe.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/superheroe.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Te Alabo</td>
+	    <td>E</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_alabo.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/te_alabo.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/te_alabo.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/te_alabo.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Te Dare Lo Mejor</td>
+	    <td>E </td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_dare_lo_mejor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/te_dare_lo_mejor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/te_dare_lo_mejor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/te_dare_lo_mejor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Te Doy Gloria</td>
+	    <td>C</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_doy_gloria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/te_doy_gloria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/te_doy_gloria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/te_doy_gloria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tin Tin Tin</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tin_tin_tin.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tin_tin_tin.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tin_tin_tin.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/tin_tin_tin.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Todo Lo Que Respira</td>
+	    <td>A</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/todo_lo_que_respira.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/todo_lo_que_respira.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/todo_lo_que_respira.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/todo_lo_que_respira.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Toma Tu Lugar</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/toma_tu_lugar.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/toma_tu_lugar.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/toma_tu_lugar.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/toma_tu_lugar.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Amor Por Mi</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_amor_por_mi.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_amor_por_mi.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_amor_por_mi.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/tu_amor_por_mi.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Eres Digno De Gloria</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_eres_digno_de_gloria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_eres_digno_de_gloria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_eres_digno_de_gloria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/tu_eres_digno_de_gloria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Fidelidad</td>
+	    <td>D</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_fidelidad.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_fidelidad.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_fidelidad.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/tu_fidelidad.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Fidelidad Cuan Grande Es El</td>
+	    <td>B</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_fidelidad_cuan_grande_es_el.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_fidelidad_cuan_grande_es_el.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_fidelidad_cuan_grande_es_el.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/tu_fidelidad_cuan_grande_es_el.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Gran Amor</td>
+	    <td>E</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_gran_amor.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_gran_amor.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_gran_amor.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/tu_gran_amor.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Tu Nombre Levantare</td>
+	    <td>G</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_nombre_levantare.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_nombre_levantare.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_nombre_levantare.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/tu_nombre_levantare.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Un Siervo Para Su Gloria</td>
+	    <td>B</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/un_siervo_para_su_gloria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/un_siervo_para_su_gloria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/un_siervo_para_su_gloria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/un_siervo_para_su_gloria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Unidos</td>
+	    <td>C</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/unidos.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/unidos.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/unidos.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/unidos.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Vamos A Cantar</td>
+	    <td>C</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vamos_a_cantar.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/vamos_a_cantar.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/vamos_a_cantar.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/vamos_a_cantar.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Vasijas Rotas</td>
+	    <td>Em</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vasijas_rotas.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/vasijas_rotas.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/vasijas_rotas.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/vasijas_rotas.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Ven A El</td>
+	    <td>D</td>
+	    <td> Himno</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_a_El.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_a_El.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_a_El.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/ven_a_El.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Ven Ante Su Trono</td>
+	    <td>G</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_ante_Su_Trono.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_ante_Su_Trono.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_ante_Su_Trono.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/ven_ante_Su_Trono.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Ven Es Hora De Adorarle</td>
+	    <td>E</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_es_hora_de_adorarle.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_es_hora_de_adorarle.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_es_hora_de_adorarle.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/ven_es_hora_de_adorarle.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Ven Espiritu Ven</td>
+	    <td>F</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_espiritu_ven.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_espiritu_ven.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_espiritu_ven.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/ven_espiritu_ven.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Ven Y Deleitate</td>
+	    <td>D</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_y_deleitate.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_y_deleitate.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_y_deleitate.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/ven_y_deleitate.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Venga Tu Reino</td>
+	    <td>A</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/venga_tu_reino.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/venga_tu_reino.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/venga_tu_reino.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/venga_tu_reino.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Victoria</td>
+	    <td>G</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/victoria.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/victoria.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/victoria.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/victoria.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Vida Nueva Tengo En Ti</td>
+	    <td>Eb</td>
+	    <td> Adoracion</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vida_nueva_tengo_en_ti.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/vida_nueva_tengo_en_ti.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/vida_nueva_tengo_en_ti.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/vida_nueva_tengo_en_ti.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Viene Ya</td>
+	    <td>Am</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/viene_ya.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/viene_ya.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/viene_ya.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/viene_ya.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Viva La Fe</td>
+	    <td>D</td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/viva_la_fe.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/viva_la_fe.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/viva_la_fe.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/viva_la_fe.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Ya Se Oye El Shofar</td>
+	    <td></td>
+	    <td> Alabanza</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ya_se_oye_el_Shofar.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ya_se_oye_el_Shofar.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ya_se_oye_el_Shofar.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/ya_se_oye_el_Shofar.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Yo Quiero Mas De Ti</td>
+	    <td>A</td>
+	    <td> Adoración</td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/yo_quiero_mas_de_ti.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/yo_quiero_mas_de_ti.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/yo_quiero_mas_de_ti.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/yo_quiero_mas_de_ti.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Selected</td>
+	    <td>Yo Tengo Una Barquita</td>
+	    <td></td>
+	    <td> </td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/yo_tengo_una_barquita.pdf"
+		   target="_blank">Chords</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/yo_tengo_una_barquita.pdf"
+		   target="_blank">Lyrics</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/openlp/yo_tengo_una_barquita.xml"
+		   target="_blank">OpenLP</a></td>
+	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/yo_tengo_una_barquita.cho"
+		   target="_blank">ChordPro</a></td>
+	  </tr>
+	  
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
