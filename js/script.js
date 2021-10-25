@@ -36,7 +36,7 @@ function download(){
 
     answer = false
     if (counter > 10) {
-	answer = window.confirm("Are you sure that you cant to open "+counter+" documents?");
+	answer = window.confirm("Are you sure that you want to open "+counter+" documents?");
     }
 
     if (counter <= 10 || answer)
