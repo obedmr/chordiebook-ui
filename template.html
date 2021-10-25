@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
     <script src="js/script.js"></script>
   </head>
   <body>
@@ -38,12 +42,45 @@
     </header>
     <main role="main" class="container">
       <div class="jumbotron">
+	</br>
         <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for songs...">
-        </br>
-        <table id="myTable" class="table table-striped table-bordered table-sm">
-          <thead class="thead-dark">
-            <th scope="col">Name</th>
-	    <th scope="col">Themes</th>
+	<div class="d-grid gap-2">
+	  <button type="button" class="btn btn-primary btn-lg btn-block"
+		  onClick=download()>Download selected songs</button>
+	</div>
+	<div class="row" id="downloadType">
+	  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio1" autocomplete="off" value="0" checked>
+	    <label class="btn btn-outline-primary" for="btnradio1">Chords</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio2" autocomplete="off" value="1">
+	    <label class="btn btn-outline-primary" for="btnradio2">Lyrics</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio3" autocomplete="off" value="2">
+	    <label class="btn btn-outline-primary" for="btnradio3">OpenLP</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio4" autocomplete="off" value="3">
+	    <label class="btn btn-outline-primary" for="btnradio4">ChordPro</label>
+	  </div>
+	</div>
+	</br>
+        <table id="myTable"
+	       class="table table-striped table-bordered table-sm"
+	       data-toggle="table"
+	       data-classes="table table-hover table-condensed"
+	       data-striped="true"
+	       data-sort-name="Quality"
+	       data-sort-order="desc"
+	       data-pagination="false"
+	       >
+          <thead class="table-dark">
+	    <th data-field="state" data-checkbox="true" data-sortable="true"></th>
+            <th scope="col" data-sortable="true">Name</th>
+	    <th scope="col" data-sortable="true">Themes</th>
             <th scope="col">Chords</th>
             <th scope="col">Lyrics</th>
             <th scope="col">OpenLP</th>
@@ -51,6 +88,7 @@
           </thead>
           {{range .Songs}}
 	  <tr>
+	    <td>Selected</td>
 	    <td>{{ .Name }}</td>
 	    <td> {{range .Themes}}{{.}}{{end}}</td>
 	    <td><a href="{{ .ChordsURL }}"

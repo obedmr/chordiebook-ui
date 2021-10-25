@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
     <script src="js/script.js"></script>
   </head>
   <body>
@@ -38,12 +42,45 @@
     </header>
     <main role="main" class="container">
       <div class="jumbotron">
+	</br>
         <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for songs...">
-        </br>
-        <table id="myTable" class="table table-striped table-bordered table-sm">
-          <thead class="thead-dark">
-            <th scope="col">Name</th>
-	    <th scope="col">Themes</th>
+	<div class="d-grid gap-2">
+	  <button type="button" class="btn btn-primary btn-lg btn-block"
+		  onClick=download()>Download selected songs</button>
+	</div>
+	<div class="row" id="downloadType">
+	  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio1" autocomplete="off" value="0" checked>
+	    <label class="btn btn-outline-primary" for="btnradio1">Chords</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio2" autocomplete="off" value="1">
+	    <label class="btn btn-outline-primary" for="btnradio2">Lyrics</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio3" autocomplete="off" value="2">
+	    <label class="btn btn-outline-primary" for="btnradio3">OpenLP</label>
+
+	    <input type="radio" class="btn-check" name="btnradio"
+		   id="btnradio4" autocomplete="off" value="3">
+	    <label class="btn btn-outline-primary" for="btnradio4">ChordPro</label>
+	  </div>
+	</div>
+	</br>
+        <table id="myTable"
+	       class="table table-striped table-bordered table-sm"
+	       data-toggle="table"
+	       data-classes="table table-hover table-condensed"
+	       data-striped="true"
+	       data-sort-name="Quality"
+	       data-sort-order="desc"
+	       data-pagination="false"
+	       >
+          <thead class="table-dark">
+	    <th data-field="state" data-checkbox="true" data-sortable="true"></th>
+            <th scope="col" data-sortable="true">Name</th>
+	    <th scope="col" data-sortable="true">Themes</th>
             <th scope="col">Chords</th>
             <th scope="col">Lyrics</th>
             <th scope="col">OpenLP</th>
@@ -51,6 +88,7 @@
           </thead>
           
 	  <tr>
+	    <td>Selected</td>
 	    <td>A Ti</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/A_ti.pdf"
@@ -64,6 +102,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Adonai</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Adonai.pdf"
@@ -77,6 +116,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Al Mundo Paz Hay Libertad</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Al_mundo_paz_hay_libertad.pdf"
@@ -90,6 +130,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Algo Esta Cayendo Aqui</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Algo_esta_cayendo_aqui.pdf"
@@ -103,6 +144,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Canto Y Danzo</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Canto_y_danzo.pdf"
@@ -116,6 +158,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Cristo No Esta Muerto</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Cristo_no_esta_muerto.pdf"
@@ -129,6 +172,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Cuan Glorioso Es Que Me Ama A Mi</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Cuan_glorioso_es_que_me_ama_a_mi.pdf"
@@ -142,6 +186,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Digno Digno Eres Tu</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Digno_Digno_eres_Tu.pdf"
@@ -155,6 +200,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Dios De Lo Imposible</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_de_lo_imposible.pdf"
@@ -168,6 +214,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Dios De Pactos</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_de_pactos.pdf"
@@ -181,6 +228,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Dios Esta Aqui</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_esta_aqui.pdf"
@@ -194,6 +242,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Dios Manda Lluvia</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_manda_lluvia.pdf"
@@ -207,6 +256,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Dios Poderoso</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_poderoso.pdf"
@@ -220,6 +270,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Espiritu De Dios Esta En Este Lugar</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_Espiritu_de_Dios_esta_en_este_lugar.pdf"
@@ -233,6 +284,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Nombre De Jesus</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_Nombre_de_Jesus.pdf"
@@ -246,6 +298,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Te Llama</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_te_llama.pdf"
@@ -259,6 +312,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Espiritu Santo</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Espiritu_Santo.pdf"
@@ -272,6 +326,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Himno Nacional Mexicano</td>
 	    <td> Genérico</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Himno_nacional_Mexicano.pdf"
@@ -285,6 +340,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Jehova Es Mi Guerrero</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jehova_es_mi_guerrero.pdf"
@@ -298,6 +354,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Jehova Es Poderoso Guerrero</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jehova_es_poderoso_guerrero.pdf"
@@ -311,6 +368,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Jesus Mi Salvador</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jesus_mi_Salvador.pdf"
@@ -324,6 +382,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Jonas</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jonas.pdf"
@@ -337,6 +396,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>La Gracia Del Senor</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/La_Gracia_del_Senor.pdf"
@@ -350,6 +410,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>La Gracia Del Señor</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/La_Gracia_del_Se%c3%b1or.pdf"
@@ -363,6 +424,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Majestuoso Poderoso</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Majestuoso_Poderoso.pdf"
@@ -376,6 +438,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Mexico Dios Te Bendiga</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mexico_Dios_te_bendiga.pdf"
@@ -389,6 +452,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Mexico Vamos A Cambiar</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mexico_vamos_a_cambiar.pdf"
@@ -402,6 +466,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Mi Esperanza Esta En Jesus</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mi_esperanza_esta_en_Jesus.pdf"
@@ -415,6 +480,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Rey De Mi Corazon</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Rey_de_mi_corazon.pdf"
@@ -428,6 +494,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Rey Vencedor</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Rey_vencedor.pdf"
@@ -441,6 +508,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Senor Senor Jesus</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Senor_Senor_Jesus.pdf"
@@ -454,6 +522,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Bondad</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_bondad.pdf"
@@ -467,6 +536,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Eres El Alfa Y Omega</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_eres_el_alfa_y_omega.pdf"
@@ -480,6 +550,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Y Yo</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_y_yo.pdf"
@@ -493,6 +564,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>A Quien Ire</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/a_quien_ire.pdf"
@@ -506,6 +578,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>A Ti La Gloria</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/a_ti_la_gloria.pdf"
@@ -519,6 +592,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Al Estar Aqui</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_estar_aqui.pdf"
@@ -532,6 +606,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Al Que Es Digno</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_que_es_digno.pdf"
@@ -545,6 +620,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Al Que Me Cine De Poder</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_que_me_cine_de_poder.pdf"
@@ -558,6 +634,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Aleluya</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/aleluya.pdf"
@@ -571,6 +648,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Amo A Cristo</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amo_a_Cristo.pdf"
@@ -584,6 +662,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Amor De Cristo</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amor_de_Cristo.pdf"
@@ -597,6 +676,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Amor Sin Comparacion</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amor_sin_comparacion.pdf"
@@ -610,6 +690,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Amor Sin Condicion</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amor_sin_condicion.pdf"
@@ -623,6 +704,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Asi Como David Danzaba</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/asi_como_David_danzaba.pdf"
@@ -636,6 +718,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Bajo Tu Abrigo</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bajo_tu_abrigo.pdf"
@@ -649,6 +732,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Bendice A Tu Pueblo Senor</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bendice_a_tu_pueblo_Senor.pdf"
@@ -662,6 +746,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Bendiceme</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bendiceme.pdf"
@@ -675,6 +760,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Bendicime</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bendicime.pdf"
@@ -688,6 +774,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Bueno Es Dios</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bueno_es_Dios.pdf"
@@ -701,6 +788,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Bueno Es Alabar</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bueno_es_alabar.pdf"
@@ -714,6 +802,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Cantare Al Senor Por Siempre</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cantare_al_Senor_por_siempre.pdf"
@@ -727,6 +816,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Celebrad A Cristo</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/celebrad_a_Cristo.pdf"
@@ -740,6 +830,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Con Mi Dios</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/con_mi_Dios.pdf"
@@ -753,6 +844,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Conmigo Danza</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/conmigo_danza.pdf"
@@ -766,6 +858,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Creo En Ti</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/creo_en_ti.pdf"
@@ -779,6 +872,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Cuan Bello Es El Senor</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuan_bello_es_el_Senor.pdf"
@@ -792,6 +886,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Cuan Grande Es Dios</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuan_grande_es_Dios.pdf"
@@ -805,6 +900,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Cuando Pienso En Lo Mucho</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuando_pienso_en_lo_mucho.pdf"
@@ -818,6 +914,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Cuando Yo Pienso</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuando_yo_pienso.pdf"
@@ -831,6 +928,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Dale Palmas</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/dale_palmas.pdf"
@@ -844,6 +942,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Damos Honor A Ti</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/damos_honor_a_ti.pdf"
@@ -857,6 +956,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>David David Danzaba</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/david_david_danzaba.pdf"
@@ -870,6 +970,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>De Tu Amor Necesita Mexico</td>
 	    <td> Adoración, Himno</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/de_Tu_amor_necesita_Mexico.pdf"
@@ -883,6 +984,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>De Gloria En Gloria</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/de_gloria_en_gloria.pdf"
@@ -896,6 +998,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Senor Es Mi Rey</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_Senor_es_mi_Rey.pdf"
@@ -909,6 +1012,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Senor Marchando Va</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_Senor_marchando_va.pdf"
@@ -922,6 +1026,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Amor De Cristo</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_amor_de_Cristo.pdf"
@@ -935,6 +1040,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Amor De Dios Es Maravilloso</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_amor_de_Dios_es_maravilloso.pdf"
@@ -948,6 +1054,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Arca De Noe</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_arca_de_Noe.pdf"
@@ -961,6 +1068,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Ejercito De Dios</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_ejercito_de_Dios.pdf"
@@ -974,6 +1082,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Gozo De Mi Vida Eres Tu</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_gozo_de_mi_vida_eres_tu.pdf"
@@ -987,6 +1096,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Guerrero David</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_guerrero_David.pdf"
@@ -1000,6 +1110,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Padre Abraham</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_padre_Abraham.pdf"
@@ -1013,6 +1124,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Poderoso De Israel</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_poderoso_de_Israel.pdf"
@@ -1026,6 +1138,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>El Tren Del Evangelio</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_tren_del_evangelio.pdf"
@@ -1039,6 +1152,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>En Los Montes En Los Valles</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/en_los_montes_en_los_valles.pdf"
@@ -1052,6 +1166,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>En Tu Presencia</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/en_tu_presencia.pdf"
@@ -1065,6 +1180,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Enviame A Mi</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/enviame_a_mi.pdf"
@@ -1078,6 +1194,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Eres Rey De Los Cielos</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/eres_rey_de_los_cielos.pdf"
@@ -1091,6 +1208,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Esfuerzate Y Se Muy Valiente</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/esfuerzate_y_se_muy_valiente.pdf"
@@ -1104,6 +1222,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Espiritu De Dios Llena Mi Ser</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/espiritu_de_Dios_llena_mi_ser.pdf"
@@ -1117,6 +1236,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Estad Por Cristo Firmes</td>
 	    <td> Adoración, Himno</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/estad_por_Cristo_firmes.pdf"
@@ -1130,6 +1250,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Estamos Aqui Para Adorar</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/estamos_aqui_para_adorar.pdf"
@@ -1143,6 +1264,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Este Es Mi Deseo</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/este_es_mi_deseo.pdf"
@@ -1156,6 +1278,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Esto Es Una Fiesta</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/esto_es_una_fiesta.pdf"
@@ -1169,6 +1292,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Exquisita Presencia</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/exquisita_presencia.pdf"
@@ -1182,6 +1306,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Fiesta</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/fiesta.pdf"
@@ -1195,6 +1320,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Fija Tus Ojos En Cristo</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/fija_tus_ojos_en_Cristo.pdf"
@@ -1208,6 +1334,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Generacion Que Danza</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/generacion_que_danza.pdf"
@@ -1221,6 +1348,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Glorificate</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/glorificate.pdf"
@@ -1234,6 +1362,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Glorioso Intercambio</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/glorioso_intercambio.pdf"
@@ -1247,6 +1376,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Gracia Sublime Es</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracia_sublime_es.pdf"
@@ -1260,6 +1390,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Gracias</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracias.pdf"
@@ -1273,6 +1404,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Gracias Cristo</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracias_Cristo.pdf"
@@ -1286,6 +1418,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Granito De Mostaza</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/granito_de_mostaza.pdf"
@@ -1299,6 +1432,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Habitacion</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/habitacion.pdf"
@@ -1312,6 +1446,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Has Cambiado Mi Lamento</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/has_cambiado_mi_lamento.pdf"
@@ -1325,6 +1460,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Has Ganado La Victoria</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/has_ganado_la_victoria.pdf"
@@ -1338,6 +1474,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Hay Libertad</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_libertad.pdf"
@@ -1351,6 +1488,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Hay Libertad En La Casa De Dios</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_libertad_en_la_casa_de_Dios.pdf"
@@ -1364,6 +1502,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Hay Momentos Tan Especiales</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_momentos_tan_especiales.pdf"
@@ -1377,6 +1516,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Hay Poder</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_poder.pdf"
@@ -1390,6 +1530,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Hay Un Pueblo</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_un_pueblo.pdf"
@@ -1403,6 +1544,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Hay Victoria</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_victoria.pdf"
@@ -1416,6 +1558,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Heme Aqui</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/heme_aqui.pdf"
@@ -1429,6 +1572,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Hoy Es Tiempo</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hoy_es_tiempo.pdf"
@@ -1442,6 +1586,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Inexplicable</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/inexplicable.pdf"
@@ -1455,6 +1600,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>La Casa De Dios</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_casa_de_Dios.pdf"
@@ -1468,6 +1614,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>La Nina De Tus Ojos</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_nina_de_tus_ojos.pdf"
@@ -1481,6 +1628,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>La Unica Razon</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_unica_razon.pdf"
@@ -1494,6 +1642,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Las Naciones Proclamen</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/las_naciones_proclamen.pdf"
@@ -1507,6 +1656,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Levantate Senor</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_Senor.pdf"
@@ -1520,6 +1670,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Levantate Levantate Senor</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_levantate_Senor.pdf"
@@ -1533,6 +1684,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Levantate Y Salvame</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_y_salvame.pdf"
@@ -1546,6 +1698,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Libre</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre.pdf"
@@ -1559,6 +1712,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Libre 2</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_2.pdf"
@@ -1572,6 +1726,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Libre En Cristo</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_en_Cristo.pdf"
@@ -1585,6 +1740,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Libre Soy</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_soy.pdf"
@@ -1598,6 +1754,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Llename Senor</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/llename_Senor.pdf"
@@ -1611,6 +1768,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Los Conejitos Brincan</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/los_conejitos_brincan.pdf"
@@ -1624,6 +1782,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Maravilloso Es</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/maravilloso_es.pdf"
@@ -1637,6 +1796,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Me Asombras</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/me_asombras.pdf"
@@ -1650,6 +1810,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Me Gusta Alabarle</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/me_gusta_alabarle.pdf"
@@ -1663,6 +1824,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Medley</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/medley.pdf"
@@ -1676,6 +1838,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Mereces La Gloria</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mereces_la_gloria.pdf"
@@ -1689,6 +1852,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Mi Buen Padre</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_buen_Padre.pdf"
@@ -1702,6 +1866,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Mi Esperanza Esta En Jesus</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_esperanza_esta_en_Jesus.pdf"
@@ -1715,6 +1880,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Mi Espiritu Te Anhela</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_espiritu_te_anhela.pdf"
@@ -1728,6 +1894,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Mirad Cuan Bueno</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mirad_cuan_bueno.pdf"
@@ -1741,6 +1908,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Nada En La Tierra</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/nada_en_la_tierra.pdf"
@@ -1754,6 +1922,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>No Hay Nadie Como Tu</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/no_hay_nadie_como_tu.pdf"
@@ -1767,6 +1936,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>No Quites Tus Ojos De Mi</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/no_quites_tus_ojos_de_mi.pdf"
@@ -1780,6 +1950,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Perfume A Tus Pies</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/perfume_a_tus_pies.pdf"
@@ -1793,6 +1964,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Poderoso Dios</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/poderoso_Dios.pdf"
@@ -1806,6 +1978,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Poderoso Dios 2</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/poderoso_Dios_2.pdf"
@@ -1819,6 +1992,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Popurri Ranchero</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/popurri_ranchero.pdf"
@@ -1832,6 +2006,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Porque Para Siempre</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/porque_para_siempre.pdf"
@@ -1845,6 +2020,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Preciosa Sangre</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/preciosa_sangre.pdf"
@@ -1858,6 +2034,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Pueblos Todos</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/pueblos_todos.pdf"
@@ -1871,6 +2048,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Que Chevere</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/que_chevere.pdf"
@@ -1884,6 +2062,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Que No Se Acabe El Gozo</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/que_no_se_acabe_el_gozo.pdf"
@@ -1897,6 +2076,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Quiero Cantar Una Linda Cancion</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/quiero_cantar_una_linda_cancion.pdf"
@@ -1910,6 +2090,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Quiero Llenar Tu Trono De Alabanzas</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/quiero_llenar_tu_trono_de_alabanzas.pdf"
@@ -1923,6 +2104,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Remolineando</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/remolineando.pdf"
@@ -1936,6 +2118,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Renuevame</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/renuevame.pdf"
@@ -1949,6 +2132,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Renuncio A Mi</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/renuncio_a_mi.pdf"
@@ -1962,6 +2146,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Sentado En Su Trono</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/sentado_en_su_trono.pdf"
@@ -1975,6 +2160,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Solo De Jesus La Sangre</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/solo_de_Jesus_la_Sangre.pdf"
@@ -1988,6 +2174,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Solo Hay Uno</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/solo_hay_uno.pdf"
@@ -2001,6 +2188,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Somos Pueblo</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/somos_pueblo.pdf"
@@ -2014,6 +2202,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Somos Soldaditos</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/somos_soldaditos.pdf"
@@ -2027,6 +2216,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Soy Feliz</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/soy_feliz.pdf"
@@ -2040,6 +2230,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Superheroe</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/superheroe.pdf"
@@ -2053,6 +2244,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Te Alabo</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_alabo.pdf"
@@ -2066,6 +2258,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Te Dare Lo Mejor</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_dare_lo_mejor.pdf"
@@ -2079,6 +2272,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Te Doy Gloria</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_doy_gloria.pdf"
@@ -2092,6 +2286,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tin Tin Tin</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tin_tin_tin.pdf"
@@ -2105,6 +2300,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Todo Lo Que Respira</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/todo_lo_que_respira.pdf"
@@ -2118,6 +2314,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Toma Tu Lugar</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/toma_tu_lugar.pdf"
@@ -2131,6 +2328,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Amor Por Mi</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_amor_por_mi.pdf"
@@ -2144,6 +2342,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Eres Digno De Gloria</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_eres_digno_de_gloria.pdf"
@@ -2157,6 +2356,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Fidelidad</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_fidelidad.pdf"
@@ -2170,6 +2370,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Fidelidad Cuan Grande Es El</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_fidelidad_cuan_grande_es_el.pdf"
@@ -2183,6 +2384,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Gran Amor</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_gran_amor.pdf"
@@ -2196,6 +2398,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Tu Nombre Levantare</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_nombre_levantare.pdf"
@@ -2209,6 +2412,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Un Siervo Para Su Gloria</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/un_siervo_para_su_gloria.pdf"
@@ -2222,6 +2426,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Unidos</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/unidos.pdf"
@@ -2235,6 +2440,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Vamos A Cantar</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vamos_a_cantar.pdf"
@@ -2248,6 +2454,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Vasijas Rotas</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vasijas_rotas.pdf"
@@ -2261,6 +2468,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Ven A El</td>
 	    <td> Himno</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_a_El.pdf"
@@ -2274,6 +2482,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Ven Ante Su Trono</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_ante_Su_Trono.pdf"
@@ -2287,6 +2496,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Ven Es Hora De Adorarle</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_es_hora_de_adorarle.pdf"
@@ -2300,6 +2510,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Ven Espiritu Ven</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_espiritu_ven.pdf"
@@ -2313,6 +2524,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Ven Y Deleitate</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_y_deleitate.pdf"
@@ -2326,6 +2538,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Venga Tu Reino</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/venga_tu_reino.pdf"
@@ -2339,6 +2552,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Victoria</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/victoria.pdf"
@@ -2352,6 +2566,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Vida Nueva Tengo En Ti</td>
 	    <td> Adoracion</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vida_nueva_tengo_en_ti.pdf"
@@ -2365,6 +2580,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Viene Ya</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/viene_ya.pdf"
@@ -2378,6 +2594,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Viva La Fe</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/viva_la_fe.pdf"
@@ -2391,6 +2608,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Ya Se Oye El Shofar</td>
 	    <td> Alabanza</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ya_se_oye_el_Shofar.pdf"
@@ -2404,6 +2622,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Yo Quiero Mas De Ti</td>
 	    <td> Adoración</td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/yo_quiero_mas_de_ti.pdf"
@@ -2417,6 +2636,7 @@
 	  </tr>
 	  
 	  <tr>
+	    <td>Selected</td>
 	    <td>Yo Tengo Una Barquita</td>
 	    <td> </td>
 	    <td><a href="https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/yo_tengo_una_barquita.pdf"
