@@ -42,9 +42,13 @@ function download(){
 	    function(item) {
 		url = item;
 		pdfjoiner_url += "urls[]="+url+"&"
+		if (downloadType == "openlp" || downloadType == "chordpro")
+		    window.open(url, "_blank")
 	    }
 	)
-    window.open(pdfjoiner_url, "_blank")
+
+    if (downloadType == "chords" || downloadType == "lyrics")
+	window.open(pdfjoiner_url, "_blank")
 }
 
 
