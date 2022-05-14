@@ -23,15 +23,11 @@ function download(){
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
     selectedURLs = [];
-    downloadIdx = $('#downloadType input:radio:checked').val();
+    downloadType = $('#downloadType input:radio:checked').val();
     counter = 0;
 
-    for (i = 0; i < tr.length; i++) {
-	if (tr[i].className == "selected"){
-	    url = tr[i].getElementsByTagName("a")[downloadIdx].href;
-	    selectedURLs.push(url);
-	    counter++;
-	}
+    for (i = 0; i < selected_songs.length; i++) {
+	selectedURLs.push(selected_songs[i][downloadType])
     }
 
     answer = false
@@ -39,11 +35,33 @@ function download(){
 	answer = window.confirm("Are you sure that you want to open "+counter+" documents?");
     }
 
+    var pdfjoiner_url = "http://utils.obedmr.com/urls/mergePDFs?";
+
     if (counter <= 10 || answer)
-    selectedURLs.forEach(
-	function(item, index, arr) {
-	    url = arr[index];
-	    window.open(url, "_blank");
-	}
-    )
+	selectedURLs.forEach(
+	    function(item) {
+		url = item;
+		pdfjoiner_url += "urls[]="+url+"&"
+	    }
+	)
+    window.open(pdfjoiner_url, "_blank")
 }
+
+
+var selected_songs = []
+
+function getURL(str) {
+    return str.match(/\bhttps?:\/\/\S+/gi)[0].replace('"', '')
+}
+
+$(function(){
+    $('#myTable').on('check.bs.table', function (e, row, $element) {
+	var selected_song = {
+	    "chords" : getURL(row[4]),
+	    "lyrics" : getURL(row[5]),
+	    "openlp" : getURL(row[6]),
+	    "chordpro" : getURL(row[7]),
+	}
+	selected_songs.push(selected_song)
+});
+});

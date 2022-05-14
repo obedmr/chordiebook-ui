@@ -7,7 +7,6 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
-    <script src="js/script.js"></script>
   </head>
   <body>
     <header>
@@ -51,19 +50,19 @@
 	<div class="row" id="downloadType">
 	  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 	    <input type="radio" class="btn-check" name="btnradio"
-		   id="btnradio1" autocomplete="off" value="0" checked>
+		   id="btnradio1" autocomplete="off" value="chords" checked>
 	    <label class="btn btn-outline-primary" for="btnradio1">Chords</label>
 
 	    <input type="radio" class="btn-check" name="btnradio"
-		   id="btnradio2" autocomplete="off" value="1">
+		   id="btnradio2" autocomplete="off" value="lyrics">
 	    <label class="btn btn-outline-primary" for="btnradio2">Lyrics</label>
 
 	    <input type="radio" class="btn-check" name="btnradio"
-		   id="btnradio3" autocomplete="off" value="2">
+		   id="btnradio3" autocomplete="off" value="openlp">
 	    <label class="btn btn-outline-primary" for="btnradio3">OpenLP</label>
 
 	    <input type="radio" class="btn-check" name="btnradio"
-		   id="btnradio4" autocomplete="off" value="3">
+		   id="btnradio4" autocomplete="off" value="chordpro">
 	    <label class="btn btn-outline-primary" for="btnradio4">ChordPro</label>
 	  </div>
 	</div>
@@ -78,7 +77,8 @@
 	       data-pagination="false"
 	       >
           <thead class="table-dark">
-	    <th data-field="state" data-checkbox="true" data-sortable="true"></th>
+	    <th data-field="state" data-checkbox="true"
+	    data-sortable="true" onCheck=alert()></th>
             <th scope="col" data-sortable="true">Name</th>
 	    <th scope="col" data-sortable="true">Key</th>
 	    <th scope="col" data-sortable="true">Themes</th>
@@ -104,6 +104,8 @@
 	  </tr>
 	  {{end}}
         </table>
+	<div id="result"></div>
+	<script src="js/script.js"></script>
       </div>
     </main>
   </body>

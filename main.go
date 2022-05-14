@@ -88,6 +88,7 @@ func main() {
 				songName = strings.Split(songName, ".")[0]
 				songName = strings.Title(songName)
 				songs = append(songs, Song{songName, key, themes, chordsURL, lyricsURL, openLPURL, chordProURL})
+				fmt.Printf("Adding song: %v\n", songName)
 			}
 		}
 		return true
@@ -106,7 +107,9 @@ func main() {
 		Songs: songs,
 	}
 
-	err = t.Execute(os.Stdout, data)
+	out, err := os.Create("index.html")
+	checkError(err)
+	err = t.Execute(out, data)
 	checkError(err)
 
 }
