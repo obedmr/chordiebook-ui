@@ -69,3 +69,17 @@ $(function(){
 	selected_songs.push(selected_song)
 });
 });
+
+
+function arrayRemove(arr, value) {
+    return arr.filter(function(ele){
+        return ele["chords"] != value;
+    });
+}
+
+$(function(){
+    $('#myTable').on('uncheck.bs.table', function (e, row, $element) {
+	chords = getURL(row[4])
+	selected_songs = arrayRemove(selected_songs, chords)
+});
+});
