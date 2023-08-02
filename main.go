@@ -18,6 +18,7 @@ type Song struct {
 	Name        string
 	Key         string
 	Themes      []string
+	Authors     []string
 	ChordsURL   string
 	LyricsURL   string
 	OpenLPURL   string
@@ -33,6 +34,7 @@ const (
 type SongMetadata struct {
 	XMLName xml.Name `xml:"song"`
 	Key     string   `xml:"properties>key"`
+	Authors []string `xml:"properties>authors>author"`
 	Themes  []string `xml:"properties>themes>theme"`
 }
 
@@ -76,8 +78,10 @@ func main() {
 		for _, obj := range p.Contents {
 			if strings.HasPrefix(*obj.Key, OpenLPPath) {
 				songMetadata := getSongMetadata(svc, bucket, obj)
+				fmt.Println(songMetadata)
 				key := songMetadata.Key
 				themes := songMetadata.Themes
+				authors := songMetadata.Authors
 				name := strings.Replace(*obj.Key, OpenLPPath, "", -1)
 				name = strings.ReplaceAll(name, ".xml", "")
 				chordsURL := urlPrefix + ChordsPath + name + ".pdf"
@@ -87,7 +91,7 @@ func main() {
 				songName := strings.Join(strings.Split(name, "_"), " ")
 				songName = strings.Split(songName, ".")[0]
 				songName = strings.Title(songName)
-				songs = append(songs, Song{songName, key, themes, chordsURL, lyricsURL, openLPURL, chordProURL})
+				songs = append(songs, Song{songName, key, themes, authors, chordsURL, lyricsURL, openLPURL, chordProURL})
 				fmt.Printf("Adding song: %v\n", songName)
 			}
 		}

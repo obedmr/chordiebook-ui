@@ -82,6 +82,7 @@
             <th scope="col" data-sortable="true">Name</th>
 	    <th scope="col" data-sortable="true">Key</th>
 	    <th scope="col" data-sortable="true">Themes</th>
+	    <th scope="col" data-sortable="true">Authors</th>
             <th scope="col">Chords</th>
             <th scope="col">Lyrics</th>
             <th scope="col">OpenLP</th>
@@ -93,6 +94,7 @@
 	    <td>{{ .Name }}</td>
 	    <td>{{ .Key }}</td>
 	    <td> {{range .Themes}}{{.}}{{end}}</td>
+	    <td> {{range .Authors}}{{.}}{{end}}</td>
 	    <td><a href="{{ .ChordsURL }}"
 		   target="_blank">Chords</a></td>
 	    <td><a href="{{ .LyricsURL }}"
