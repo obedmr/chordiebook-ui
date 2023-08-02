@@ -61,10 +61,10 @@ function getURL(str) {
 $(function(){
     $('#myTable').on('check.bs.table', function (e, row, $element) {
 	var selected_song = {
-	    "chords" : getURL(row[4]),
-	    "lyrics" : getURL(row[5]),
-	    "openlp" : getURL(row[6]),
-	    "chordpro" : getURL(row[7]),
+	    "chords" : getURL(row[5]),
+	    "lyrics" : getURL(row[6]),
+	    "openlp" : getURL(row[7]),
+	    "chordpro" : getURL(row[8]),
 	}
 	selected_songs.push(selected_song)
 });
