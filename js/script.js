@@ -35,7 +35,7 @@ function download(){
 	answer = window.confirm("Are you sure that you want to open "+counter+" documents?");
     }
 
-    var pdfjoiner_url = "http://utils.obedmr.com/urls/mergePDFs?";
+    var pdfjoiner_url = "https://utils.obedmr.com/urls/mergePDFs?";
 
     if (counter <= 10 || answer)
 	selectedURLs.forEach(
