@@ -3,6 +3,7 @@ SHELL := /bin/sh
 CONTAINER_RUNTIME ?= $(shell if command -v docker >/dev/null 2>&1; then echo docker; elif command -v podman >/dev/null 2>&1; then echo podman; fi)
 GO_IMAGE ?= golang:latest
 NODE_IMAGE ?= node:latest
+ESBUILD_VERSION ?= latest
 WORKDIR ?= /workspace
 AWS_DIR ?= $(HOME)/.aws
 CONTAINER_HOME ?= /tmp/chordiebook-home
@@ -36,7 +37,7 @@ GO_CACHE_MOUNTS := -v "$(GO_CACHE_DIR):/tmp/chordiebook-go-cache" -v "$(GO_MOD_C
 NPM_CACHE_MOUNT := -v "$(NPM_CACHE_DIR):/tmp/chordiebook-npm-cache"
 CONTAINER_FLAGS := --rm --user "$(CONTAINER_USER)"
 
-.PHONY: help check-runtime check-vars prepare-cache minify-assets catalog index generate-index generate-catalog go-test serve container-shell
+.PHONY: help check-runtime check-vars prepare-cache minify-assets minify-assets-local catalog index generate-index generate-catalog ci-index go-test serve container-shell
 
 help:
 	@printf '%s\n' 'ChordieBook UI automation'
@@ -67,6 +68,8 @@ help:
 	@printf '  %s\n' 'make catalog BUCKET=other-bucket URL_PREFIX=https://example.com/'
 	@printf '  %s\n' 'make serve'
 	@printf '  %s\n' 'make go-test'
+	@printf '\n%s\n' 'Pipeline notes:'
+	@printf '  %s\n' 'ci-index is kept for another repository pipeline that provides host Go and Node.'
 
 check-runtime:
 	@if [ -z "$(CONTAINER_RUNTIME)" ]; then \
@@ -104,7 +107,11 @@ minify-assets: check-runtime prepare-cache
 		-e HOME=$(CONTAINER_HOME) \
 		-e npm_config_cache=/tmp/chordiebook-npm-cache \
 		"$(NODE_IMAGE)" \
-		sh -c 'npx --yes esbuild@latest js/script.js --bundle=false --minify --target=es2017 --outfile=js/script.min.js && npx --yes esbuild@latest css/style.css --bundle=false --minify --outfile=css/style.min.css'
+		sh -c 'npx --yes esbuild@$(ESBUILD_VERSION) js/script.js --bundle=false --minify --target=es2017 --outfile=js/script.min.js && npx --yes esbuild@$(ESBUILD_VERSION) css/style.css --bundle=false --minify --outfile=css/style.min.css'
+
+minify-assets-local:
+	npx --yes esbuild@$(ESBUILD_VERSION) js/script.js --bundle=false --minify --target=es2017 --outfile=js/script.min.js
+	npx --yes esbuild@$(ESBUILD_VERSION) css/style.css --bundle=false --minify --outfile=css/style.min.css
 
 catalog index generate-index generate-catalog: check-runtime check-vars prepare-cache minify-assets
 	$(CONTAINER_RUNTIME) run $(CONTAINER_FLAGS) \
@@ -115,6 +122,10 @@ catalog index generate-index generate-catalog: check-runtime check-vars prepare-
 		$(AWS_ENV) \
 		"$(GO_IMAGE)" \
 		go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)" -compact-json -css-path css/style.min.css -js-path js/script.min.js
+
+# Kept for another repository pipeline that provides host Go and Node.
+ci-index: check-vars minify-assets-local
+	go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)" -compact-json -css-path css/style.min.css -js-path js/script.min.js
 
 go-test: check-runtime prepare-cache
 	$(CONTAINER_RUNTIME) run $(CONTAINER_FLAGS) \
