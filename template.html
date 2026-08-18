@@ -1,61 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChordieBook</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
   </head>
   <body>
-    <header>
-      <div class="bg-dark collapse" id="navbarHeader" style="">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
-              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Contact</h4>
-              <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
-              </ul>
-            </div>
+    <main role="main" class="container-fluid app-main">
+      <section class="top-bar" aria-labelledby="page-title">
+        <div class="top-bar-copy">
+          <p class="eyebrow" data-i18n="eyebrow">Song library</p>
+          <h1 id="page-title">ChordieBook</h1>
+          <p data-i18n="heroDescription">Search, select, and download worship songs in the format your team needs.</p>
+        </div>
+        <div class="top-bar-meta">
+          <div class="format-summary" aria-label="Available formats">
+            <span data-i18n="formatChords">PDF chords</span>
+            <span data-i18n="formatLyrics">PDF lyrics</span>
+            <span>OpenLP</span>
+            <span>ChordPro</span>
+          </div>
+          <div class="language-switch" role="group" aria-label="Language">
+            <button type="button" class="language-option" data-language="en">EN</button>
+            <button type="button" class="language-option" data-language="es">ES</button>
+          </div>
+          <div class="selection-meter" aria-live="polite">
+            <span id="selectionCount">0</span>
+            <small data-i18n="selected">selected</small>
           </div>
         </div>
-      </div>
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>ChordieBook</strong>
-          </a>
-          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <main role="main" class="container">
-      <div class="jumbotron">
-	</br>
-        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for songs...">
-	<div class="d-grid gap-2">
-	  <button type="button" class="btn btn-primary btn-lg btn-block"
-		  onClick=download()>Download selected songs</button>
-	</div>
-	<div class="row" id="downloadType">
-	  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      </section>
+      <section class="library-panel">
+        <div class="toolbar">
+          <div class="search-area">
+            <label for="myInput" data-i18n="searchLabel">Search songs</label>
+            <input type="search" id="myInput" class="form-control" placeholder="Search by song name..." data-i18n-placeholder="searchPlaceholder">
+            <div id="catalogStatus" class="catalog-status" data-i18n="loadingCatalog">Loading catalog...</div>
+          </div>
+          <div class="download-area">
+            <div class="btn-group download-options" id="downloadType" role="group" aria-label="Download format">
 	    <input type="radio" class="btn-check" name="btnradio"
 		   id="btnradio1" autocomplete="off" value="chords" checked>
-	    <label class="btn btn-outline-primary" for="btnradio1">Chords</label>
+	    <label class="btn btn-outline-primary" for="btnradio1" data-i18n="chords">Chords</label>
 
 	    <input type="radio" class="btn-check" name="btnradio"
 		   id="btnradio2" autocomplete="off" value="lyrics">
-	    <label class="btn btn-outline-primary" for="btnradio2">Lyrics</label>
+	    <label class="btn btn-outline-primary" for="btnradio2" data-i18n="lyrics">Lyrics</label>
 
 	    <input type="radio" class="btn-check" name="btnradio"
 		   id="btnradio3" autocomplete="off" value="openlp">
@@ -64,51 +59,38 @@
 	    <input type="radio" class="btn-check" name="btnradio"
 		   id="btnradio4" autocomplete="off" value="chordpro">
 	    <label class="btn btn-outline-primary" for="btnradio4">ChordPro</label>
-	  </div>
-	</div>
-	</br>
+            </div>
+	    <button type="button" class="btn btn-primary download-button" onClick="download()" data-i18n="downloadSelected">Download selected</button>
+          </div>
+        </div>
+        <div class="table-shell">
         <table id="myTable"
-	       class="table table-striped table-bordered table-sm"
-	       data-toggle="table"
-	       data-classes="table table-hover table-condensed"
+	       class="table table-striped table-hover table-sm song-table"
+	       data-classes="table table-hover table-condensed song-table"
 	       data-striped="true"
 	       data-sort-name="Quality"
 	       data-sort-order="desc"
 	       data-pagination="false"
 	       >
           <thead class="table-dark">
-	    <th data-field="state" data-checkbox="true"
-	    data-sortable="true" onCheck=alert()></th>
-            <th scope="col" data-sortable="true">Name</th>
-	    <th scope="col" data-sortable="true">Key</th>
-	    <th scope="col" data-sortable="true">Themes</th>
-	    <th scope="col" data-sortable="true">Authors</th>
-            <th scope="col">Chords</th>
-            <th scope="col">Lyrics</th>
-            <th scope="col">OpenLP</th>
-	    <th scope="col">ChordPro</th>
+            <tr>
+	    <th data-field="state" data-checkbox="true"></th>
+            <th scope="col" data-field="name" data-sortable="true" data-i18n="name">Name</th>
+	    <th scope="col" data-field="key" data-sortable="true" data-i18n="key">Key</th>
+	    <th scope="col" data-field="themes" data-sortable="true" data-i18n="themes">Themes</th>
+	    <th scope="col" data-field="authors" data-sortable="true" data-i18n="authors">Authors</th>
+            <th scope="col" data-field="chords" data-i18n="chords">Chords</th>
+            <th scope="col" data-field="lyrics" data-i18n="lyrics">Lyrics</th>
+            <th scope="col" data-field="openlp">OpenLP</th>
+	    <th scope="col" data-field="chordpro">ChordPro</th>
+            </tr>
           </thead>
-          {{range .Songs}}
-	  <tr>
-	    <td>Selected</td>
-	    <td>{{ .Name }}</td>
-	    <td>{{ .Key }}</td>
-	    <td> {{range .Themes}}{{.}}{{end}}</td>
-	    <td> {{range .Authors}}{{.}}{{end}}</td>
-	    <td><a href="{{ .ChordsURL }}"
-		   target="_blank">Chords</a></td>
-	    <td><a href="{{ .LyricsURL }}"
-		   target="_blank">Lyrics</a></td>
-	    <td><a href="{{ .OpenLPURL }}"
-		   target="_blank">OpenLP</a></td>
-	    <td><a href="{{ .ChordProURL }}"
-		   target="_blank">ChordPro</a></td>
-	  </tr>
-	  {{end}}
+	          <tbody></tbody>
         </table>
-	<div id="result"></div>
+        </div>
+      </section>
+      <div id="result"></div>
 	<script src="js/script.js"></script>
-      </div>
     </main>
   </body>
 </html>

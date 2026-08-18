@@ -1,32 +1,371 @@
+:root {
+    --surface: #ffffff;
+    --surface-soft: #f7f8fb;
+    --ink: #19202a;
+    --muted: #64748b;
+    --line: #d8dee8;
+    --accent: #0f766e;
+    --accent-strong: #0b5f59;
+    --gold: #b7791f;
+    --header: #151923;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--ink);
+    background: var(--surface-soft);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app-main {
+    max-width: 1440px;
+    padding: 18px 18px 40px;
+}
+
+.top-bar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 22px;
+    padding: 28px;
+    color: #fff;
+    background: #1f2937;
+    border: 1px solid #303a49;
+    border-radius: 8px;
+}
+
+.top-bar-copy {
+    max-width: 720px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: #8bd3cb;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 750;
+    line-height: 1;
+}
+
+.top-bar-copy p:last-child {
+    margin: 12px 0 0;
+    max-width: 580px;
+    color: #d7dde8;
+    font-size: 1.05rem;
+}
+
+.top-bar-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 12px;
+    min-width: 260px;
+}
+
+.format-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    max-width: 300px;
+}
+
+.format-summary span {
+    padding: 6px 10px;
+    color: #d7f3ef;
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+    background: rgba(15, 118, 110, 0.22);
+    border: 1px solid rgba(139, 211, 203, 0.32);
+    border-radius: 999px;
+}
+
+.language-switch {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+}
+
+.language-option {
+    min-width: 42px;
+    min-height: 32px;
+    padding: 4px 10px;
+    color: #d7dde8;
+    font-size: 0.82rem;
+    font-weight: 800;
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+}
+
+.language-option:hover,
+.language-option:focus {
+    color: #fff;
+    outline: none;
+}
+
+.language-option.is-active {
+    color: #10201f;
+    background: #8bd3cb;
+}
+
+.selection-meter {
+    display: grid;
+    min-width: 118px;
+    padding: 16px 18px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+}
+
+.selection-meter span {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.selection-meter small {
+    color: #cbd5e1;
+    font-weight: 650;
+    text-transform: uppercase;
+}
+
+.library-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+.toolbar {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) auto;
+    gap: 18px;
+    align-items: end;
+    padding: 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.search-area label {
+    display: block;
+    margin-bottom: 8px;
+    color: #3b4658;
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.catalog-status {
+    min-height: 20px;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+.catalog-status.is-error {
+    color: #b42318;
+    font-weight: 700;
+}
+
 #myInput {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 16px 10px 42px;
+    color: var(--ink);
+    background-color: #fff;
+    background-image: url('searchicon.png');
+    background-position: 14px center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-shadow: none;
 }
 
-#myTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
+#myInput:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.16);
 }
 
-#myTable th, #myTable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
+.download-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
-#myTable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd;
+.download-options {
+    flex-wrap: wrap;
 }
 
-#myTable tr.header, #myTable tr:hover {
-    /* Add a grey background color to the table header and on hover */
-    background-color: #f1f1f1;
+.btn-outline-primary {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-check:checked + .btn-outline-primary,
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.download-button,
+.download-button:hover,
+.download-button:focus {
+    min-height: 42px;
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: none;
+}
+
+.download-button:hover {
+    background: #9f6318;
+    border-color: #9f6318;
+}
+
+.table-shell {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#myTable,
+.song-table {
+    width: 100%;
+    min-width: 920px;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.95rem;
+}
+
+#myTable th,
+#myTable td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+    border-color: #e4e9f1;
+}
+
+#myTable thead th {
+    color: #f8fafc;
+    background: #273142;
+    border-color: #273142;
+    white-space: nowrap;
+}
+
+#myTable tbody tr:hover {
+    background-color: #eef7f6;
+}
+
+#myTable a {
+    color: var(--accent-strong);
+    font-weight: 650;
+    text-decoration: none;
+}
+
+#myTable a:hover {
+    color: #084c47;
+    text-decoration: underline;
+}
+
+.fixed-table-container {
+    border: 0;
+}
+
+.fixed-table-body {
+    overflow: visible;
+}
+
+@media (max-width: 900px) {
+    .top-bar,
+    .toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .top-bar-meta {
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+    .format-summary {
+        justify-content: flex-start;
+    }
+
+    .selection-meter {
+        justify-self: start;
+    }
+
+    .download-area {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 560px) {
+    .app-main {
+        padding: 10px 10px 28px;
+    }
+
+    .top-bar,
+    .toolbar {
+        padding: 18px;
+    }
+
+    .top-bar {
+        gap: 18px;
+    }
+
+    .top-bar h1 {
+        font-size: 2rem;
+    }
+
+    .top-bar-copy p:last-child {
+        font-size: 1rem;
+    }
+
+    .top-bar-meta,
+    .format-summary,
+    .language-switch,
+    .selection-meter {
+        width: 100%;
+    }
+
+    .format-summary span {
+        flex: 1 1 calc(50% - 8px);
+        text-align: center;
+    }
+
+    .language-option {
+        flex: 1 1 50%;
+    }
+
+    .download-area,
+    .download-options,
+    .download-button {
+        width: 100%;
+    }
+
+    .download-options .btn {
+        flex: 1 1 50%;
+    }
 }

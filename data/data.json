@@ -1,0 +1,4976 @@
+{
+  "generated_at": "2026-08-18T01:34:34.836728902Z",
+  "bucket": "chordiebook",
+  "url_prefix": "https://chordiebook.s3-us-west-1.amazonaws.com/",
+  "songs": [
+    {
+      "id": "a_quien_ire",
+      "source_key": "openlp/a_quien_ire.xml",
+      "name": "A Quien Ire",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/a_quien_ire.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/a_quien_ire.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/a_quien_ire.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/a_quien_ire.cho"
+      }
+    },
+    {
+      "id": "A_ti",
+      "source_key": "openlp/A_ti.xml",
+      "name": "A Ti",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/A_ti.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/A_ti.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/A_ti.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/A_ti.cho"
+      }
+    },
+    {
+      "id": "a_ti_la_gloria",
+      "source_key": "openlp/a_ti_la_gloria.xml",
+      "name": "A Ti La Gloria",
+      "key": "A",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/a_ti_la_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/a_ti_la_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/a_ti_la_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/a_ti_la_gloria.cho"
+      }
+    },
+    {
+      "id": "A_Ti_sea_la_Gloria",
+      "source_key": "openlp/A_Ti_sea_la_Gloria.xml",
+      "name": "A Ti Sea La Gloria",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Para Su Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/A_Ti_sea_la_Gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/A_Ti_sea_la_Gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/A_Ti_sea_la_Gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/A_Ti_sea_la_Gloria.cho"
+      }
+    },
+    {
+      "id": "Admirable",
+      "source_key": "openlp/Admirable.xml",
+      "name": "Admirable",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Christine d'Clario"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Admirable.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Admirable.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Admirable.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Admirable.cho"
+      }
+    },
+    {
+      "id": "Adonai",
+      "source_key": "openlp/Adonai.xml",
+      "name": "Adonai",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Adonai.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Adonai.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Adonai.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Adonai.cho"
+      }
+    },
+    {
+      "id": "Agnus_Dei",
+      "source_key": "openlp/Agnus_Dei.xml",
+      "name": "Agnus Dei",
+      "themes": [
+        "adoración"
+      ],
+      "authors": [
+        "Xtreme kids"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Agnus_Dei.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Agnus_Dei.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Agnus_Dei.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Agnus_Dei.cho"
+      }
+    },
+    {
+      "id": "al_estar_aqui",
+      "source_key": "openlp/al_estar_aqui.xml",
+      "name": "Al Estar Aqui",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_estar_aqui.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/al_estar_aqui.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/al_estar_aqui.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/al_estar_aqui.cho"
+      }
+    },
+    {
+      "id": "Al_mundo_paz_hay_libertad",
+      "source_key": "openlp/Al_mundo_paz_hay_libertad.xml",
+      "name": "Al Mundo Paz Hay Libertad",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Al_mundo_paz_hay_libertad.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Al_mundo_paz_hay_libertad.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Al_mundo_paz_hay_libertad.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Al_mundo_paz_hay_libertad.cho"
+      }
+    },
+    {
+      "id": "al_que_es_digno",
+      "source_key": "openlp/al_que_es_digno.xml",
+      "name": "Al Que Es Digno",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_que_es_digno.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/al_que_es_digno.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/al_que_es_digno.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/al_que_es_digno.cho"
+      }
+    },
+    {
+      "id": "al_que_me_cine_de_poder",
+      "source_key": "openlp/al_que_me_cine_de_poder.xml",
+      "name": "Al Que Me Cine De Poder",
+      "key": "F",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Jesús Adrian Romero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/al_que_me_cine_de_poder.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/al_que_me_cine_de_poder.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/al_que_me_cine_de_poder.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/al_que_me_cine_de_poder.cho"
+      }
+    },
+    {
+      "id": "Alabemos_al_Senor",
+      "source_key": "openlp/Alabemos_al_Senor.xml",
+      "name": "Alabemos Al Senor",
+      "key": "F",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Para Su Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Alabemos_al_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Alabemos_al_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Alabemos_al_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Alabemos_al_Senor.cho"
+      }
+    },
+    {
+      "id": "aleluya",
+      "source_key": "openlp/aleluya.xml",
+      "name": "Aleluya",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Celez Gonzalez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/aleluya.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/aleluya.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/aleluya.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/aleluya.cho"
+      }
+    },
+    {
+      "id": "Algo_esta_cayendo_aqui",
+      "source_key": "openlp/Algo_esta_cayendo_aqui.xml",
+      "name": "Algo Esta Cayendo Aqui",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "José Luis Reyes"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Algo_esta_cayendo_aqui.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Algo_esta_cayendo_aqui.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Algo_esta_cayendo_aqui.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Algo_esta_cayendo_aqui.cho"
+      }
+    },
+    {
+      "id": "amo_a_Cristo",
+      "source_key": "openlp/amo_a_Cristo.xml",
+      "name": "Amo A Cristo",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amo_a_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/amo_a_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/amo_a_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/amo_a_Cristo.cho"
+      }
+    },
+    {
+      "id": "amor_sin_comparacion",
+      "source_key": "openlp/amor_sin_comparacion.xml",
+      "name": "Amor Sin Comparacion",
+      "key": "Em",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Hillsong United"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amor_sin_comparacion.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/amor_sin_comparacion.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/amor_sin_comparacion.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/amor_sin_comparacion.cho"
+      }
+    },
+    {
+      "id": "amor_sin_condicion",
+      "source_key": "openlp/amor_sin_condicion.xml",
+      "name": "Amor Sin Condicion",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/amor_sin_condicion.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/amor_sin_condicion.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/amor_sin_condicion.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/amor_sin_condicion.cho"
+      }
+    },
+    {
+      "id": "aqui_estoy",
+      "source_key": "openlp/aqui_estoy.xml",
+      "name": "Aqui Estoy",
+      "key": "A",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Jaime Murrell"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/aqui_estoy.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/aqui_estoy.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/aqui_estoy.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/aqui_estoy.cho"
+      }
+    },
+    {
+      "id": "asi_como_David_danzaba",
+      "source_key": "openlp/asi_como_David_danzaba.xml",
+      "name": "Asi Como David Danzaba",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Ebenezer"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/asi_como_David_danzaba.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/asi_como_David_danzaba.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/asi_como_David_danzaba.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/asi_como_David_danzaba.cho"
+      }
+    },
+    {
+      "id": "bajo_tu_abrigo",
+      "source_key": "openlp/bajo_tu_abrigo.xml",
+      "name": "Bajo Tu Abrigo",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bajo_tu_abrigo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bajo_tu_abrigo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bajo_tu_abrigo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/bajo_tu_abrigo.cho"
+      }
+    },
+    {
+      "id": "bendice_a_tu_pueblo_Senor",
+      "source_key": "openlp/bendice_a_tu_pueblo_Senor.xml",
+      "name": "Bendice A Tu Pueblo Senor",
+      "key": "F",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Stanislao Marino"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bendice_a_tu_pueblo_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bendice_a_tu_pueblo_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bendice_a_tu_pueblo_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/bendice_a_tu_pueblo_Senor.cho"
+      }
+    },
+    {
+      "id": "bendiceme",
+      "source_key": "openlp/bendiceme.xml",
+      "name": "Bendiceme",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Eduardo Rios"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bendiceme.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bendiceme.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bendiceme.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/bendiceme.cho"
+      }
+    },
+    {
+      "id": "bienvenido_Espiritu_Santo",
+      "source_key": "openlp/bienvenido_Espiritu_Santo.xml",
+      "name": "Bienvenido Espiritu Santo",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bienvenido_Espiritu_Santo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bienvenido_Espiritu_Santo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bienvenido_Espiritu_Santo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/bienvenido_Espiritu_Santo.cho"
+      }
+    },
+    {
+      "id": "bueno_es_alabar",
+      "source_key": "openlp/bueno_es_alabar.xml",
+      "name": "Bueno Es Alabar",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bueno_es_alabar.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bueno_es_alabar.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bueno_es_alabar.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/bueno_es_alabar.cho"
+      }
+    },
+    {
+      "id": "bueno_es_Dios",
+      "source_key": "openlp/bueno_es_Dios.xml",
+      "name": "Bueno Es Dios",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Don Moen"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/bueno_es_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/bueno_es_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/bueno_es_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/bueno_es_Dios.cho"
+      }
+    },
+    {
+      "id": "cantare_al_Senor_por_siempre",
+      "source_key": "openlp/cantare_al_Senor_por_siempre.xml",
+      "name": "Cantare Al Senor Por Siempre",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cantare_al_Senor_por_siempre.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cantare_al_Senor_por_siempre.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cantare_al_Senor_por_siempre.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/cantare_al_Senor_por_siempre.cho"
+      }
+    },
+    {
+      "id": "Canto_y_danzo",
+      "source_key": "openlp/Canto_y_danzo.xml",
+      "name": "Canto Y Danzo",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Canto_y_danzo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Canto_y_danzo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Canto_y_danzo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Canto_y_danzo.cho"
+      }
+    },
+    {
+      "id": "Castillo_fuerte",
+      "source_key": "openlp/Castillo_fuerte.xml",
+      "name": "Castillo Fuerte",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Castillo_fuerte.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Castillo_fuerte.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Castillo_fuerte.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Castillo_fuerte.cho"
+      }
+    },
+    {
+      "id": "Celebra_victorioso",
+      "source_key": "openlp/Celebra_victorioso.xml",
+      "name": "Celebra Victorioso",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Celebra_victorioso.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Celebra_victorioso.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Celebra_victorioso.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Celebra_victorioso.cho"
+      }
+    },
+    {
+      "id": "celebrad_a_Cristo",
+      "source_key": "openlp/celebrad_a_Cristo.xml",
+      "name": "Celebrad A Cristo",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/celebrad_a_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/celebrad_a_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/celebrad_a_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/celebrad_a_Cristo.cho"
+      }
+    },
+    {
+      "id": "con_mi_Dios",
+      "source_key": "openlp/con_mi_Dios.xml",
+      "name": "Con Mi Dios",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Jesús Adrian Romero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/con_mi_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/con_mi_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/con_mi_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/con_mi_Dios.cho"
+      }
+    },
+    {
+      "id": "Conforme_a_Tu_Misericordia",
+      "source_key": "openlp/Conforme_a_Tu_Misericordia.xml",
+      "name": "Conforme A Tu Misericordia",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Para Su Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Conforme_a_Tu_Misericordia.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Conforme_a_Tu_Misericordia.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Conforme_a_Tu_Misericordia.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Conforme_a_Tu_Misericordia.cho"
+      }
+    },
+    {
+      "id": "conmigo_danza",
+      "source_key": "openlp/conmigo_danza.xml",
+      "name": "Conmigo Danza",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Paul Wilbur"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/conmigo_danza.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/conmigo_danza.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/conmigo_danza.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/conmigo_danza.cho"
+      }
+    },
+    {
+      "id": "creo_en_ti",
+      "source_key": "openlp/creo_en_ti.xml",
+      "name": "Creo En Ti",
+      "key": "Bm",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Coalo Zamorano"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/creo_en_ti.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/creo_en_ti.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/creo_en_ti.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/creo_en_ti.cho"
+      }
+    },
+    {
+      "id": "Cristo_no_esta_muerto",
+      "source_key": "openlp/Cristo_no_esta_muerto.xml",
+      "name": "Cristo No Esta Muerto",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Cristo_no_esta_muerto.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Cristo_no_esta_muerto.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Cristo_no_esta_muerto.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Cristo_no_esta_muerto.cho"
+      }
+    },
+    {
+      "id": "cuan_bello_es_el_Senor",
+      "source_key": "openlp/cuan_bello_es_el_Senor.xml",
+      "name": "Cuan Bello Es El Senor",
+      "key": "Dmaj7",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuan_bello_es_el_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuan_bello_es_el_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuan_bello_es_el_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/cuan_bello_es_el_Senor.cho"
+      }
+    },
+    {
+      "id": "Cuan_glorioso_es_que_me_ama_a_mi",
+      "source_key": "openlp/Cuan_glorioso_es_que_me_ama_a_mi.xml",
+      "name": "Cuan Glorioso Es Que Me Ama A Mi",
+      "key": "Eb",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Scott Lawrence"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Cuan_glorioso_es_que_me_ama_a_mi.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Cuan_glorioso_es_que_me_ama_a_mi.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Cuan_glorioso_es_que_me_ama_a_mi.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Cuan_glorioso_es_que_me_ama_a_mi.cho"
+      }
+    },
+    {
+      "id": "cuan_grande_es_Dios",
+      "source_key": "openlp/cuan_grande_es_Dios.xml",
+      "name": "Cuan Grande Es Dios",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuan_grande_es_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuan_grande_es_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuan_grande_es_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/cuan_grande_es_Dios.cho"
+      }
+    },
+    {
+      "id": "cuando_pienso",
+      "source_key": "openlp/cuando_pienso.xml",
+      "name": "Cuando Pienso",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "xtreme kids"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuando_pienso.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuando_pienso.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuando_pienso.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/cuando_pienso.cho"
+      }
+    },
+    {
+      "id": "cuando_pienso_en_lo_mucho",
+      "source_key": "openlp/cuando_pienso_en_lo_mucho.xml",
+      "name": "Cuando Pienso En Lo Mucho",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Elim"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuando_pienso_en_lo_mucho.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuando_pienso_en_lo_mucho.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuando_pienso_en_lo_mucho.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/cuando_pienso_en_lo_mucho.cho"
+      }
+    },
+    {
+      "id": "cuando_yo_pienso",
+      "source_key": "openlp/cuando_yo_pienso.xml",
+      "name": "Cuando Yo Pienso",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Xtreme Kids"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/cuando_yo_pienso.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/cuando_yo_pienso.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/cuando_yo_pienso.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/cuando_yo_pienso.cho"
+      }
+    },
+    {
+      "id": "dale_palmas",
+      "source_key": "openlp/dale_palmas.xml",
+      "name": "Dale Palmas",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Desconocido"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/dale_palmas.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/dale_palmas.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/dale_palmas.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/dale_palmas.cho"
+      }
+    },
+    {
+      "id": "dame_un_nuevo_corazon",
+      "source_key": "openlp/dame_un_nuevo_corazon.xml",
+      "name": "Dame Un Nuevo Corazon",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Manuel Bonilla"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/dame_un_nuevo_corazon.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/dame_un_nuevo_corazon.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/dame_un_nuevo_corazon.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/dame_un_nuevo_corazon.cho"
+      }
+    },
+    {
+      "id": "damos_honor_a_ti",
+      "source_key": "openlp/damos_honor_a_ti.xml",
+      "name": "Damos Honor A Ti",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/damos_honor_a_ti.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/damos_honor_a_ti.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/damos_honor_a_ti.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/damos_honor_a_ti.cho"
+      }
+    },
+    {
+      "id": "david_david_danzaba",
+      "source_key": "openlp/david_david_danzaba.xml",
+      "name": "David David Danzaba",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Tony Peres"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/david_david_danzaba.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/david_david_danzaba.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/david_david_danzaba.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/david_david_danzaba.cho"
+      }
+    },
+    {
+      "id": "De_Gloria_En_Gloria",
+      "source_key": "openlp/De_Gloria_En_Gloria.xml",
+      "name": "De Gloria En Gloria",
+      "key": "Eb",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/De_Gloria_En_Gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/De_Gloria_En_Gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/De_Gloria_En_Gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/De_Gloria_En_Gloria.cho"
+      }
+    },
+    {
+      "id": "de_gloria_en_gloria",
+      "source_key": "openlp/de_gloria_en_gloria.xml",
+      "name": "De Gloria En Gloria",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/de_gloria_en_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/de_gloria_en_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/de_gloria_en_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/de_gloria_en_gloria.cho"
+      }
+    },
+    {
+      "id": "de_Tu_amor_necesita_Mexico",
+      "source_key": "openlp/de_Tu_amor_necesita_Mexico.xml",
+      "name": "De Tu Amor Necesita Mexico",
+      "key": "E",
+      "themes": [
+        "Adoración, Himno"
+      ],
+      "authors": [
+        "Ricardo Ceratto"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/de_Tu_amor_necesita_Mexico.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/de_Tu_amor_necesita_Mexico.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/de_Tu_amor_necesita_Mexico.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/de_Tu_amor_necesita_Mexico.cho"
+      }
+    },
+    {
+      "id": "Digno_Digno_eres_Tu",
+      "source_key": "openlp/Digno_Digno_eres_Tu.xml",
+      "name": "Digno Digno Eres Tu",
+      "key": "Am",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Brunet"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Digno_Digno_eres_Tu.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Digno_Digno_eres_Tu.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Digno_Digno_eres_Tu.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Digno_Digno_eres_Tu.cho"
+      }
+    },
+    {
+      "id": "Digno_Para_Siempre",
+      "source_key": "openlp/Digno_Para_Siempre.xml",
+      "name": "Digno Para Siempre",
+      "key": "F#",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Para Su Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Digno_Para_Siempre.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Digno_Para_Siempre.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Digno_Para_Siempre.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Digno_Para_Siempre.cho"
+      }
+    },
+    {
+      "id": "Digno_y_Santo",
+      "source_key": "openlp/Digno_y_Santo.xml",
+      "name": "Digno Y Santo",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Digno_y_Santo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Digno_y_Santo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Digno_y_Santo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Digno_y_Santo.cho"
+      }
+    },
+    {
+      "id": "Dios_de_lo_imposible",
+      "source_key": "openlp/Dios_de_lo_imposible.xml",
+      "name": "Dios De Lo Imposible",
+      "key": "A#m",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_de_lo_imposible.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_de_lo_imposible.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_de_lo_imposible.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Dios_de_lo_imposible.cho"
+      }
+    },
+    {
+      "id": "Dios_de_pactos",
+      "source_key": "openlp/Dios_de_pactos.xml",
+      "name": "Dios De Pactos",
+      "key": "A",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_de_pactos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_de_pactos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_de_pactos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Dios_de_pactos.cho"
+      }
+    },
+    {
+      "id": "Dios_esta_aqui",
+      "source_key": "openlp/Dios_esta_aqui.xml",
+      "name": "Dios Esta Aqui",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Grupo Mojado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_esta_aqui.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_esta_aqui.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_esta_aqui.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Dios_esta_aqui.cho"
+      }
+    },
+    {
+      "id": "Dios_ha_sido_bueno",
+      "source_key": "openlp/Dios_ha_sido_bueno.xml",
+      "name": "Dios Ha Sido Bueno",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_ha_sido_bueno.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_ha_sido_bueno.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_ha_sido_bueno.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Dios_ha_sido_bueno.cho"
+      }
+    },
+    {
+      "id": "Dios_manda_lluvia",
+      "source_key": "openlp/Dios_manda_lluvia.xml",
+      "name": "Dios Manda Lluvia",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Rojo"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_manda_lluvia.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_manda_lluvia.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_manda_lluvia.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Dios_manda_lluvia.cho"
+      }
+    },
+    {
+      "id": "Dios_poderoso",
+      "source_key": "openlp/Dios_poderoso.xml",
+      "name": "Dios Poderoso",
+      "key": "Gm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Dios_poderoso.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Dios_poderoso.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Dios_poderoso.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Dios_poderoso.cho"
+      }
+    },
+    {
+      "id": "eben-ezer",
+      "source_key": "openlp/eben-ezer.xml",
+      "name": "Eben-ezer",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Coros Unidos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/eben-ezer.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/eben-ezer.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/eben-ezer.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/eben-ezer.cho"
+      }
+    },
+    {
+      "id": "El_alfarero",
+      "source_key": "openlp/El_alfarero.xml",
+      "name": "El Alfarero",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Geovana Leal"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_alfarero.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_alfarero.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_alfarero.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_alfarero.cho"
+      }
+    },
+    {
+      "id": "el_amor_de_Cristo",
+      "source_key": "openlp/el_amor_de_Cristo.xml",
+      "name": "El Amor De Cristo",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_amor_de_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_amor_de_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_amor_de_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_amor_de_Cristo.cho"
+      }
+    },
+    {
+      "id": "el_amor_de_Dios_es_maravilloso",
+      "source_key": "openlp/el_amor_de_Dios_es_maravilloso.xml",
+      "name": "El Amor De Dios Es Maravilloso",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Desconocido"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_amor_de_Dios_es_maravilloso.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_amor_de_Dios_es_maravilloso.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_amor_de_Dios_es_maravilloso.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_amor_de_Dios_es_maravilloso.cho"
+      }
+    },
+    {
+      "id": "el_arca_de_Noe",
+      "source_key": "openlp/el_arca_de_Noe.xml",
+      "name": "El Arca De Noe",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_arca_de_Noe.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_arca_de_Noe.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_arca_de_Noe.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_arca_de_Noe.cho"
+      }
+    },
+    {
+      "id": "El_Dios_que_adoramos",
+      "source_key": "openlp/El_Dios_que_adoramos.xml",
+      "name": "El Dios Que Adoramos",
+      "key": "F#",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_Dios_que_adoramos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_Dios_que_adoramos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_Dios_que_adoramos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_Dios_que_adoramos.cho"
+      }
+    },
+    {
+      "id": "el_ejercito_de_Dios",
+      "source_key": "openlp/el_ejercito_de_Dios.xml",
+      "name": "El Ejercito De Dios",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_ejercito_de_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_ejercito_de_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_ejercito_de_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_ejercito_de_Dios.cho"
+      }
+    },
+    {
+      "id": "El_es_Digno",
+      "source_key": "openlp/El_es_Digno.xml",
+      "name": "El Es Digno",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_es_Digno.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_es_Digno.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_es_Digno.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_es_Digno.cho"
+      }
+    },
+    {
+      "id": "El_Espiritu_de_Dios_esta_en_este_lugar",
+      "source_key": "openlp/El_Espiritu_de_Dios_esta_en_este_lugar.xml",
+      "name": "El Espiritu De Dios Esta En Este Lugar",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_Espiritu_de_Dios_esta_en_este_lugar.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_Espiritu_de_Dios_esta_en_este_lugar.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_Espiritu_de_Dios_esta_en_este_lugar.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_Espiritu_de_Dios_esta_en_este_lugar.cho"
+      }
+    },
+    {
+      "id": "el_gozo_de_mi_vida_eres_tu",
+      "source_key": "openlp/el_gozo_de_mi_vida_eres_tu.xml",
+      "name": "El Gozo De Mi Vida Eres Tu",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_gozo_de_mi_vida_eres_tu.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_gozo_de_mi_vida_eres_tu.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_gozo_de_mi_vida_eres_tu.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_gozo_de_mi_vida_eres_tu.cho"
+      }
+    },
+    {
+      "id": "el_guerrero_David",
+      "source_key": "openlp/el_guerrero_David.xml",
+      "name": "El Guerrero David",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_guerrero_David.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_guerrero_David.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_guerrero_David.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_guerrero_David.cho"
+      }
+    },
+    {
+      "id": "El_justo_vivira_por_fe",
+      "source_key": "openlp/El_justo_vivira_por_fe.xml",
+      "name": "El Justo Vivira Por Fe",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_justo_vivira_por_fe.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_justo_vivira_por_fe.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_justo_vivira_por_fe.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_justo_vivira_por_fe.cho"
+      }
+    },
+    {
+      "id": "El_Nombre_de_Jesus",
+      "source_key": "openlp/El_Nombre_de_Jesus.xml",
+      "name": "El Nombre De Jesus",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Redimi2, Christine D'Clario"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_Nombre_de_Jesus.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_Nombre_de_Jesus.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_Nombre_de_Jesus.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_Nombre_de_Jesus.cho"
+      }
+    },
+    {
+      "id": "el_padre_Abraham",
+      "source_key": "openlp/el_padre_Abraham.xml",
+      "name": "El Padre Abraham",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_padre_Abraham.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_padre_Abraham.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_padre_Abraham.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_padre_Abraham.cho"
+      }
+    },
+    {
+      "id": "el_poder_de_la_oracion",
+      "source_key": "openlp/el_poder_de_la_oracion.xml",
+      "name": "El Poder De La Oracion",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Oscar Medina"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_poder_de_la_oracion.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_poder_de_la_oracion.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_poder_de_la_oracion.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_poder_de_la_oracion.cho"
+      }
+    },
+    {
+      "id": "El_poder_de_tu_palabra",
+      "source_key": "openlp/El_poder_de_tu_palabra.xml",
+      "name": "El Poder De Tu Palabra",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_poder_de_tu_palabra.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_poder_de_tu_palabra.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_poder_de_tu_palabra.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_poder_de_tu_palabra.cho"
+      }
+    },
+    {
+      "id": "el_poderoso_de_Israel",
+      "source_key": "openlp/el_poderoso_de_Israel.xml",
+      "name": "El Poderoso De Israel",
+      "key": "Dm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_poderoso_de_Israel.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_poderoso_de_Israel.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_poderoso_de_Israel.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_poderoso_de_Israel.cho"
+      }
+    },
+    {
+      "id": "el_Senor_es_mi_Rey",
+      "source_key": "openlp/el_Senor_es_mi_Rey.xml",
+      "name": "El Senor Es Mi Rey",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_Senor_es_mi_Rey.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_Senor_es_mi_Rey.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_Senor_es_mi_Rey.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_Senor_es_mi_Rey.cho"
+      }
+    },
+    {
+      "id": "el_Senor_marchando_va",
+      "source_key": "openlp/el_Senor_marchando_va.xml",
+      "name": "El Senor Marchando Va",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Genérico"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_Senor_marchando_va.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_Senor_marchando_va.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_Senor_marchando_va.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_Senor_marchando_va.cho"
+      }
+    },
+    {
+      "id": "el_sonador_jose",
+      "source_key": "openlp/el_sonador_jose.xml",
+      "name": "El Sonador Jose",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Generación 12 Kids"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_sonador_jose.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_sonador_jose.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_sonador_jose.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_sonador_jose.cho"
+      }
+    },
+    {
+      "id": "El_te_llama",
+      "source_key": "openlp/El_te_llama.xml",
+      "name": "El Te Llama",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "B.D.Ackley"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_te_llama.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_te_llama.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_te_llama.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_te_llama.cho"
+      }
+    },
+    {
+      "id": "el_tren_del_evangelio",
+      "source_key": "openlp/el_tren_del_evangelio.xml",
+      "name": "El Tren Del Evangelio",
+      "key": "A",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Manuel Bonilla"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/el_tren_del_evangelio.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/el_tren_del_evangelio.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/el_tren_del_evangelio.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/el_tren_del_evangelio.cho"
+      }
+    },
+    {
+      "id": "El_vive_hoy",
+      "source_key": "openlp/El_vive_hoy.xml",
+      "name": "El Vive Hoy",
+      "key": "Ab",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/El_vive_hoy.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/El_vive_hoy.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/El_vive_hoy.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/El_vive_hoy.cho"
+      }
+    },
+    {
+      "id": "en_los_montes_en_los_valles",
+      "source_key": "openlp/en_los_montes_en_los_valles.xml",
+      "name": "En Los Montes En Los Valles",
+      "key": "Dm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/en_los_montes_en_los_valles.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/en_los_montes_en_los_valles.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/en_los_montes_en_los_valles.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/en_los_montes_en_los_valles.cho"
+      }
+    },
+    {
+      "id": "en_totalidad_a_ti",
+      "source_key": "openlp/en_totalidad_a_ti.xml",
+      "name": "En Totalidad A Ti",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Vino Nuevo"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/en_totalidad_a_ti.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/en_totalidad_a_ti.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/en_totalidad_a_ti.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/en_totalidad_a_ti.cho"
+      }
+    },
+    {
+      "id": "en_tu_presencia",
+      "source_key": "openlp/en_tu_presencia.xml",
+      "name": "En Tu Presencia",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/en_tu_presencia.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/en_tu_presencia.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/en_tu_presencia.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/en_tu_presencia.cho"
+      }
+    },
+    {
+      "id": "ensaname_oh_Jehova_tus_caminos",
+      "source_key": "openlp/ensaname_oh_Jehova_tus_caminos.xml",
+      "name": "Ensaname Oh Jehova Tus Caminos",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ensaname_oh_Jehova_tus_caminos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ensaname_oh_Jehova_tus_caminos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ensaname_oh_Jehova_tus_caminos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/ensaname_oh_Jehova_tus_caminos.cho"
+      }
+    },
+    {
+      "id": "entare_por_sus_puertas",
+      "source_key": "openlp/entare_por_sus_puertas.xml",
+      "name": "Entare Por Sus Puertas",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Dominio Público"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/entare_por_sus_puertas.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/entare_por_sus_puertas.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/entare_por_sus_puertas.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/entare_por_sus_puertas.cho"
+      }
+    },
+    {
+      "id": "entra_en_La_Presencia",
+      "source_key": "openlp/entra_en_La_Presencia.xml",
+      "name": "Entra En La Presencia",
+      "key": "Bb",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/entra_en_La_Presencia.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/entra_en_La_Presencia.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/entra_en_La_Presencia.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/entra_en_La_Presencia.cho"
+      }
+    },
+    {
+      "id": "enviame",
+      "source_key": "openlp/enviame.xml",
+      "name": "Enviame",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/enviame.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/enviame.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/enviame.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/enviame.cho"
+      }
+    },
+    {
+      "id": "eres_rey_de_los_cielos",
+      "source_key": "openlp/eres_rey_de_los_cielos.xml",
+      "name": "Eres Rey De Los Cielos",
+      "key": "A",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/eres_rey_de_los_cielos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/eres_rey_de_los_cielos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/eres_rey_de_los_cielos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/eres_rey_de_los_cielos.cho"
+      }
+    },
+    {
+      "id": "Es_tu_gloria",
+      "source_key": "openlp/Es_tu_gloria.xml",
+      "name": "Es Tu Gloria",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Desconocido"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Es_tu_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Es_tu_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Es_tu_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Es_tu_gloria.cho"
+      }
+    },
+    {
+      "id": "esfuerzate_y_se_muy_valiente",
+      "source_key": "openlp/esfuerzate_y_se_muy_valiente.xml",
+      "name": "Esfuerzate Y Se Muy Valiente",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/esfuerzate_y_se_muy_valiente.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/esfuerzate_y_se_muy_valiente.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/esfuerzate_y_se_muy_valiente.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/esfuerzate_y_se_muy_valiente.cho"
+      }
+    },
+    {
+      "id": "espiritu_de_Dios_llena_mi_ser",
+      "source_key": "openlp/espiritu_de_Dios_llena_mi_ser.xml",
+      "name": "Espiritu De Dios Llena Mi Ser",
+      "key": "Am",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Elim"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/espiritu_de_Dios_llena_mi_ser.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/espiritu_de_Dios_llena_mi_ser.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/espiritu_de_Dios_llena_mi_ser.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/espiritu_de_Dios_llena_mi_ser.cho"
+      }
+    },
+    {
+      "id": "Espiritu_Santo",
+      "source_key": "openlp/Espiritu_Santo.xml",
+      "name": "Espiritu Santo",
+      "key": "G#",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Espiritu_Santo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Espiritu_Santo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Espiritu_Santo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Espiritu_Santo.cho"
+      }
+    },
+    {
+      "id": "Espiritu_Santo_2",
+      "source_key": "openlp/Espiritu_Santo_2.xml",
+      "name": "Espiritu Santo 2",
+      "key": "Am",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Tercer Cielo"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Espiritu_Santo_2.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Espiritu_Santo_2.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Espiritu_Santo_2.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Espiritu_Santo_2.cho"
+      }
+    },
+    {
+      "id": "Espiritu_Santo_bienvenido",
+      "source_key": "openlp/Espiritu_Santo_bienvenido.xml",
+      "name": "Espiritu Santo Bienvenido",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Espiritu_Santo_bienvenido.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Espiritu_Santo_bienvenido.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Espiritu_Santo_bienvenido.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Espiritu_Santo_bienvenido.cho"
+      }
+    },
+    {
+      "id": "estad_por_Cristo_firmes",
+      "source_key": "openlp/estad_por_Cristo_firmes.xml",
+      "name": "Estad Por Cristo Firmes",
+      "key": "G",
+      "themes": [
+        "Adoración, Himno"
+      ],
+      "authors": [
+        "Himnos de Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/estad_por_Cristo_firmes.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/estad_por_Cristo_firmes.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/estad_por_Cristo_firmes.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/estad_por_Cristo_firmes.cho"
+      }
+    },
+    {
+      "id": "estamos_aqui_para_adorar",
+      "source_key": "openlp/estamos_aqui_para_adorar.xml",
+      "name": "Estamos Aqui Para Adorar",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Samuel Hernandez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/estamos_aqui_para_adorar.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/estamos_aqui_para_adorar.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/estamos_aqui_para_adorar.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/estamos_aqui_para_adorar.cho"
+      }
+    },
+    {
+      "id": "este_es_mi_deseo",
+      "source_key": "openlp/este_es_mi_deseo.xml",
+      "name": "Este Es Mi Deseo",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Ruben Morgan"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/este_es_mi_deseo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/este_es_mi_deseo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/este_es_mi_deseo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/este_es_mi_deseo.cho"
+      }
+    },
+    {
+      "id": "esto_es_una_fiesta",
+      "source_key": "openlp/esto_es_una_fiesta.xml",
+      "name": "Esto Es Una Fiesta",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Generación 12 Kids"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/esto_es_una_fiesta.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/esto_es_una_fiesta.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/esto_es_una_fiesta.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/esto_es_una_fiesta.cho"
+      }
+    },
+    {
+      "id": "exquisita_presencia",
+      "source_key": "openlp/exquisita_presencia.xml",
+      "name": "Exquisita Presencia",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Fernel Monroy"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/exquisita_presencia.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/exquisita_presencia.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/exquisita_presencia.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/exquisita_presencia.cho"
+      }
+    },
+    {
+      "id": "Feliz_feliz_cumpleanos",
+      "source_key": "openlp/Feliz_feliz_cumpleanos.xml",
+      "name": "Feliz Feliz Cumpleanos",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Feliz_feliz_cumpleanos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Feliz_feliz_cumpleanos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Feliz_feliz_cumpleanos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Feliz_feliz_cumpleanos.cho"
+      }
+    },
+    {
+      "id": "fiesta",
+      "source_key": "openlp/fiesta.xml",
+      "name": "Fiesta",
+      "key": "Cm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/fiesta.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/fiesta.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/fiesta.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/fiesta.cho"
+      }
+    },
+    {
+      "id": "fija_tus_ojos_en_Cristo",
+      "source_key": "openlp/fija_tus_ojos_en_Cristo.xml",
+      "name": "Fija Tus Ojos En Cristo",
+      "key": "A",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Generación de Jesús"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/fija_tus_ojos_en_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/fija_tus_ojos_en_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/fija_tus_ojos_en_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/fija_tus_ojos_en_Cristo.cho"
+      }
+    },
+    {
+      "id": "generacion_que_danza",
+      "source_key": "openlp/generacion_que_danza.xml",
+      "name": "Generacion Que Danza",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/generacion_que_danza.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/generacion_que_danza.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/generacion_que_danza.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/generacion_que_danza.cho"
+      }
+    },
+    {
+      "id": "Gloria_a_Cristo_El_Senor",
+      "source_key": "openlp/Gloria_a_Cristo_El_Senor.xml",
+      "name": "Gloria A Cristo El Senor",
+      "key": "B",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Gloria_a_Cristo_El_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Gloria_a_Cristo_El_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Gloria_a_Cristo_El_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Gloria_a_Cristo_El_Senor.cho"
+      }
+    },
+    {
+      "id": "glorificate_Senor",
+      "source_key": "openlp/glorificate_Senor.xml",
+      "name": "Glorificate Senor",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/glorificate_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/glorificate_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/glorificate_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/glorificate_Senor.cho"
+      }
+    },
+    {
+      "id": "Glorioso_eres_Jesus",
+      "source_key": "openlp/Glorioso_eres_Jesus.xml",
+      "name": "Glorioso Eres Jesus",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Glorioso_eres_Jesus.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Glorioso_eres_Jesus.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Glorioso_eres_Jesus.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Glorioso_eres_Jesus.cho"
+      }
+    },
+    {
+      "id": "glorioso_intercambio",
+      "source_key": "openlp/glorioso_intercambio.xml",
+      "name": "Glorioso Intercambio",
+      "key": "Db2",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/glorioso_intercambio.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/glorioso_intercambio.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/glorioso_intercambio.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/glorioso_intercambio.cho"
+      }
+    },
+    {
+      "id": "Gozate",
+      "source_key": "openlp/Gozate.xml",
+      "name": "Gozate",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Gozate.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Gozate.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Gozate.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Gozate.cho"
+      }
+    },
+    {
+      "id": "Gozate_delante_del_Senor",
+      "source_key": "openlp/Gozate_delante_del_Senor.xml",
+      "name": "Gozate Delante Del Senor",
+      "key": "Cm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Gozate_delante_del_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Gozate_delante_del_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Gozate_delante_del_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Gozate_delante_del_Senor.cho"
+      }
+    },
+    {
+      "id": "Gracia_sin_fin",
+      "source_key": "openlp/Gracia_sin_fin.xml",
+      "name": "Gracia Sin Fin",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Evan Craft"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Gracia_sin_fin.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Gracia_sin_fin.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Gracia_sin_fin.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Gracia_sin_fin.cho"
+      }
+    },
+    {
+      "id": "gracia_sublime_es",
+      "source_key": "openlp/gracia_sublime_es.xml",
+      "name": "Gracia Sublime Es",
+      "key": "B",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracia_sublime_es.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/gracia_sublime_es.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/gracia_sublime_es.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/gracia_sublime_es.cho"
+      }
+    },
+    {
+      "id": "gracias",
+      "source_key": "openlp/gracias.xml",
+      "name": "Gracias",
+      "key": "Am",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracias.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/gracias.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/gracias.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/gracias.cho"
+      }
+    },
+    {
+      "id": "Gracias_2",
+      "source_key": "openlp/Gracias_2.xml",
+      "name": "Gracias 2",
+      "themes": [
+        "adoracion"
+      ],
+      "authors": [
+        "Generación 12"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Gracias_2.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Gracias_2.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Gracias_2.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Gracias_2.cho"
+      }
+    },
+    {
+      "id": "gracias_Cristo",
+      "source_key": "openlp/gracias_Cristo.xml",
+      "name": "Gracias Cristo",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Genérico"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/gracias_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/gracias_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/gracias_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/gracias_Cristo.cho"
+      }
+    },
+    {
+      "id": "Gracias_Dios",
+      "source_key": "openlp/Gracias_Dios.xml",
+      "name": "Gracias Dios",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Para Su Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Gracias_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Gracias_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Gracias_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Gracias_Dios.cho"
+      }
+    },
+    {
+      "id": "grande_y_fuerte",
+      "source_key": "openlp/grande_y_fuerte.xml",
+      "name": "Grande Y Fuerte",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/grande_y_fuerte.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/grande_y_fuerte.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/grande_y_fuerte.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/grande_y_fuerte.cho"
+      }
+    },
+    {
+      "id": "granito_de_mostaza",
+      "source_key": "openlp/granito_de_mostaza.xml",
+      "name": "Granito De Mostaza",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Generico"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/granito_de_mostaza.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/granito_de_mostaza.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/granito_de_mostaza.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/granito_de_mostaza.cho"
+      }
+    },
+    {
+      "id": "habitacion",
+      "source_key": "openlp/habitacion.xml",
+      "name": "Habitacion",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/habitacion.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/habitacion.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/habitacion.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/habitacion.cho"
+      }
+    },
+    {
+      "id": "hacemos_hoy",
+      "source_key": "openlp/hacemos_hoy.xml",
+      "name": "Hacemos Hoy",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Jesús Adrian Romero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hacemos_hoy.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hacemos_hoy.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hacemos_hoy.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hacemos_hoy.cho"
+      }
+    },
+    {
+      "id": "Hare_un_altar_para_ti",
+      "source_key": "openlp/Hare_un_altar_para_ti.xml",
+      "name": "Hare Un Altar Para Ti",
+      "key": "Cm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Hare_un_altar_para_ti.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Hare_un_altar_para_ti.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Hare_un_altar_para_ti.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Hare_un_altar_para_ti.cho"
+      }
+    },
+    {
+      "id": "has_cambiado_mi_lamento",
+      "source_key": "openlp/has_cambiado_mi_lamento.xml",
+      "name": "Has Cambiado Mi Lamento",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/has_cambiado_mi_lamento.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/has_cambiado_mi_lamento.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/has_cambiado_mi_lamento.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/has_cambiado_mi_lamento.cho"
+      }
+    },
+    {
+      "id": "has_ganado_la_victoria",
+      "source_key": "openlp/has_ganado_la_victoria.xml",
+      "name": "Has Ganado La Victoria",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Palabra en Acción"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/has_ganado_la_victoria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/has_ganado_la_victoria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/has_ganado_la_victoria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/has_ganado_la_victoria.cho"
+      }
+    },
+    {
+      "id": "hay_libertad",
+      "source_key": "openlp/hay_libertad.xml",
+      "name": "Hay Libertad",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_libertad.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_libertad.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_libertad.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hay_libertad.cho"
+      }
+    },
+    {
+      "id": "hay_libertad_en_la_casa_de_Dios",
+      "source_key": "openlp/hay_libertad_en_la_casa_de_Dios.xml",
+      "name": "Hay Libertad En La Casa De Dios",
+      "key": "Dm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Art Aguilera"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_libertad_en_la_casa_de_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_libertad_en_la_casa_de_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_libertad_en_la_casa_de_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hay_libertad_en_la_casa_de_Dios.cho"
+      }
+    },
+    {
+      "id": "Hay_momentos",
+      "source_key": "openlp/Hay_momentos.xml",
+      "name": "Hay Momentos",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Hay_momentos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Hay_momentos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Hay_momentos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Hay_momentos.cho"
+      }
+    },
+    {
+      "id": "hay_momentos_tan_especiales",
+      "source_key": "openlp/hay_momentos_tan_especiales.xml",
+      "name": "Hay Momentos Tan Especiales",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Fernel Monroy"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_momentos_tan_especiales.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_momentos_tan_especiales.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_momentos_tan_especiales.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hay_momentos_tan_especiales.cho"
+      }
+    },
+    {
+      "id": "hay_poder",
+      "source_key": "openlp/hay_poder.xml",
+      "name": "Hay Poder",
+      "key": "A",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Dominio Público"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_poder.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_poder.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_poder.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hay_poder.cho"
+      }
+    },
+    {
+      "id": "hay_un_gozo",
+      "source_key": "openlp/hay_un_gozo.xml",
+      "name": "Hay Un Gozo",
+      "key": "C7",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_un_gozo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_un_gozo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_un_gozo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hay_un_gozo.cho"
+      }
+    },
+    {
+      "id": "hay_un_pueblo",
+      "source_key": "openlp/hay_un_pueblo.xml",
+      "name": "Hay Un Pueblo",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Generación de Jesús"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_un_pueblo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_un_pueblo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_un_pueblo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hay_un_pueblo.cho"
+      }
+    },
+    {
+      "id": "hay_victoria",
+      "source_key": "openlp/hay_victoria.xml",
+      "name": "Hay Victoria",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hay_victoria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hay_victoria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hay_victoria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hay_victoria.cho"
+      }
+    },
+    {
+      "id": "heme_aqui",
+      "source_key": "openlp/heme_aqui.xml",
+      "name": "Heme Aqui",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/heme_aqui.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/heme_aqui.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/heme_aqui.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/heme_aqui.cho"
+      }
+    },
+    {
+      "id": "Himno_nacional_Mexicano",
+      "source_key": "openlp/Himno_nacional_Mexicano.xml",
+      "name": "Himno Nacional Mexicano",
+      "key": "Genérico",
+      "themes": [
+        "Genérico"
+      ],
+      "authors": [
+        "Genérico"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Himno_nacional_Mexicano.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Himno_nacional_Mexicano.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Himno_nacional_Mexicano.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Himno_nacional_Mexicano.cho"
+      }
+    },
+    {
+      "id": "hoy_es_tiempo",
+      "source_key": "openlp/hoy_es_tiempo.xml",
+      "name": "Hoy Es Tiempo",
+      "key": "Bm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/hoy_es_tiempo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/hoy_es_tiempo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/hoy_es_tiempo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/hoy_es_tiempo.cho"
+      }
+    },
+    {
+      "id": "Incontrolable_amor",
+      "source_key": "openlp/Incontrolable_amor.xml",
+      "name": "Incontrolable Amor",
+      "key": "D#m",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Kike Pavón"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Incontrolable_amor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Incontrolable_amor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Incontrolable_amor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Incontrolable_amor.cho"
+      }
+    },
+    {
+      "id": "inexplicable",
+      "source_key": "openlp/inexplicable.xml",
+      "name": "Inexplicable",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Denicher Pol O"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/inexplicable.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/inexplicable.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/inexplicable.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/inexplicable.cho"
+      }
+    },
+    {
+      "id": "Jehova_es_mi_guerrero",
+      "source_key": "openlp/Jehova_es_mi_guerrero.xml",
+      "name": "Jehova Es Mi Guerrero",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jehova_es_mi_guerrero.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jehova_es_mi_guerrero.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jehova_es_mi_guerrero.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Jehova_es_mi_guerrero.cho"
+      }
+    },
+    {
+      "id": "Jehova_es_poderoso_guerrero",
+      "source_key": "openlp/Jehova_es_poderoso_guerrero.xml",
+      "name": "Jehova Es Poderoso Guerrero",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Tony Peres"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jehova_es_poderoso_guerrero.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jehova_es_poderoso_guerrero.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jehova_es_poderoso_guerrero.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Jehova_es_poderoso_guerrero.cho"
+      }
+    },
+    {
+      "id": "Jehova_te_bendiga",
+      "source_key": "openlp/Jehova_te_bendiga.xml",
+      "name": "Jehova Te Bendiga",
+      "key": "F",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Karina Moreno"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jehova_te_bendiga.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jehova_te_bendiga.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jehova_te_bendiga.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Jehova_te_bendiga.cho"
+      }
+    },
+    {
+      "id": "Jesus_eres_mi_buen_pastor",
+      "source_key": "openlp/Jesus_eres_mi_buen_pastor.xml",
+      "name": "Jesus Eres Mi Buen Pastor",
+      "key": "A",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jesus_eres_mi_buen_pastor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jesus_eres_mi_buen_pastor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jesus_eres_mi_buen_pastor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Jesus_eres_mi_buen_pastor.cho"
+      }
+    },
+    {
+      "id": "Jesus_mi_Salvador",
+      "source_key": "openlp/Jesus_mi_Salvador.xml",
+      "name": "Jesus Mi Salvador",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jesus_mi_Salvador.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jesus_mi_Salvador.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jesus_mi_Salvador.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Jesus_mi_Salvador.cho"
+      }
+    },
+    {
+      "id": "Jonas",
+      "source_key": "openlp/Jonas.xml",
+      "name": "Jonas",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Jonas.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Jonas.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Jonas.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Jonas.cho"
+      }
+    },
+    {
+      "id": "la_casa_de_Dios",
+      "source_key": "openlp/la_casa_de_Dios.xml",
+      "name": "La Casa De Dios",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_casa_de_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/la_casa_de_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/la_casa_de_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/la_casa_de_Dios.cho"
+      }
+    },
+    {
+      "id": "La_gloria_de_esta_casa",
+      "source_key": "openlp/La_gloria_de_esta_casa.xml",
+      "name": "La Gloria De Esta Casa",
+      "key": "Dm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Fernando Ramos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/La_gloria_de_esta_casa.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/La_gloria_de_esta_casa.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/La_gloria_de_esta_casa.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/La_gloria_de_esta_casa.cho"
+      }
+    },
+    {
+      "id": "la_gloria_de_la_cruz",
+      "source_key": "openlp/la_gloria_de_la_cruz.xml",
+      "name": "La Gloria De La Cruz",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Sovereign Grace Music"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_gloria_de_la_cruz.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/la_gloria_de_la_cruz.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/la_gloria_de_la_cruz.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/la_gloria_de_la_cruz.cho"
+      }
+    },
+    {
+      "id": "La_Gracia_del_Senor",
+      "source_key": "openlp/La_Gracia_del_Senor.xml",
+      "name": "La Gracia Del Senor",
+      "key": "Db",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Gladys Blanchard Muller"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/La_Gracia_del_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/La_Gracia_del_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/La_Gracia_del_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/La_Gracia_del_Senor.cho"
+      }
+    },
+    {
+      "id": "la_nina_de_tus_ojos",
+      "source_key": "openlp/la_nina_de_tus_ojos.xml",
+      "name": "La Nina De Tus Ojos",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Daniel Calvetti"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_nina_de_tus_ojos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/la_nina_de_tus_ojos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/la_nina_de_tus_ojos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/la_nina_de_tus_ojos.cho"
+      }
+    },
+    {
+      "id": "La_nube_de_tu_presencia",
+      "source_key": "openlp/La_nube_de_tu_presencia.xml",
+      "name": "La Nube De Tu Presencia",
+      "key": "B",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Vino Nuevo"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/La_nube_de_tu_presencia.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/La_nube_de_tu_presencia.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/La_nube_de_tu_presencia.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/La_nube_de_tu_presencia.cho"
+      }
+    },
+    {
+      "id": "la_unica_razon",
+      "source_key": "openlp/la_unica_razon.xml",
+      "name": "La Unica Razon",
+      "key": "Bm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/la_unica_razon.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/la_unica_razon.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/la_unica_razon.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/la_unica_razon.cho"
+      }
+    },
+    {
+      "id": "Las_heridas_de_Cristo",
+      "source_key": "openlp/Las_heridas_de_Cristo.xml",
+      "name": "Las Heridas De Cristo",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Verónica Leal"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Las_heridas_de_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Las_heridas_de_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Las_heridas_de_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Las_heridas_de_Cristo.cho"
+      }
+    },
+    {
+      "id": "Las_manceras",
+      "source_key": "openlp/Las_manceras.xml",
+      "name": "Las Manceras",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Karina Moreno"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Las_manceras.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Las_manceras.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Las_manceras.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Las_manceras.cho"
+      }
+    },
+    {
+      "id": "las_naciones_proclamen",
+      "source_key": "openlp/las_naciones_proclamen.xml",
+      "name": "Las Naciones Proclamen",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/las_naciones_proclamen.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/las_naciones_proclamen.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/las_naciones_proclamen.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/las_naciones_proclamen.cho"
+      }
+    },
+    {
+      "id": "levantate_levantate_Senor",
+      "source_key": "openlp/levantate_levantate_Senor.xml",
+      "name": "Levantate Levantate Senor",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "John Sellers"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_levantate_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/levantate_levantate_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/levantate_levantate_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/levantate_levantate_Senor.cho"
+      }
+    },
+    {
+      "id": "levantate_Senor",
+      "source_key": "openlp/levantate_Senor.xml",
+      "name": "Levantate Senor",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/levantate_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/levantate_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/levantate_Senor.cho"
+      }
+    },
+    {
+      "id": "levantate_y_salvame",
+      "source_key": "openlp/levantate_y_salvame.xml",
+      "name": "Levantate Y Salvame",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/levantate_y_salvame.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/levantate_y_salvame.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/levantate_y_salvame.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/levantate_y_salvame.cho"
+      }
+    },
+    {
+      "id": "libre",
+      "source_key": "openlp/libre.xml",
+      "name": "Libre",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Juan Carlos Alvarado"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/libre.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/libre.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/libre.cho"
+      }
+    },
+    {
+      "id": "libre_2",
+      "source_key": "openlp/libre_2.xml",
+      "name": "Libre 2",
+      "key": "Am",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_2.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/libre_2.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/libre_2.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/libre_2.cho"
+      }
+    },
+    {
+      "id": "libre_en_Cristo",
+      "source_key": "openlp/libre_en_Cristo.xml",
+      "name": "Libre En Cristo",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Stanislao Marino"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_en_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/libre_en_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/libre_en_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/libre_en_Cristo.cho"
+      }
+    },
+    {
+      "id": "libre_soy",
+      "source_key": "openlp/libre_soy.xml",
+      "name": "Libre Soy",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Banda Barak"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/libre_soy.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/libre_soy.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/libre_soy.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/libre_soy.cho"
+      }
+    },
+    {
+      "id": "llename_Senor",
+      "source_key": "openlp/llename_Senor.xml",
+      "name": "Llename Senor",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/llename_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/llename_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/llename_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/llename_Senor.cho"
+      }
+    },
+    {
+      "id": "los_conejitos_brincan",
+      "source_key": "openlp/los_conejitos_brincan.xml",
+      "name": "Los Conejitos Brincan",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Desconocido"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/los_conejitos_brincan.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/los_conejitos_brincan.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/los_conejitos_brincan.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/los_conejitos_brincan.cho"
+      }
+    },
+    {
+      "id": "Los_que_esperan_en_Jehova",
+      "source_key": "openlp/Los_que_esperan_en_Jehova.xml",
+      "name": "Los Que Esperan En Jehova",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Los_que_esperan_en_Jehova.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Los_que_esperan_en_Jehova.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Los_que_esperan_en_Jehova.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Los_que_esperan_en_Jehova.cho"
+      }
+    },
+    {
+      "id": "Majestuoso_Poderoso",
+      "source_key": "openlp/Majestuoso_Poderoso.xml",
+      "name": "Majestuoso Poderoso",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Majestuoso_Poderoso.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Majestuoso_Poderoso.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Majestuoso_Poderoso.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Majestuoso_Poderoso.cho"
+      }
+    },
+    {
+      "id": "maravilloso_es",
+      "source_key": "openlp/maravilloso_es.xml",
+      "name": "Maravilloso Es",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Alex Rodriguez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/maravilloso_es.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/maravilloso_es.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/maravilloso_es.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/maravilloso_es.cho"
+      }
+    },
+    {
+      "id": "me_asombras",
+      "source_key": "openlp/me_asombras.xml",
+      "name": "Me Asombras",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/me_asombras.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/me_asombras.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/me_asombras.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/me_asombras.cho"
+      }
+    },
+    {
+      "id": "Me_dice_que_me_ama",
+      "source_key": "openlp/Me_dice_que_me_ama.xml",
+      "name": "Me Dice Que Me Ama",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Jesús Adrián Romero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Me_dice_que_me_ama.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Me_dice_que_me_ama.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Me_dice_que_me_ama.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Me_dice_que_me_ama.cho"
+      }
+    },
+    {
+      "id": "me_gusta_alabarle",
+      "source_key": "openlp/me_gusta_alabarle.xml",
+      "name": "Me Gusta Alabarle",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Unknown"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/me_gusta_alabarle.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/me_gusta_alabarle.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/me_gusta_alabarle.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/me_gusta_alabarle.cho"
+      }
+    },
+    {
+      "id": "Me_postro",
+      "source_key": "openlp/Me_postro.xml",
+      "name": "Me Postro",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Me_postro.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Me_postro.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Me_postro.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Me_postro.cho"
+      }
+    },
+    {
+      "id": "medley",
+      "source_key": "openlp/medley.xml",
+      "name": "Medley",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Visión Juvenil"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/medley.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/medley.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/medley.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/medley.cho"
+      }
+    },
+    {
+      "id": "mereces_la_gloria",
+      "source_key": "openlp/mereces_la_gloria.xml",
+      "name": "Mereces La Gloria",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Luigi Castro"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mereces_la_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mereces_la_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mereces_la_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/mereces_la_gloria.cho"
+      }
+    },
+    {
+      "id": "Mexico_Dios_te_bendiga",
+      "source_key": "openlp/Mexico_Dios_te_bendiga.xml",
+      "name": "Mexico Dios Te Bendiga",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Verónica Leal"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mexico_Dios_te_bendiga.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Mexico_Dios_te_bendiga.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Mexico_Dios_te_bendiga.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Mexico_Dios_te_bendiga.cho"
+      }
+    },
+    {
+      "id": "Mexico_vamos_a_cambiar",
+      "source_key": "openlp/Mexico_vamos_a_cambiar.xml",
+      "name": "Mexico Vamos A Cambiar",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mexico_vamos_a_cambiar.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Mexico_vamos_a_cambiar.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Mexico_vamos_a_cambiar.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Mexico_vamos_a_cambiar.cho"
+      }
+    },
+    {
+      "id": "Mi_alma_te_canta",
+      "source_key": "openlp/Mi_alma_te_canta.xml",
+      "name": "Mi Alma Te Canta",
+      "key": "A",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mi_alma_te_canta.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Mi_alma_te_canta.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Mi_alma_te_canta.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Mi_alma_te_canta.cho"
+      }
+    },
+    {
+      "id": "mi_buen_Padre",
+      "source_key": "openlp/mi_buen_Padre.xml",
+      "name": "Mi Buen Padre",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Majo Solis"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_buen_Padre.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mi_buen_Padre.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mi_buen_Padre.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/mi_buen_Padre.cho"
+      }
+    },
+    {
+      "id": "mi_esperanza_esta_en_Jesus",
+      "source_key": "openlp/mi_esperanza_esta_en_Jesus.xml",
+      "name": "Mi Esperanza Esta En Jesus",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Jonathan y Sarah Jerez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_esperanza_esta_en_Jesus.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mi_esperanza_esta_en_Jesus.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mi_esperanza_esta_en_Jesus.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/mi_esperanza_esta_en_Jesus.cho"
+      }
+    },
+    {
+      "id": "mi_espiritu_te_anhela",
+      "source_key": "openlp/mi_espiritu_te_anhela.xml",
+      "name": "Mi Espiritu Te Anhela",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mi_espiritu_te_anhela.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mi_espiritu_te_anhela.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mi_espiritu_te_anhela.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/mi_espiritu_te_anhela.cho"
+      }
+    },
+    {
+      "id": "mirad_cuan_bueno",
+      "source_key": "openlp/mirad_cuan_bueno.xml",
+      "name": "Mirad Cuan Bueno",
+      "key": "Em",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "René Gonzalez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/mirad_cuan_bueno.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/mirad_cuan_bueno.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/mirad_cuan_bueno.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/mirad_cuan_bueno.cho"
+      }
+    },
+    {
+      "id": "Mirare_al_Rey",
+      "source_key": "openlp/Mirare_al_Rey.xml",
+      "name": "Mirare Al Rey",
+      "key": "F#",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Mirare_al_Rey.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Mirare_al_Rey.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Mirare_al_Rey.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Mirare_al_Rey.cho"
+      }
+    },
+    {
+      "id": "nada_en_la_tierra",
+      "source_key": "openlp/nada_en_la_tierra.xml",
+      "name": "Nada En La Tierra",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/nada_en_la_tierra.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/nada_en_la_tierra.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/nada_en_la_tierra.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/nada_en_la_tierra.cho"
+      }
+    },
+    {
+      "id": "No_hay_nada_imposible",
+      "source_key": "openlp/No_hay_nada_imposible.xml",
+      "name": "No Hay Nada Imposible",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "redimi2"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/No_hay_nada_imposible.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/No_hay_nada_imposible.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/No_hay_nada_imposible.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/No_hay_nada_imposible.cho"
+      }
+    },
+    {
+      "id": "no_hay_nadie_como_tu",
+      "source_key": "openlp/no_hay_nadie_como_tu.xml",
+      "name": "No Hay Nadie Como Tu",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/no_hay_nadie_como_tu.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/no_hay_nadie_como_tu.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/no_hay_nadie_como_tu.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/no_hay_nadie_como_tu.cho"
+      }
+    },
+    {
+      "id": "no_quites_tus_ojos_de_mi",
+      "source_key": "openlp/no_quites_tus_ojos_de_mi.xml",
+      "name": "No Quites Tus Ojos De Mi",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Stanislao Marino"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/no_quites_tus_ojos_de_mi.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/no_quites_tus_ojos_de_mi.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/no_quites_tus_ojos_de_mi.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/no_quites_tus_ojos_de_mi.cho"
+      }
+    },
+    {
+      "id": "oh_alma_mia",
+      "source_key": "openlp/oh_alma_mia.xml",
+      "name": "Oh Alma Mia",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Los Voceros de Cristo"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/oh_alma_mia.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/oh_alma_mia.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/oh_alma_mia.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/oh_alma_mia.cho"
+      }
+    },
+    {
+      "id": "oracion_diaria_del_cristiano",
+      "source_key": "openlp/oracion_diaria_del_cristiano.xml",
+      "name": "Oracion Diaria Del Cristiano",
+      "key": "Ab",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Sovereign Grace Music"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/oracion_diaria_del_cristiano.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/oracion_diaria_del_cristiano.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/oracion_diaria_del_cristiano.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/oracion_diaria_del_cristiano.cho"
+      }
+    },
+    {
+      "id": "Para_Su_Gloria",
+      "source_key": "openlp/Para_Su_Gloria.xml",
+      "name": "Para Su Gloria",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Para Su Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Para_Su_Gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Para_Su_Gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Para_Su_Gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Para_Su_Gloria.cho"
+      }
+    },
+    {
+      "id": "perfume_a_tus_pies",
+      "source_key": "openlp/perfume_a_tus_pies.xml",
+      "name": "Perfume A Tus Pies",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/perfume_a_tus_pies.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/perfume_a_tus_pies.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/perfume_a_tus_pies.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/perfume_a_tus_pies.cho"
+      }
+    },
+    {
+      "id": "poderoso_Dios",
+      "source_key": "openlp/poderoso_Dios.xml",
+      "name": "Poderoso Dios",
+      "key": "Dm",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "David Reyes, Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/poderoso_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/poderoso_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/poderoso_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/poderoso_Dios.cho"
+      }
+    },
+    {
+      "id": "poderoso_Dios_2",
+      "source_key": "openlp/poderoso_Dios_2.xml",
+      "name": "Poderoso Dios 2",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/poderoso_Dios_2.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/poderoso_Dios_2.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/poderoso_Dios_2.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/poderoso_Dios_2.cho"
+      }
+    },
+    {
+      "id": "Poderoso_es_el_Senor",
+      "source_key": "openlp/Poderoso_es_el_Senor.xml",
+      "name": "Poderoso Es El Senor",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Poderoso_es_el_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Poderoso_es_el_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Poderoso_es_el_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Poderoso_es_el_Senor.cho"
+      }
+    },
+    {
+      "id": "popurri_ranchero",
+      "source_key": "openlp/popurri_ranchero.xml",
+      "name": "Popurri Ranchero",
+      "key": "F",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/popurri_ranchero.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/popurri_ranchero.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/popurri_ranchero.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/popurri_ranchero.cho"
+      }
+    },
+    {
+      "id": "porque_para_siempre",
+      "source_key": "openlp/porque_para_siempre.xml",
+      "name": "Porque Para Siempre",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/porque_para_siempre.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/porque_para_siempre.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/porque_para_siempre.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/porque_para_siempre.cho"
+      }
+    },
+    {
+      "id": "porque_tu_eres_mi_Roca",
+      "source_key": "openlp/porque_tu_eres_mi_Roca.xml",
+      "name": "Porque Tu Eres Mi Roca",
+      "key": "B",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/porque_tu_eres_mi_Roca.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/porque_tu_eres_mi_Roca.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/porque_tu_eres_mi_Roca.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/porque_tu_eres_mi_Roca.cho"
+      }
+    },
+    {
+      "id": "preciosa_sangre",
+      "source_key": "openlp/preciosa_sangre.xml",
+      "name": "Preciosa Sangre",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "César Darío"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/preciosa_sangre.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/preciosa_sangre.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/preciosa_sangre.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/preciosa_sangre.cho"
+      }
+    },
+    {
+      "id": "prometele",
+      "source_key": "openlp/prometele.xml",
+      "name": "Prometele",
+      "themes": [
+        "Himno"
+      ],
+      "authors": [
+        "Himnario de Suprema Alabanza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/prometele.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/prometele.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/prometele.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/prometele.cho"
+      }
+    },
+    {
+      "id": "pueblos_todos",
+      "source_key": "openlp/pueblos_todos.xml",
+      "name": "Pueblos Todos",
+      "key": "A",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Samuel Ruiz"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/pueblos_todos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/pueblos_todos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/pueblos_todos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/pueblos_todos.cho"
+      }
+    },
+    {
+      "id": "que_chevere",
+      "source_key": "openlp/que_chevere.xml",
+      "name": "Que Chevere",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Unknow"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/que_chevere.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/que_chevere.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/que_chevere.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/que_chevere.cho"
+      }
+    },
+    {
+      "id": "que_no_se_acabe_el_gozo",
+      "source_key": "openlp/que_no_se_acabe_el_gozo.xml",
+      "name": "Que No Se Acabe El Gozo",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Tony Sauceda"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/que_no_se_acabe_el_gozo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/que_no_se_acabe_el_gozo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/que_no_se_acabe_el_gozo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/que_no_se_acabe_el_gozo.cho"
+      }
+    },
+    {
+      "id": "quiero_cantar_una_linda_cancion",
+      "source_key": "openlp/quiero_cantar_una_linda_cancion.xml",
+      "name": "Quiero Cantar Una Linda Cancion",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Dominio Público"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/quiero_cantar_una_linda_cancion.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/quiero_cantar_una_linda_cancion.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/quiero_cantar_una_linda_cancion.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/quiero_cantar_una_linda_cancion.cho"
+      }
+    },
+    {
+      "id": "quiero_conocerte_mas",
+      "source_key": "openlp/quiero_conocerte_mas.xml",
+      "name": "Quiero Conocerte Mas",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Majo Solís"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/quiero_conocerte_mas.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/quiero_conocerte_mas.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/quiero_conocerte_mas.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/quiero_conocerte_mas.cho"
+      }
+    },
+    {
+      "id": "quiero_levantar_mis_manos",
+      "source_key": "openlp/quiero_levantar_mis_manos.xml",
+      "name": "Quiero Levantar Mis Manos",
+      "key": "A",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Miguel Cassina"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/quiero_levantar_mis_manos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/quiero_levantar_mis_manos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/quiero_levantar_mis_manos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/quiero_levantar_mis_manos.cho"
+      }
+    },
+    {
+      "id": "quiero_llenar_tu_trono_de_alabanzas",
+      "source_key": "openlp/quiero_llenar_tu_trono_de_alabanzas.xml",
+      "name": "Quiero Llenar Tu Trono De Alabanzas",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/quiero_llenar_tu_trono_de_alabanzas.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/quiero_llenar_tu_trono_de_alabanzas.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/quiero_llenar_tu_trono_de_alabanzas.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/quiero_llenar_tu_trono_de_alabanzas.cho"
+      }
+    },
+    {
+      "id": "recordamos_hoy",
+      "source_key": "openlp/recordamos_hoy.xml",
+      "name": "Recordamos Hoy",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Jonathan y Sarah Jerez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/recordamos_hoy.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/recordamos_hoy.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/recordamos_hoy.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/recordamos_hoy.cho"
+      }
+    },
+    {
+      "id": "remolineando",
+      "source_key": "openlp/remolineando.xml",
+      "name": "Remolineando",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Fernel Monroy"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/remolineando.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/remolineando.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/remolineando.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/remolineando.cho"
+      }
+    },
+    {
+      "id": "renuevame",
+      "source_key": "openlp/renuevame.xml",
+      "name": "Renuevame",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/renuevame.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/renuevame.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/renuevame.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/renuevame.cho"
+      }
+    },
+    {
+      "id": "renuncio_a_mi",
+      "source_key": "openlp/renuncio_a_mi.xml",
+      "name": "Renuncio A Mi",
+      "key": "Fm",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Banda Punto de Encuentro"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/renuncio_a_mi.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/renuncio_a_mi.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/renuncio_a_mi.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/renuncio_a_mi.cho"
+      }
+    },
+    {
+      "id": "Rey_de_gloria",
+      "source_key": "openlp/Rey_de_gloria.xml",
+      "name": "Rey De Gloria",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marco Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Rey_de_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Rey_de_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Rey_de_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Rey_de_gloria.cho"
+      }
+    },
+    {
+      "id": "Rey_de_mi_corazon",
+      "source_key": "openlp/Rey_de_mi_corazon.xml",
+      "name": "Rey De Mi Corazon",
+      "key": "Ab",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Efecto Eterno"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Rey_de_mi_corazon.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Rey_de_mi_corazon.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Rey_de_mi_corazon.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Rey_de_mi_corazon.cho"
+      }
+    },
+    {
+      "id": "Rey_Glorioso",
+      "source_key": "openlp/Rey_Glorioso.xml",
+      "name": "Rey Glorioso",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Rey_Glorioso.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Rey_Glorioso.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Rey_Glorioso.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Rey_Glorioso.cho"
+      }
+    },
+    {
+      "id": "Rey_vencedor",
+      "source_key": "openlp/Rey_vencedor.xml",
+      "name": "Rey Vencedor",
+      "key": "F",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Rey_vencedor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Rey_vencedor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Rey_vencedor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Rey_vencedor.cho"
+      }
+    },
+    {
+      "id": "Santo_por_siempre",
+      "source_key": "openlp/Santo_por_siempre.xml",
+      "name": "Santo Por Siempre",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Santo_por_siempre.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Santo_por_siempre.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Santo_por_siempre.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Santo_por_siempre.cho"
+      }
+    },
+    {
+      "id": "Senor_Senor_Jesus",
+      "source_key": "openlp/Senor_Senor_Jesus.xml",
+      "name": "Senor Senor Jesus",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Juan Salinas"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Senor_Senor_Jesus.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Senor_Senor_Jesus.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Senor_Senor_Jesus.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Senor_Senor_Jesus.cho"
+      }
+    },
+    {
+      "id": "sentado_en_su_trono",
+      "source_key": "openlp/sentado_en_su_trono.xml",
+      "name": "Sentado En Su Trono",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/sentado_en_su_trono.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/sentado_en_su_trono.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/sentado_en_su_trono.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/sentado_en_su_trono.cho"
+      }
+    },
+    {
+      "id": "Sera_llena_la_tierra",
+      "source_key": "openlp/Sera_llena_la_tierra.xml",
+      "name": "Sera Llena La Tierra",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marco Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Sera_llena_la_tierra.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Sera_llena_la_tierra.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Sera_llena_la_tierra.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Sera_llena_la_tierra.cho"
+      }
+    },
+    {
+      "id": "Serviremos_al_Senor",
+      "source_key": "openlp/Serviremos_al_Senor.xml",
+      "name": "Serviremos Al Senor",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Para Su Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Serviremos_al_Senor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Serviremos_al_Senor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Serviremos_al_Senor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Serviremos_al_Senor.cho"
+      }
+    },
+    {
+      "id": "solo_de_Jesus_la_Sangre",
+      "source_key": "openlp/solo_de_Jesus_la_Sangre.xml",
+      "name": "Solo De Jesus La Sangre",
+      "key": "B",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/solo_de_Jesus_la_Sangre.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/solo_de_Jesus_la_Sangre.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/solo_de_Jesus_la_Sangre.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/solo_de_Jesus_la_Sangre.cho"
+      }
+    },
+    {
+      "id": "solo_hay_uno",
+      "source_key": "openlp/solo_hay_uno.xml",
+      "name": "Solo Hay Uno",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/solo_hay_uno.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/solo_hay_uno.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/solo_hay_uno.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/solo_hay_uno.cho"
+      }
+    },
+    {
+      "id": "Somos_el_pueblo_de_Dios",
+      "source_key": "openlp/Somos_el_pueblo_de_Dios.xml",
+      "name": "Somos El Pueblo De Dios",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Somos_el_pueblo_de_Dios.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Somos_el_pueblo_de_Dios.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Somos_el_pueblo_de_Dios.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Somos_el_pueblo_de_Dios.cho"
+      }
+    },
+    {
+      "id": "Somos_Iglesia",
+      "source_key": "openlp/Somos_Iglesia.xml",
+      "name": "Somos Iglesia",
+      "key": "Cm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Somos_Iglesia.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Somos_Iglesia.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Somos_Iglesia.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Somos_Iglesia.cho"
+      }
+    },
+    {
+      "id": "somos_pueblo",
+      "source_key": "openlp/somos_pueblo.xml",
+      "name": "Somos Pueblo",
+      "key": "Bm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/somos_pueblo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/somos_pueblo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/somos_pueblo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/somos_pueblo.cho"
+      }
+    },
+    {
+      "id": "somos_soldaditos",
+      "source_key": "openlp/somos_soldaditos.xml",
+      "name": "Somos Soldaditos",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Biper"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/somos_soldaditos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/somos_soldaditos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/somos_soldaditos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/somos_soldaditos.cho"
+      }
+    },
+    {
+      "id": "somos_soldados",
+      "source_key": "openlp/somos_soldados.xml",
+      "name": "Somos Soldados",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Mayra Leal"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/somos_soldados.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/somos_soldados.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/somos_soldados.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/somos_soldados.cho"
+      }
+    },
+    {
+      "id": "soy_feliz",
+      "source_key": "openlp/soy_feliz.xml",
+      "name": "Soy Feliz",
+      "key": "F",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/soy_feliz.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/soy_feliz.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/soy_feliz.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/soy_feliz.cho"
+      }
+    },
+    {
+      "id": "superheroe",
+      "source_key": "openlp/superheroe.xml",
+      "name": "Superheroe",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Xtreme Kids"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/superheroe.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/superheroe.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/superheroe.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/superheroe.cho"
+      }
+    },
+    {
+      "id": "Te_adorare_y_te_servire",
+      "source_key": "openlp/Te_adorare_y_te_servire.xml",
+      "name": "Te Adorare Y Te Servire",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Lus Enrique Espinoza"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Te_adorare_y_te_servire.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Te_adorare_y_te_servire.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Te_adorare_y_te_servire.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Te_adorare_y_te_servire.cho"
+      }
+    },
+    {
+      "id": "Te_alabare",
+      "source_key": "openlp/Te_alabare.xml",
+      "name": "Te Alabare",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Danilo Montero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Te_alabare.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Te_alabare.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Te_alabare.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Te_alabare.cho"
+      }
+    },
+    {
+      "id": "te_alabo",
+      "source_key": "openlp/te_alabo.xml",
+      "name": "Te Alabo",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Stanislao Marino"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_alabo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/te_alabo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/te_alabo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/te_alabo.cho"
+      }
+    },
+    {
+      "id": "te_dare_lo_mejor",
+      "source_key": "openlp/te_dare_lo_mejor.xml",
+      "name": "Te Dare Lo Mejor",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Jesús Adrian Romero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_dare_lo_mejor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/te_dare_lo_mejor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/te_dare_lo_mejor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/te_dare_lo_mejor.cho"
+      }
+    },
+    {
+      "id": "Te_dare_lo_mejor_del_trigo",
+      "source_key": "openlp/Te_dare_lo_mejor_del_trigo.xml",
+      "name": "Te Dare Lo Mejor Del Trigo",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Te_dare_lo_mejor_del_trigo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Te_dare_lo_mejor_del_trigo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Te_dare_lo_mejor_del_trigo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Te_dare_lo_mejor_del_trigo.cho"
+      }
+    },
+    {
+      "id": "te_doy_gloria",
+      "source_key": "openlp/te_doy_gloria.xml",
+      "name": "Te Doy Gloria",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/te_doy_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/te_doy_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/te_doy_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/te_doy_gloria.cho"
+      }
+    },
+    {
+      "id": "Te_seguire",
+      "source_key": "openlp/Te_seguire.xml",
+      "name": "Te Seguire",
+      "key": "Bb",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Te_seguire.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Te_seguire.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Te_seguire.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Te_seguire.cho"
+      }
+    },
+    {
+      "id": "tin_tin_tin",
+      "source_key": "openlp/tin_tin_tin.xml",
+      "name": "Tin Tin Tin",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Manuel Bonilla"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tin_tin_tin.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tin_tin_tin.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tin_tin_tin.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/tin_tin_tin.cho"
+      }
+    },
+    {
+      "id": "todo_a_Cristo",
+      "source_key": "openlp/todo_a_Cristo.xml",
+      "name": "Todo A Cristo",
+      "key": "C",
+      "themes": [
+        "Himno"
+      ],
+      "authors": [
+        "Himnos de Gloria y Triunfo"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/todo_a_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/todo_a_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/todo_a_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/todo_a_Cristo.cho"
+      }
+    },
+    {
+      "id": "todo_es_posible",
+      "source_key": "openlp/todo_es_posible.xml",
+      "name": "Todo Es Posible",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Ricardo Rodríguez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/todo_es_posible.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/todo_es_posible.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/todo_es_posible.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/todo_es_posible.cho"
+      }
+    },
+    {
+      "id": "todo_lo_que_respira",
+      "source_key": "openlp/todo_lo_que_respira.xml",
+      "name": "Todo Lo Que Respira",
+      "key": "A",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/todo_lo_que_respira.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/todo_lo_que_respira.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/todo_lo_que_respira.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/todo_lo_que_respira.cho"
+      }
+    },
+    {
+      "id": "Todo_por_Su_gloria",
+      "source_key": "openlp/Todo_por_Su_gloria.xml",
+      "name": "Todo Por Su Gloria",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Gracia Soberana"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Todo_por_Su_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Todo_por_Su_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Todo_por_Su_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Todo_por_Su_gloria.cho"
+      }
+    },
+    {
+      "id": "todo_por_tu_gloria",
+      "source_key": "openlp/todo_por_tu_gloria.xml",
+      "name": "Todo Por Tu Gloria",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Gracia Soberana Música"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/todo_por_tu_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/todo_por_tu_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/todo_por_tu_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/todo_por_tu_gloria.cho"
+      }
+    },
+    {
+      "id": "toma_tu_lugar",
+      "source_key": "openlp/toma_tu_lugar.xml",
+      "name": "Toma Tu Lugar",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Brunet"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/toma_tu_lugar.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/toma_tu_lugar.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/toma_tu_lugar.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/toma_tu_lugar.cho"
+      }
+    },
+    {
+      "id": "Tu_amor_no_fallara",
+      "source_key": "openlp/Tu_amor_no_fallara.xml",
+      "name": "Tu Amor No Fallara",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Hillsong United"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_amor_no_fallara.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_amor_no_fallara.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_amor_no_fallara.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Tu_amor_no_fallara.cho"
+      }
+    },
+    {
+      "id": "tu_amor_por_mi",
+      "source_key": "openlp/tu_amor_por_mi.xml",
+      "name": "Tu Amor Por Mi",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_amor_por_mi.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_amor_por_mi.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_amor_por_mi.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/tu_amor_por_mi.cho"
+      }
+    },
+    {
+      "id": "Tu_bondad",
+      "source_key": "openlp/Tu_bondad.xml",
+      "name": "Tu Bondad",
+      "key": "F",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Verónica Leal"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_bondad.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_bondad.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_bondad.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Tu_bondad.cho"
+      }
+    },
+    {
+      "id": "tu_eres_digno_de_gloria",
+      "source_key": "openlp/tu_eres_digno_de_gloria.xml",
+      "name": "Tu Eres Digno De Gloria",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Gerry Márquez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_eres_digno_de_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_eres_digno_de_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_eres_digno_de_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/tu_eres_digno_de_gloria.cho"
+      }
+    },
+    {
+      "id": "Tu_eres_el_alfa_y_omega",
+      "source_key": "openlp/Tu_eres_el_alfa_y_omega.xml",
+      "name": "Tu Eres El Alfa Y Omega",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Inspiración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_eres_el_alfa_y_omega.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_eres_el_alfa_y_omega.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_eres_el_alfa_y_omega.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Tu_eres_el_alfa_y_omega.cho"
+      }
+    },
+    {
+      "id": "tu_fidelidad",
+      "source_key": "openlp/tu_fidelidad.xml",
+      "name": "Tu Fidelidad",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_fidelidad.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_fidelidad.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_fidelidad.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/tu_fidelidad.cho"
+      }
+    },
+    {
+      "id": "Tu_fidelidad_2",
+      "source_key": "openlp/Tu_fidelidad_2.xml",
+      "name": "Tu Fidelidad 2",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Verónica Leal"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_fidelidad_2.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_fidelidad_2.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_fidelidad_2.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Tu_fidelidad_2.cho"
+      }
+    },
+    {
+      "id": "tu_fidelidad_cuan_grande_es_el",
+      "source_key": "openlp/tu_fidelidad_cuan_grande_es_el.xml",
+      "name": "Tu Fidelidad Cuan Grande Es El",
+      "key": "B",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Seth Condrey"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_fidelidad_cuan_grande_es_el.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_fidelidad_cuan_grande_es_el.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_fidelidad_cuan_grande_es_el.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/tu_fidelidad_cuan_grande_es_el.cho"
+      }
+    },
+    {
+      "id": "tu_gran_amor",
+      "source_key": "openlp/tu_gran_amor.xml",
+      "name": "Tu Gran Amor",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Hillsong United"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_gran_amor.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_gran_amor.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_gran_amor.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/tu_gran_amor.cho"
+      }
+    },
+    {
+      "id": "tu_nombre_levantare",
+      "source_key": "openlp/tu_nombre_levantare.xml",
+      "name": "Tu Nombre Levantare",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/tu_nombre_levantare.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/tu_nombre_levantare.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/tu_nombre_levantare.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/tu_nombre_levantare.cho"
+      }
+    },
+    {
+      "id": "Tu_Palabra",
+      "source_key": "openlp/Tu_Palabra.xml",
+      "name": "Tu Palabra",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Para su gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_Palabra.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_Palabra.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_Palabra.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Tu_Palabra.cho"
+      }
+    },
+    {
+      "id": "Tu_vives",
+      "source_key": "openlp/Tu_vives.xml",
+      "name": "Tu Vives",
+      "key": "E",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Julissa"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_vives.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_vives.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_vives.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Tu_vives.cho"
+      }
+    },
+    {
+      "id": "Tu_y_yo",
+      "source_key": "openlp/Tu_y_yo.xml",
+      "name": "Tu Y Yo",
+      "key": "Cm",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Tu_y_yo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Tu_y_yo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Tu_y_yo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Tu_y_yo.cho"
+      }
+    },
+    {
+      "id": "Un_dia_a_la_vez",
+      "source_key": "openlp/Un_dia_a_la_vez.xml",
+      "name": "Un Dia A La Vez",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Verónica Leal"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Un_dia_a_la_vez.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Un_dia_a_la_vez.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Un_dia_a_la_vez.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Un_dia_a_la_vez.cho"
+      }
+    },
+    {
+      "id": "un_siervo_para_tu_gloria",
+      "source_key": "openlp/un_siervo_para_tu_gloria.xml",
+      "name": "Un Siervo Para Tu Gloria",
+      "key": "B",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/un_siervo_para_tu_gloria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/un_siervo_para_tu_gloria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/un_siervo_para_tu_gloria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/un_siervo_para_tu_gloria.cho"
+      }
+    },
+    {
+      "id": "unidos",
+      "source_key": "openlp/unidos.xml",
+      "name": "Unidos",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Generación de Jesús"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/unidos.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/unidos.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/unidos.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/unidos.cho"
+      }
+    },
+    {
+      "id": "vamos_a_cantar",
+      "source_key": "openlp/vamos_a_cantar.xml",
+      "name": "Vamos A Cantar",
+      "key": "C",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "En Espíritu y Verdad"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vamos_a_cantar.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/vamos_a_cantar.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/vamos_a_cantar.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/vamos_a_cantar.cho"
+      }
+    },
+    {
+      "id": "vasijas_rotas",
+      "source_key": "openlp/vasijas_rotas.xml",
+      "name": "Vasijas Rotas",
+      "key": "Em",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Hillsong"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vasijas_rotas.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/vasijas_rotas.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/vasijas_rotas.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/vasijas_rotas.cho"
+      }
+    },
+    {
+      "id": "ven_a_El",
+      "source_key": "openlp/ven_a_El.xml",
+      "name": "Ven A El",
+      "key": "D",
+      "themes": [
+        "Himno"
+      ],
+      "authors": [
+        "Himnos de Gloria"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_a_El.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_a_El.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_a_El.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/ven_a_El.cho"
+      }
+    },
+    {
+      "id": "ven_ante_Su_Trono",
+      "source_key": "openlp/ven_ante_Su_Trono.xml",
+      "name": "Ven Ante Su Trono",
+      "key": "G",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Elevation Worship"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_ante_Su_Trono.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_ante_Su_Trono.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_ante_Su_Trono.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/ven_ante_Su_Trono.cho"
+      }
+    },
+    {
+      "id": "ven_es_hora_de_adorarle",
+      "source_key": "openlp/ven_es_hora_de_adorarle.xml",
+      "name": "Ven Es Hora De Adorarle",
+      "key": "E",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_es_hora_de_adorarle.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_es_hora_de_adorarle.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_es_hora_de_adorarle.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/ven_es_hora_de_adorarle.cho"
+      }
+    },
+    {
+      "id": "ven_espiritu_ven",
+      "source_key": "openlp/ven_espiritu_ven.xml",
+      "name": "Ven Espiritu Ven",
+      "key": "F",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_espiritu_ven.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_espiritu_ven.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_espiritu_ven.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/ven_espiritu_ven.cho"
+      }
+    },
+    {
+      "id": "ven_y_deleitate",
+      "source_key": "openlp/ven_y_deleitate.xml",
+      "name": "Ven Y Deleitate",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ven_y_deleitate.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ven_y_deleitate.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ven_y_deleitate.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/ven_y_deleitate.cho"
+      }
+    },
+    {
+      "id": "Vencio",
+      "source_key": "openlp/Vencio.xml",
+      "name": "Vencio",
+      "key": "C#m7",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Witt"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Vencio.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Vencio.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Vencio.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Vencio.cho"
+      }
+    },
+    {
+      "id": "Vencio_la_muerte",
+      "source_key": "openlp/Vencio_la_muerte.xml",
+      "name": "Vencio La Muerte",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Karina Moreno"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Vencio_la_muerte.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Vencio_la_muerte.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Vencio_la_muerte.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Vencio_la_muerte.cho"
+      }
+    },
+    {
+      "id": "venga_tu_reino",
+      "source_key": "openlp/venga_tu_reino.xml",
+      "name": "Venga Tu Reino",
+      "key": "A",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "La IBI"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/venga_tu_reino.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/venga_tu_reino.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/venga_tu_reino.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/venga_tu_reino.cho"
+      }
+    },
+    {
+      "id": "victoria",
+      "source_key": "openlp/victoria.xml",
+      "name": "Victoria",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Marcos Barrientos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/victoria.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/victoria.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/victoria.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/victoria.cho"
+      }
+    },
+    {
+      "id": "vida_nueva_tengo_en_ti",
+      "source_key": "openlp/vida_nueva_tengo_en_ti.xml",
+      "name": "Vida Nueva Tengo En Ti",
+      "key": "Eb",
+      "themes": [
+        "Adoracion"
+      ],
+      "authors": [
+        "Ralph E.stewart"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/vida_nueva_tengo_en_ti.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/vida_nueva_tengo_en_ti.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/vida_nueva_tengo_en_ti.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/vida_nueva_tengo_en_ti.cho"
+      }
+    },
+    {
+      "id": "viene_ya",
+      "source_key": "openlp/viene_ya.xml",
+      "name": "Viene Ya",
+      "key": "Am",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/viene_ya.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/viene_ya.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/viene_ya.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/viene_ya.cho"
+      }
+    },
+    {
+      "id": "Vine_a_adorarte",
+      "source_key": "openlp/Vine_a_adorarte.xml",
+      "name": "Vine A Adorarte",
+      "key": "D",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Marcela Gandara"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Vine_a_adorarte.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Vine_a_adorarte.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Vine_a_adorarte.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Vine_a_adorarte.cho"
+      }
+    },
+    {
+      "id": "Vine_a_adorarte_2",
+      "source_key": "openlp/Vine_a_adorarte_2.xml",
+      "name": "Vine A Adorarte 2",
+      "themes": [
+        "adoración"
+      ],
+      "authors": [
+        "Xtreme kids"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Vine_a_adorarte_2.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Vine_a_adorarte_2.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Vine_a_adorarte_2.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Vine_a_adorarte_2.cho"
+      }
+    },
+    {
+      "id": "viva_la_fe",
+      "source_key": "openlp/viva_la_fe.xml",
+      "name": "Viva La Fe",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Genérico"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/viva_la_fe.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/viva_la_fe.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/viva_la_fe.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/viva_la_fe.cho"
+      }
+    },
+    {
+      "id": "Vivir_es_Cristo",
+      "source_key": "openlp/Vivir_es_Cristo.xml",
+      "name": "Vivir Es Cristo",
+      "key": "Em",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Jonathan y Sara Jerez"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Vivir_es_Cristo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Vivir_es_Cristo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Vivir_es_Cristo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Vivir_es_Cristo.cho"
+      }
+    },
+    {
+      "id": "ya_se_oye_el_Shofar",
+      "source_key": "openlp/ya_se_oye_el_Shofar.xml",
+      "name": "Ya Se Oye El Shofar",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Billy Bunster"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/ya_se_oye_el_Shofar.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/ya_se_oye_el_Shofar.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/ya_se_oye_el_Shofar.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/ya_se_oye_el_Shofar.cho"
+      }
+    },
+    {
+      "id": "Yahweh",
+      "source_key": "openlp/Yahweh.xml",
+      "name": "Yahweh",
+      "key": "Em",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Oasis Ministry"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Yahweh.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Yahweh.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Yahweh.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Yahweh.cho"
+      }
+    },
+    {
+      "id": "Yahweh_se_manifestara",
+      "source_key": "openlp/Yahweh_se_manifestara.xml",
+      "name": "Yahweh Se Manifestara",
+      "key": "Em",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Oasis Ministry"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Yahweh_se_manifestara.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Yahweh_se_manifestara.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Yahweh_se_manifestara.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Yahweh_se_manifestara.cho"
+      }
+    },
+    {
+      "id": "Yo_creo",
+      "source_key": "openlp/Yo_creo.xml",
+      "name": "Yo Creo",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Miel San Marcos"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Yo_creo.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Yo_creo.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Yo_creo.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Yo_creo.cho"
+      }
+    },
+    {
+      "id": "yo_me_rindo_a_El",
+      "source_key": "openlp/yo_me_rindo_a_El.xml",
+      "name": "Yo Me Rindo A El",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Jesús Adrian Romero"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/yo_me_rindo_a_El.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/yo_me_rindo_a_El.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/yo_me_rindo_a_El.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/yo_me_rindo_a_El.cho"
+      }
+    },
+    {
+      "id": "Yo_navegare",
+      "source_key": "openlp/Yo_navegare.xml",
+      "name": "Yo Navegare",
+      "key": "Em",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Dahaira"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Yo_navegare.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Yo_navegare.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Yo_navegare.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Yo_navegare.cho"
+      }
+    },
+    {
+      "id": "yo_quiero_mas_de_ti",
+      "source_key": "openlp/yo_quiero_mas_de_ti.xml",
+      "name": "Yo Quiero Mas De Ti",
+      "key": "A",
+      "themes": [
+        "Adoración"
+      ],
+      "authors": [
+        "Jaime Murrell"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/yo_quiero_mas_de_ti.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/yo_quiero_mas_de_ti.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/yo_quiero_mas_de_ti.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/yo_quiero_mas_de_ti.cho"
+      }
+    },
+    {
+      "id": "Yo_siento_un_gozo_en_mi_alma",
+      "source_key": "openlp/Yo_siento_un_gozo_en_mi_alma.xml",
+      "name": "Yo Siento Un Gozo En Mi Alma",
+      "key": "G",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Upperrom"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Yo_siento_un_gozo_en_mi_alma.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Yo_siento_un_gozo_en_mi_alma.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Yo_siento_un_gozo_en_mi_alma.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Yo_siento_un_gozo_en_mi_alma.cho"
+      }
+    },
+    {
+      "id": "Yo_tambien",
+      "source_key": "openlp/Yo_tambien.xml",
+      "name": "Yo Tambien",
+      "key": "C",
+      "themes": [
+        "Adoración"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/Yo_tambien.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/Yo_tambien.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/Yo_tambien.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/Yo_tambien.cho"
+      }
+    },
+    {
+      "id": "yo_tengo_una_barquita",
+      "source_key": "openlp/yo_tengo_una_barquita.xml",
+      "name": "Yo Tengo Una Barquita",
+      "key": "D",
+      "themes": [
+        "Alabanza"
+      ],
+      "authors": [
+        "Desconocido"
+      ],
+      "urls": {
+        "chords": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-chords/yo_tengo_una_barquita.pdf",
+        "lyrics": "https://chordiebook.s3-us-west-1.amazonaws.com/pdf-lyrics/yo_tengo_una_barquita.pdf",
+        "openlp": "https://chordiebook.s3-us-west-1.amazonaws.com/openlp/yo_tengo_una_barquita.xml",
+        "chordpro": "https://chordiebook.s3-us-west-1.amazonaws.com/yo_tengo_una_barquita.cho"
+      }
+    }
+  ]
+}
