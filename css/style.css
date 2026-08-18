@@ -75,31 +75,11 @@ body {
 }
 
 .top-bar-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: flex-end;
-    gap: 12px;
-    min-width: 260px;
-}
-
-.format-summary {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 8px;
-    max-width: 300px;
-}
-
-.format-summary span {
-    padding: 6px 10px;
-    color: #d7f3ef;
-    font-size: 0.82rem;
-    font-weight: 700;
-    white-space: nowrap;
-    background: rgba(15, 118, 110, 0.22);
-    border: 1px solid rgba(139, 211, 203, 0.32);
-    border-radius: 999px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: end;
+    gap: 14px;
 }
 
 .language-switch {
@@ -166,9 +146,9 @@ body {
 
 .toolbar {
     display: grid;
-    grid-template-columns: minmax(240px, 1fr) auto;
-    gap: 18px;
-    align-items: end;
+    grid-template-columns: minmax(320px, 1fr) auto;
+    gap: 22px;
+    align-items: center;
     padding: 18px;
     border-bottom: 1px solid var(--line);
 }
@@ -221,14 +201,17 @@ body {
 }
 
 .download-area {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: auto max-content;
+    align-items: center;
+    justify-content: end;
     gap: 10px;
+    min-width: 520px;
 }
 
 .download-options {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(78px, 1fr));
 }
 
 .btn-group {
@@ -260,6 +243,25 @@ body {
     background: #fff;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+
+.download-options .btn {
+    min-width: 0;
+    border-radius: 0;
+}
+
+#btnradio1 + .btn {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#btnradio4 + .btn {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.download-options .btn-check:not(:first-child) + .btn {
+    margin-left: -1px;
 }
 
 .btn-outline-primary {
@@ -423,16 +425,14 @@ th[aria-sort="descending"] .sort-button::after {
         min-width: 0;
     }
 
-    .format-summary {
-        justify-content: flex-start;
-    }
-
     .selection-meter {
         justify-self: start;
     }
 
     .download-area {
-        justify-content: flex-start;
+        grid-template-columns: minmax(0, 1fr) max-content;
+        justify-content: stretch;
+        min-width: 0;
     }
 }
 
@@ -456,17 +456,22 @@ th[aria-sort="descending"] .sort-button::after {
     }
 
     #myTable tbody {
-        padding: 12px;
+        display: grid;
+        gap: 10px;
+        padding: 10px;
         background: #eef2f7;
     }
 
     #myTable tbody tr {
-        margin-bottom: 12px;
-        padding: 12px;
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px 12px;
+        padding: 14px;
         background: #fff;
         border: 1px solid var(--line);
         border-radius: 8px;
-        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
     }
 
     #myTable tbody tr:hover {
@@ -474,69 +479,202 @@ th[aria-sort="descending"] .sort-button::after {
     }
 
     #myTable td {
-        display: grid;
-        grid-template-columns: 104px minmax(0, 1fr);
-        gap: 12px;
-        padding: 8px 0;
+        padding: 0;
         border: 0;
         overflow-wrap: anywhere;
     }
 
     #myTable td::before {
+        content: none;
+    }
+
+    #myTable .song-select-cell {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: start;
+        width: auto;
+        padding: 0;
+        text-align: right;
+    }
+
+    #myTable .song-select {
+        width: 22px;
+        height: 22px;
+    }
+
+    #myTable .song-name-cell {
+        grid-column: 1;
+        grid-row: 1;
+        padding-right: 4px;
+        color: #1f2937;
+        font-size: 1.05rem;
+        font-weight: 750;
+        line-height: 1.25;
+    }
+
+    #myTable .song-key-cell {
+        grid-column: 1;
+        grid-row: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        justify-self: start;
+        width: auto;
+        min-height: 24px;
+        padding: 3px 8px;
+        color: #273142;
+        font-size: 0.8rem;
+        font-weight: 750;
+        background: #eef7f6;
+        border: 1px solid rgba(15, 118, 110, 0.2);
+        border-radius: 999px;
+    }
+
+    #myTable .song-key-cell::before {
         content: attr(data-label);
-        color: var(--muted);
-        font-size: 0.78rem;
+        color: var(--accent-strong);
+        font-size: 0.68rem;
         font-weight: 800;
         text-transform: uppercase;
     }
 
-    #myTable .song-select-cell {
-        display: flex;
-        justify-content: flex-end;
-        padding-bottom: 4px;
+    #myTable .song-themes-cell,
+    #myTable .song-authors-cell {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 76px minmax(0, 1fr);
+        gap: 10px;
+        color: #334155;
+        font-size: 0.9rem;
+        line-height: 1.3;
     }
 
-    #myTable .song-select-cell::before {
-        content: none;
+    #myTable .song-key-cell.is-empty,
+    #myTable .song-themes-cell.is-empty,
+    #myTable .song-authors-cell.is-empty {
+        display: none;
+    }
+
+    #myTable .song-themes-cell {
+        grid-row: 3;
+        padding-top: 4px;
+    }
+
+    #myTable .song-authors-cell {
+        grid-row: 4;
+    }
+
+    #myTable .song-themes-cell::before,
+    #myTable .song-authors-cell::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    #myTable .song-action-cell {
+        grid-column: 1 / -1;
+        grid-row: 5;
+        padding-top: 6px;
+    }
+
+    #myTable .song-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 40px;
+        color: #fff;
+        font-weight: 750;
+        background: var(--accent);
+        border-radius: 6px;
+    }
+
+    #myTable .song-action:hover {
+        color: #fff;
+        text-decoration: none;
+        background: var(--accent-strong);
     }
 }
 
 @media (max-width: 560px) {
     .app-main {
-        padding: 10px 10px 28px;
+        padding: 8px 8px 24px;
     }
 
     .top-bar,
     .toolbar {
-        padding: 18px;
+        padding: 14px;
     }
 
     .top-bar {
-        gap: 18px;
+        gap: 12px;
+        margin-bottom: 12px;
     }
 
     .top-bar h1 {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
     .top-bar-copy p:last-child {
-        font-size: 1rem;
+        margin-top: 8px;
+        font-size: 0.92rem;
+        line-height: 1.35;
     }
 
-    .top-bar-meta,
-    .format-summary,
+    .eyebrow {
+        margin-bottom: 4px;
+        font-size: 0.68rem;
+    }
+
+    .top-bar-meta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 88px;
+        align-items: stretch;
+        gap: 8px;
+        width: 100%;
+    }
+
     .language-switch,
     .selection-meter {
         width: 100%;
     }
 
-    .format-summary span {
-        flex: 1 1 calc(50% - 8px);
-        text-align: center;
-    }
-
     .language-option {
         flex: 1 1 50%;
+        min-height: 30px;
+        padding: 3px 8px;
+    }
+
+    .selection-meter {
+        min-width: 0;
+        padding: 5px 8px;
+    }
+
+    .selection-meter span {
+        font-size: 1.3rem;
+    }
+
+    .selection-meter small {
+        font-size: 0.64rem;
+    }
+
+    .toolbar {
+        gap: 12px;
+    }
+
+    .search-area label {
+        margin-bottom: 6px;
+    }
+
+    #myInput {
+        min-height: 42px;
+    }
+
+    .catalog-status {
+        min-height: 18px;
+        margin-top: 6px;
     }
 
     .download-area,
@@ -545,7 +683,25 @@ th[aria-sort="descending"] .sort-button::after {
         width: 100%;
     }
 
+    .download-area {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .download-options {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
     .download-options .btn {
-        flex: 1 1 50%;
+        min-width: 0;
+        min-height: 36px;
+        padding: 7px 4px;
+        font-size: 0.86rem;
+        white-space: nowrap;
+    }
+
+    .download-button {
+        min-height: 38px;
     }
 }

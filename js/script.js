@@ -333,18 +333,25 @@ var selected_songs = [];
         }).join("&");
     }
 
-    function createTextCell(value, labelKey) {
+    function createTextCell(value, labelKey, className) {
         var cell = document.createElement("td");
         cell.textContent = value || "";
         cell.dataset.labelKey = labelKey;
         cell.setAttribute("data-label", getColumnLabel(labelKey));
+        if (className) {
+            cell.className = className;
+        }
+        if (!value) {
+            cell.classList.add("is-empty");
+        }
         return cell;
     }
 
     function createActionCell(labelKey) {
-        var cell = createTextCell("", labelKey);
+        var cell = createTextCell("", labelKey, "song-action-cell");
         var button = document.createElement("button");
 
+        cell.classList.remove("is-empty");
         button.type = "button";
         button.className = "song-action";
         button.textContent = translate("open");
@@ -406,10 +413,10 @@ var selected_songs = [];
         row.dataset.songId = song.id;
         row.dataset.searchText = getSongSearchText(song);
         row.appendChild(createSelectCell(song));
-        row.appendChild(createTextCell(song.name, "name"));
-        row.appendChild(createTextCell(song.key, "key"));
-        row.appendChild(createTextCell(Array.isArray(song.themes) ? song.themes.join(", ") : "", "themes"));
-        row.appendChild(createTextCell(Array.isArray(song.authors) ? song.authors.join(", ") : "", "authors"));
+        row.appendChild(createTextCell(song.name, "name", "song-name-cell"));
+        row.appendChild(createTextCell(song.key, "key", "song-key-cell"));
+        row.appendChild(createTextCell(Array.isArray(song.themes) ? song.themes.join(", ") : "", "themes", "song-themes-cell"));
+        row.appendChild(createTextCell(Array.isArray(song.authors) ? song.authors.join(", ") : "", "authors", "song-authors-cell"));
         row.appendChild(createActionCell("open"));
 
         return row;
