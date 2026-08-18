@@ -40,8 +40,17 @@ type Config struct {
 	Output      string
 	Template    string
 	IndexOutput string
+	CSSPath     string
+	JSPath      string
 	Concurrency int
 	LogLevel    string
+	CompactJSON bool
+}
+
+type IndexData struct {
+	CatalogPath string
+	CSSPath     string
+	JSPath      string
 }
 
 type Catalog struct {
@@ -52,16 +61,15 @@ type Catalog struct {
 }
 
 type Song struct {
-	ID        string   `json:"id"`
-	SourceKey string   `json:"source_key"`
-	Name      string   `json:"name"`
-	Key       string   `json:"key,omitempty"`
-	Themes    []string `json:"themes,omitempty"`
-	Authors   []string `json:"authors,omitempty"`
-	URLs      SongURLs `json:"urls"`
+	ID      string    `json:"id"`
+	Name    string    `json:"name"`
+	Key     string    `json:"key,omitempty"`
+	Themes  []string  `json:"themes,omitempty"`
+	Authors []string  `json:"authors,omitempty"`
+	Files   SongFiles `json:"files"`
 }
 
-type SongURLs struct {
+type SongFiles struct {
 	Chords   string `json:"chords"`
 	Lyrics   string `json:"lyrics"`
 	OpenLP   string `json:"openlp"`
@@ -160,13 +168,17 @@ func main() {
 		Songs:       songs,
 	}
 
-	if err := writeCatalog(cfg.Output, catalog); err != nil {
+	if err := writeCatalog(cfg.Output, catalog, cfg.CompactJSON); err != nil {
 		logger.Error("failed to write catalog", "path", cfg.Output, "error", err)
 		os.Exit(1)
 	}
 	logger.Info("wrote catalog", "path", cfg.Output, "songs", len(songs))
 
-	if err := renderIndex(cfg.Template, cfg.IndexOutput); err != nil {
+	if err := renderIndex(cfg.Template, cfg.IndexOutput, IndexData{
+		CatalogPath: cfg.Output,
+		CSSPath:     cfg.CSSPath,
+		JSPath:      cfg.JSPath,
+	}); err != nil {
 		logger.Error("failed to render index", "template", cfg.Template, "output", cfg.IndexOutput, "error", err)
 		os.Exit(1)
 	}
@@ -190,8 +202,11 @@ func parseConfig() Config {
 	flag.StringVar(&cfg.Output, "output", defaultOut, "JSON catalog output path")
 	flag.StringVar(&cfg.Template, "template", "template.html", "static HTML template path")
 	flag.StringVar(&cfg.IndexOutput, "index-output", defaultHTML, "rendered static index output path")
+	flag.StringVar(&cfg.CSSPath, "css-path", "css/style.css", "CSS path referenced by the rendered index")
+	flag.StringVar(&cfg.JSPath, "js-path", "js/script.js", "JavaScript path referenced by the rendered index")
 	flag.IntVar(&cfg.Concurrency, "concurrency", 12, "number of parallel S3 metadata downloads")
 	flag.StringVar(&cfg.LogLevel, "log-level", "info", "log level: debug, info, warn, error")
+	flag.BoolVar(&cfg.CompactJSON, "compact-json", false, "write compact JSON instead of pretty-printed JSON")
 	flag.Parse()
 
 	args := flag.Args()
@@ -275,7 +290,7 @@ func fetchSongs(ctx context.Context, logger *slog.Logger, svc *s3.S3, cfg Config
 		go func(workerID int) {
 			defer wg.Done()
 			for key := range jobs {
-				song, err := buildSong(ctx, svc, cfg.Bucket, cfg.URLPrefix, key)
+				song, err := buildSong(ctx, svc, cfg.Bucket, key)
 				results <- songResult{Song: song, Key: key, Err: err}
 				if err == nil {
 					logger.Debug("parsed song", "worker", workerID, "id", song.ID, "name", song.Name)
@@ -307,7 +322,7 @@ func fetchSongs(ctx context.Context, logger *slog.Logger, svc *s3.S3, cfg Config
 	return songs, failures
 }
 
-func buildSong(ctx context.Context, svc *s3.S3, bucket, urlPrefix, key string) (Song, error) {
+func buildSong(ctx context.Context, svc *s3.S3, bucket, key string) (Song, error) {
 	metadata, err := getSongMetadata(ctx, svc, bucket, key)
 	if err != nil {
 		return Song{}, err
@@ -315,17 +330,16 @@ func buildSong(ctx context.Context, svc *s3.S3, bucket, urlPrefix, key string) (
 
 	id := songIDFromKey(key)
 	return Song{
-		ID:        id,
-		SourceKey: key,
-		Name:      titleFromID(id),
-		Key:       strings.TrimSpace(metadata.Key),
-		Themes:    cleanStrings(metadata.Themes),
-		Authors:   cleanStrings(metadata.Authors),
-		URLs: SongURLs{
-			Chords:   urlPrefix + chordsPath + id + ".pdf",
-			Lyrics:   urlPrefix + lyricsPath + id + ".pdf",
-			OpenLP:   urlPrefix + openLPPath + id + ".xml",
-			ChordPro: urlPrefix + id + ".cho",
+		ID:      id,
+		Name:    titleFromID(id),
+		Key:     strings.TrimSpace(metadata.Key),
+		Themes:  cleanStrings(metadata.Themes),
+		Authors: cleanStrings(metadata.Authors),
+		Files: SongFiles{
+			Chords:   chordsPath + id + ".pdf",
+			Lyrics:   lyricsPath + id + ".pdf",
+			OpenLP:   openLPPath + id + ".xml",
+			ChordPro: id + ".cho",
 		},
 	}, nil
 }
@@ -409,12 +423,20 @@ func readCatalog(path string) (Catalog, error) {
 	return catalog, nil
 }
 
-func writeCatalog(path string, catalog Catalog) error {
+func writeCatalog(path string, catalog Catalog, compact bool) error {
 	if err := os.MkdirAll(filepathDir(path), 0o755); err != nil {
 		return err
 	}
 
-	payload, err := json.MarshalIndent(catalog, "", "  ")
+	var (
+		payload []byte
+		err     error
+	)
+	if compact {
+		payload, err = json.Marshal(catalog)
+	} else {
+		payload, err = json.MarshalIndent(catalog, "", "  ")
+	}
 	if err != nil {
 		return err
 	}
@@ -431,7 +453,7 @@ func filepathDir(filePath string) string {
 	return dir
 }
 
-func renderIndex(templatePath, outputPath string) error {
+func renderIndex(templatePath, outputPath string, data IndexData) error {
 	tpl, err := template.ParseFiles(templatePath)
 	if err != nil {
 		return err
@@ -443,7 +465,7 @@ func renderIndex(templatePath, outputPath string) error {
 	}
 	defer out.Close()
 
-	return tpl.Execute(out, nil)
+	return tpl.Execute(out, data)
 }
 
 func compareCatalogs(oldSongs, newSongs []Song) Summary {

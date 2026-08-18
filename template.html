@@ -4,11 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChordieBook</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <link rel="preload" href="{{ .CatalogPath }}" as="fetch" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ .CSSPath }}">
   </head>
   <body>
     <main role="main" class="container-fluid app-main">
@@ -66,23 +63,15 @@
         <div class="table-shell">
         <table id="myTable"
 	       class="table table-striped table-hover table-sm song-table"
-	       data-classes="table table-hover table-condensed song-table"
-	       data-striped="true"
-	       data-sort-name="Quality"
-	       data-sort-order="desc"
-	       data-pagination="false"
 	       >
           <thead class="table-dark">
             <tr>
-	    <th data-field="state" data-checkbox="true"></th>
-            <th scope="col" data-field="name" data-sortable="true" data-i18n="name">Name</th>
-	    <th scope="col" data-field="key" data-sortable="true" data-i18n="key">Key</th>
-	    <th scope="col" data-field="themes" data-sortable="true" data-i18n="themes">Themes</th>
-	    <th scope="col" data-field="authors" data-sortable="true" data-i18n="authors">Authors</th>
-            <th scope="col" data-field="chords" data-i18n="chords">Chords</th>
-            <th scope="col" data-field="lyrics" data-i18n="lyrics">Lyrics</th>
-            <th scope="col" data-field="openlp">OpenLP</th>
-	    <th scope="col" data-field="chordpro">ChordPro</th>
+	    <th class="song-select-cell"><input type="checkbox" id="selectAllSongs"></th>
+            <th scope="col" data-column="name" aria-sort="ascending"><button type="button" class="sort-button" data-sort="name" data-i18n="name">Name</button></th>
+	    <th scope="col" data-column="key" aria-sort="none"><button type="button" class="sort-button" data-sort="key" data-i18n="key">Key</button></th>
+	    <th scope="col" data-column="themes" aria-sort="none"><button type="button" class="sort-button" data-sort="themes" data-i18n="themes">Themes</button></th>
+	    <th scope="col" data-column="authors" aria-sort="none"><button type="button" class="sort-button" data-sort="authors" data-i18n="authors">Authors</button></th>
+            <th scope="col" data-column="action" data-i18n="open">Open</th>
             </tr>
           </thead>
 	          <tbody></tbody>
@@ -90,7 +79,7 @@
         </div>
       </section>
       <div id="result"></div>
-	<script src="js/script.js"></script>
+	<script src="{{ .JSPath }}"></script>
     </main>
   </body>
 </html>

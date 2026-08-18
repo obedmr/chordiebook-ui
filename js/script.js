@@ -9,13 +9,26 @@ var selected_songs = [];
     var LANGUAGE_STORAGE_KEY = "chordiebook.language";
     var currentLanguage = "en";
     var catalogSongs = [];
-    var tableInitialized = false;
+    var catalogURLPrefix = "";
+    var selectedSongIds = {};
+    var sortState = {
+        key: "name",
+        direction: "asc"
+    };
+    var COLUMNS = [
+        { key: "name", label: "name", sortable: true },
+        { key: "key", label: "key", sortable: true },
+        { key: "themes", label: "themes", sortable: true },
+        { key: "authors", label: "authors", sortable: true },
+        { key: "action", label: "open" }
+    ];
     var TRANSLATIONS = {
         en: {
             authors: "Authors",
             catalogError: "Unable to load the song catalog. Tried: {paths}.",
             catalogLoaded: "{count} songs loaded.",
             chords: "Chords",
+            chordpro: "ChordPro",
             downloadSelected: "Download selected",
             eyebrow: "Song library",
             formatChords: "PDF chords",
@@ -26,30 +39,39 @@ var selected_songs = [];
             lyrics: "Lyrics",
             name: "Name",
             noSelection: "Select at least one song to download.",
+            open: "Open",
             openMany: "Are you sure that you want to open {count} documents?",
+            openlp: "OpenLP",
             searchLabel: "Search songs",
             searchPlaceholder: "Search by song name...",
+            selectSong: "Select song",
+            selectVisible: "Select visible songs",
             selected: "selected",
             themes: "Themes"
         },
         es: {
             authors: "Autores",
-            catalogError: "No se pudo cargar el catálogo de canciones. Se intentó: {paths}.",
+            catalogError: "No se pudo cargar el catalogo de canciones. Se intento: {paths}.",
             catalogLoaded: "{count} canciones cargadas.",
             chords: "Acordes",
+            chordpro: "ChordPro",
             downloadSelected: "Descargar seleccionadas",
             eyebrow: "Biblioteca de canciones",
             formatChords: "PDF acordes",
             formatLyrics: "PDF letras",
             heroDescription: "Busca, selecciona y descarga canciones en el formato que tu equipo necesita.",
             key: "Tono",
-            loadingCatalog: "Cargando catálogo...",
+            loadingCatalog: "Cargando catalogo...",
             lyrics: "Letras",
             name: "Nombre",
-            noSelection: "Selecciona al menos una canción para descargar.",
-            openMany: "¿Seguro que quieres abrir {count} documentos?",
+            noSelection: "Selecciona al menos una cancion para descargar.",
+            open: "Abrir",
+            openMany: "Seguro que quieres abrir {count} documentos?",
+            openlp: "OpenLP",
             searchLabel: "Buscar canciones",
             searchPlaceholder: "Buscar por nombre...",
+            selectSong: "Seleccionar cancion",
+            selectVisible: "Seleccionar canciones visibles",
             selected: "seleccionadas",
             themes: "Temas"
         }
@@ -93,7 +115,7 @@ var selected_songs = [];
     }
 
     function translate(key) {
-        return (TRANSLATIONS[currentLanguage] && TRANSLATIONS[currentLanguage][key]) || TRANSLATIONS.en[key] || "";
+        return (TRANSLATIONS[currentLanguage] && TRANSLATIONS[currentLanguage][key]) || TRANSLATIONS.en[key] || key || "";
     }
 
     function interpolate(key, values) {
@@ -129,21 +151,34 @@ var selected_songs = [];
         status.textContent = interpolate(status.dataset.statusKey, values);
     }
 
-    function localizeTableHeaders() {
-        var headers = {
-            2: "name",
-            3: "key",
-            4: "themes",
-            5: "authors",
-            6: "chords",
-            7: "lyrics"
-        };
+    function getColumnLabel(key) {
+        return translate(key);
+    }
 
-        Object.keys(headers).forEach(function (column) {
-            Array.prototype.forEach.call(document.querySelectorAll("thead th:nth-child(" + column + ")"), function (header) {
-                var target = header.querySelector(".th-inner") || header;
-                target.textContent = translate(headers[column]);
+    function localizeTableHeaders() {
+        COLUMNS.forEach(function (column) {
+            Array.prototype.forEach.call(document.querySelectorAll("[data-column='" + column.key + "']"), function (header) {
+                var label = getColumnLabel(column.label);
+                var button = header.querySelector(".sort-button");
+                if (button) {
+                    button.textContent = label;
+                } else {
+                    header.textContent = label;
+                }
             });
+
+            Array.prototype.forEach.call(document.querySelectorAll("[data-label-key='" + column.label + "']"), function (cell) {
+                cell.setAttribute("data-label", getColumnLabel(column.label));
+            });
+        });
+
+        var selectAll = document.getElementById("selectAllSongs");
+        if (selectAll) {
+            selectAll.setAttribute("aria-label", translate("selectVisible"));
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll(".song-select"), function (checkbox) {
+            checkbox.setAttribute("aria-label", translate("selectSong"));
         });
     }
 
@@ -181,61 +216,50 @@ var selected_songs = [];
 
         refreshCatalogStatus();
         localizeTableHeaders();
-        window.setTimeout(localizeTableHeaders, 0);
+        renderSongs(catalogSongs);
     }
 
     function getTable() {
         return document.getElementById("myTable");
     }
 
-    function getRows() {
+    function getTableBody() {
         var table = getTable();
-        return table ? Array.prototype.slice.call(table.querySelectorAll("tbody tr")) : [];
+        return table ? table.querySelector("tbody") : null;
+    }
+
+    function getRows() {
+        var tableBody = getTableBody();
+        return tableBody ? Array.prototype.slice.call(tableBody.querySelectorAll("tr")) : [];
     }
 
     function normalizeText(value) {
         return (value || "").toString().trim().toUpperCase();
     }
 
-    function escapeHTML(value) {
-        return (value || "").toString().replace(/[&<>"']/g, function (character) {
-            return {
-                "&": "&amp;",
-                "<": "&lt;",
-                ">": "&gt;",
-                "\"": "&quot;",
-                "'": "&#39;"
-            }[character];
-        });
-    }
-
-    function escapeAttribute(value) {
-        return escapeHTML(value).replace(/`/g, "&#96;");
-    }
-
-    function getSongURLs(row) {
-        if (row && row.urls) {
-            return row.urls;
+    function normalizeURLPrefix(prefix) {
+        if (!prefix) {
+            return "";
         }
-
-        return DOWNLOAD_TYPES.reduce(function (urls, type) {
-            urls[type] = row && row[type] ? row[type] : "";
-            return urls;
-        }, {});
+        return prefix.slice(-1) === "/" ? prefix : prefix + "/";
     }
 
-    function getSongFromRow(row) {
-        var urls = getSongURLs(row);
-        return DOWNLOAD_TYPES.reduce(function (song, type) {
-            song[type] = urls[type] || "";
-            return song;
-        }, {});
+    function joinCatalogURL(path) {
+        if (!path) {
+            return "";
+        }
+        if (/^https?:\/\//i.test(path)) {
+            return path;
+        }
+        return catalogURLPrefix + path.replace(/^\/+/, "");
     }
 
-    function findSongIndex(song) {
-        return selected_songs.findIndex(function (selectedSong) {
-            return selectedSong.chords === song.chords;
-        });
+    function getSongFiles(song) {
+        return song && (song.files || song.urls) ? (song.files || song.urls) : {};
+    }
+
+    function getSongURL(song, type) {
+        return joinCatalogURL(getSongFiles(song)[type]);
     }
 
     function updateSelectionCount() {
@@ -245,24 +269,52 @@ var selected_songs = [];
         }
     }
 
-    function addSelectedSong(row) {
-        var song = getSongFromRow(row);
-        if (song.chords && findSongIndex(song) === -1) {
-            selected_songs.push(song);
-        }
-        updateSelectionCount();
-    }
+    function updateSelectAllState() {
+        var selectAll = document.getElementById("selectAllSongs");
+        var visibleRows = getRows().filter(function (row) {
+            return row.style.display !== "none";
+        });
+        var selectedRows = visibleRows.filter(function (row) {
+            return !!selectedSongIds[row.dataset.songId];
+        });
 
-    function removeSelectedSong(row) {
-        var song = getSongFromRow(row);
-        if (!song.chords) {
+        if (!selectAll) {
             return;
         }
 
+        selectAll.checked = visibleRows.length > 0 && selectedRows.length === visibleRows.length;
+        selectAll.indeterminate = selectedRows.length > 0 && selectedRows.length < visibleRows.length;
+    }
+
+    function addSelectedSong(song) {
+        if (!song || !song.id || selectedSongIds[song.id]) {
+            return;
+        }
+
+        selectedSongIds[song.id] = true;
+        selected_songs.push(song.id);
+        updateSelectionCount();
+    }
+
+    function removeSelectedSong(song) {
+        if (!song || !song.id || !selectedSongIds[song.id]) {
+            return;
+        }
+
+        selectedSongIds[song.id] = false;
         selected_songs = selected_songs.filter(function (selectedSong) {
-            return selectedSong.chords !== song.chords;
+            return selectedSong !== song.id;
         });
         updateSelectionCount();
+    }
+
+    function getSongById(songId) {
+        for (var i = 0; i < catalogSongs.length; i += 1) {
+            if (catalogSongs[i].id === songId) {
+                return catalogSongs[i];
+            }
+        }
+        return null;
     }
 
     function getDownloadType() {
@@ -281,56 +333,105 @@ var selected_songs = [];
         }).join("&");
     }
 
-    function makeLink(url, label, i18nKey) {
-        return [
-            "<a href=\"",
-            escapeAttribute(url),
-            "\" target=\"_blank\" rel=\"noopener\"",
-            i18nKey ? " data-i18n=\"" + escapeAttribute(i18nKey) + "\"" : "",
-            ">",
-            escapeHTML(label),
-            "</a>"
-        ].join("");
+    function createTextCell(value, labelKey) {
+        var cell = document.createElement("td");
+        cell.textContent = value || "";
+        cell.dataset.labelKey = labelKey;
+        cell.setAttribute("data-label", getColumnLabel(labelKey));
+        return cell;
     }
 
-    function songToRow(song) {
-        var urls = song.urls || {};
-        var themes = Array.isArray(song.themes) ? song.themes.join(", ") : "";
-        var authors = Array.isArray(song.authors) ? song.authors.join(", ") : "";
+    function createActionCell(labelKey) {
+        var cell = createTextCell("", labelKey);
+        var button = document.createElement("button");
 
-        return {
-            state: false,
-            id: song.id,
-            name: escapeHTML(song.name),
-            key: escapeHTML(song.key),
-            themes: escapeHTML(themes),
-            authors: escapeHTML(authors),
-            chords: makeLink(urls.chords, translate("chords"), "chords"),
-            lyrics: makeLink(urls.lyrics, translate("lyrics"), "lyrics"),
-            openlp: makeLink(urls.openlp, "OpenLP"),
-            chordpro: makeLink(urls.chordpro, "ChordPro"),
-            urls: urls
-        };
+        button.type = "button";
+        button.className = "song-action";
+        button.textContent = translate("open");
+
+        cell.appendChild(button);
+        return cell;
+    }
+
+    function createSelectCell(song) {
+        var cell = document.createElement("td");
+        var checkbox = document.createElement("input");
+
+        checkbox.type = "checkbox";
+        checkbox.className = "song-select";
+        checkbox.checked = !!selectedSongIds[song.id];
+        checkbox.setAttribute("aria-label", translate("selectSong"));
+
+        cell.className = "song-select-cell";
+        cell.appendChild(checkbox);
+        return cell;
+    }
+
+    function getSortableValue(song, key) {
+        if (key === "themes" || key === "authors") {
+            return normalizeText(Array.isArray(song[key]) ? song[key].join(", ") : "");
+        }
+        return normalizeText(song[key]);
+    }
+
+    function sortSongs(songs) {
+        var direction = sortState.direction === "desc" ? -1 : 1;
+
+        return songs.slice().sort(function (songA, songB) {
+            var valueA = getSortableValue(songA, sortState.key);
+            var valueB = getSortableValue(songB, sortState.key);
+
+            if (valueA < valueB) {
+                return -1 * direction;
+            }
+            if (valueA > valueB) {
+                return 1 * direction;
+            }
+            return normalizeText(songA.name) < normalizeText(songB.name) ? -1 : 1;
+        });
+    }
+
+    function getSongSearchText(song) {
+        return normalizeText([
+            song.name,
+            song.key,
+            Array.isArray(song.themes) ? song.themes.join(" ") : "",
+            Array.isArray(song.authors) ? song.authors.join(" ") : ""
+        ].join(" "));
+    }
+
+    function createSongRow(song) {
+        var row = document.createElement("tr");
+
+        row.dataset.songId = song.id;
+        row.dataset.searchText = getSongSearchText(song);
+        row.appendChild(createSelectCell(song));
+        row.appendChild(createTextCell(song.name, "name"));
+        row.appendChild(createTextCell(song.key, "key"));
+        row.appendChild(createTextCell(Array.isArray(song.themes) ? song.themes.join(", ") : "", "themes"));
+        row.appendChild(createTextCell(Array.isArray(song.authors) ? song.authors.join(", ") : "", "authors"));
+        row.appendChild(createActionCell("open"));
+
+        return row;
     }
 
     function renderSongs(songs) {
-        var $table = $("#myTable");
-        var rows = songs.map(songToRow);
+        var tableBody = getTableBody();
+        var fragment = document.createDocumentFragment();
 
-        selected_songs = [];
-        updateSelectionCount();
-
-        if (tableInitialized) {
-            $table.bootstrapTable("load", rows);
-        } else {
-            $table.bootstrapTable({
-                data: rows
-            });
-            tableInitialized = true;
+        if (!tableBody || !Array.isArray(songs) || songs.length === 0) {
+            return;
         }
 
-        applyLocalization(currentLanguage, false);
+        sortSongs(songs).forEach(function (song) {
+            fragment.appendChild(createSongRow(song));
+        });
+
+        tableBody.textContent = "";
+        tableBody.appendChild(fragment);
         myFunction();
+        updateSelectionCount();
+        updateSelectAllState();
     }
 
     function myFunction() {
@@ -338,12 +439,9 @@ var selected_songs = [];
         var filter = normalizeText(input ? input.value : "");
 
         getRows().forEach(function (row) {
-            if (!row.dataset.searchText) {
-                row.dataset.searchText = normalizeText(row.textContent);
-            }
-
             row.style.display = !filter || row.dataset.searchText.indexOf(filter) > -1 ? "" : "none";
         });
+        updateSelectAllState();
     }
 
     function fetchCatalog(urls) {
@@ -356,7 +454,7 @@ var selected_songs = [];
                 throw new Error("Catalog not found. Tried: " + failures.join(", "));
             }
 
-            return fetch(url, { cache: "no-cache" })
+            return fetch(url)
                 .then(function (response) {
                     if (!response.ok) {
                         throw new Error(url + " returned HTTP " + response.status);
@@ -378,6 +476,9 @@ var selected_songs = [];
         return fetchCatalog(CATALOG_URLS)
             .then(function (catalog) {
                 catalogSongs = Array.isArray(catalog.songs) ? catalog.songs : [];
+                catalogURLPrefix = normalizeURLPrefix(catalog.url_prefix || "");
+                selected_songs = [];
+                selectedSongIds = {};
                 renderSongs(catalogSongs);
                 setCatalogStatus("catalogLoaded", { count: catalogSongs.length });
             })
@@ -387,10 +488,56 @@ var selected_songs = [];
             });
     }
 
+    function toggleSongSelection(checkbox) {
+        var row = checkbox.closest("tr");
+        var song = row ? getSongById(row.dataset.songId) : null;
+
+        if (checkbox.checked) {
+            addSelectedSong(song);
+        } else {
+            removeSelectedSong(song);
+        }
+        updateSelectAllState();
+    }
+
+    function toggleVisibleSongs(checked) {
+        getRows().forEach(function (row) {
+            var song = getSongById(row.dataset.songId);
+            var checkbox = row.querySelector(".song-select");
+
+            if (row.style.display === "none" || !checkbox) {
+                return;
+            }
+
+            checkbox.checked = checked;
+            if (checked) {
+                addSelectedSong(song);
+            } else {
+                removeSelectedSong(song);
+            }
+        });
+        updateSelectAllState();
+    }
+
+    function setSort(columnKey) {
+        if (sortState.key === columnKey) {
+            sortState.direction = sortState.direction === "asc" ? "desc" : "asc";
+        } else {
+            sortState.key = columnKey;
+            sortState.direction = "asc";
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll("[aria-sort]"), function (header) {
+            header.setAttribute("aria-sort", header.dataset.column === sortState.key ? (sortState.direction === "asc" ? "ascending" : "descending") : "none");
+        });
+
+        renderSongs(catalogSongs);
+    }
+
     function download() {
         var downloadType = getDownloadType();
         var selectedURLs = selected_songs.map(function (song) {
-            return song[downloadType];
+            return getSongURL(getSongById(song), downloadType);
         }).filter(Boolean);
 
         if (!selectedURLs.length) {
@@ -410,36 +557,65 @@ var selected_songs = [];
         openURL(buildPDFJoinerURL(selectedURLs));
     }
 
+    function openSongAction(button) {
+        var row = button.closest("tr");
+        var song = row ? getSongById(row.dataset.songId) : null;
+        var url = song ? getSongURL(song, getDownloadType()) : "";
+
+        if (url) {
+            openURL(url);
+        }
+    }
+
+    function bindEvents() {
+        var table = getTable();
+        var selectAll = document.getElementById("selectAllSongs");
+        var searchInput = document.getElementById("myInput");
+
+        if (table) {
+            table.addEventListener("change", function (event) {
+                if (event.target.classList.contains("song-select")) {
+                    toggleSongSelection(event.target);
+                }
+            });
+
+            table.addEventListener("click", function (event) {
+                var sortButton = event.target.closest(".sort-button");
+                var actionButton = event.target.closest(".song-action");
+                if (sortButton) {
+                    setSort(sortButton.dataset.sort);
+                    return;
+                }
+                if (actionButton) {
+                    openSongAction(actionButton);
+                }
+            });
+        }
+
+        if (selectAll) {
+            selectAll.addEventListener("change", function () {
+                toggleVisibleSongs(selectAll.checked);
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener("input", myFunction);
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll("[data-language]"), function (button) {
+            button.addEventListener("click", function () {
+                applyLocalization(this.getAttribute("data-language"), true);
+            });
+        });
+    }
+
     window.setLanguage = applyLocalization;
     window.myFunction = myFunction;
     window.download = download;
 
-    $(function () {
-        var $table = $("#myTable");
-
+    document.addEventListener("DOMContentLoaded", function () {
+        bindEvents();
         applyLocalization(getInitialLanguage(), false);
-
-        $table.on("check.bs.table", function (event, row) {
-            addSelectedSong(row);
-        });
-
-        $table.on("uncheck.bs.table", function (event, row) {
-            removeSelectedSong(row);
-        });
-
-        $table.on("check-all.bs.table", function (event, rows) {
-            rows.forEach(addSelectedSong);
-        });
-
-        $table.on("uncheck-all.bs.table", function (event, rows) {
-            rows.forEach(removeSelectedSong);
-        });
-
-        $("#myInput").on("input", myFunction);
-        $("[data-language]").on("click", function () {
-            applyLocalization(this.getAttribute("data-language"), true);
-        });
-
         loadCatalog();
         updateSelectionCount();
     });

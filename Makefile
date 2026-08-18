@@ -2,6 +2,7 @@ SHELL := /bin/sh
 
 CONTAINER_RUNTIME ?= $(shell if command -v docker >/dev/null 2>&1; then echo docker; elif command -v podman >/dev/null 2>&1; then echo podman; fi)
 GO_IMAGE ?= golang:latest
+NODE_IMAGE ?= node:latest
 WORKDIR ?= /workspace
 AWS_DIR ?= $(HOME)/.aws
 CONTAINER_HOME ?= /tmp/chordiebook-home
@@ -16,6 +17,7 @@ CONCURRENCY ?= 12
 SERVE_PORT ?= 10000
 GO_CACHE_DIR ?= $(HOME)/.cache/chordiebook-ui/go-build
 GO_MOD_CACHE_DIR ?= $(HOME)/.cache/chordiebook-ui/go-mod
+NPM_CACHE_DIR ?= $(HOME)/.cache/chordiebook-ui/npm
 
 AWS_ENV := \
 	-e HOME=$(CONTAINER_HOME) \
@@ -31,9 +33,10 @@ AWS_ENV := \
 
 AWS_MOUNT := $(if $(wildcard $(AWS_DIR)),-v "$(AWS_DIR):$(CONTAINER_HOME)/.aws:ro",)
 GO_CACHE_MOUNTS := -v "$(GO_CACHE_DIR):/tmp/chordiebook-go-cache" -v "$(GO_MOD_CACHE_DIR):/tmp/chordiebook-go-mod-cache"
+NPM_CACHE_MOUNT := -v "$(NPM_CACHE_DIR):/tmp/chordiebook-npm-cache"
 CONTAINER_FLAGS := --rm --user "$(CONTAINER_USER)"
 
-.PHONY: help check-runtime check-vars prepare-cache catalog index generate-index generate-catalog go-test serve container-shell
+.PHONY: help check-runtime check-vars prepare-cache minify-assets catalog index generate-index generate-catalog go-test serve container-shell
 
 help:
 	@printf '%s\n' 'ChordieBook UI automation'
@@ -51,11 +54,13 @@ help:
 	@printf '  %-18s %s\n' 'CONCURRENCY' 'Parallel S3 XML downloads. Default: $(CONCURRENCY).'
 	@printf '  %-18s %s\n' 'SERVE_PORT' 'Local static server port. Default: $(SERVE_PORT).'
 	@printf '  %-18s %s\n' 'GO_IMAGE' 'Go container image. Default: $(GO_IMAGE).'
+	@printf '  %-18s %s\n' 'NODE_IMAGE' 'Node container image used for JS/CSS minification. Default: $(NODE_IMAGE).'
 	@printf '  %-18s %s\n' 'CONTAINER_RUNTIME' 'Container runtime. Auto-detects docker, then podman.'
 	@printf '  %-18s %s\n' 'CONTAINER_USER' 'UID:GID used inside the container. Default: current host user.'
 	@printf '  %-18s %s\n' 'AWS_DIR' 'AWS config/credentials directory to mount read-only. Default: $(AWS_DIR).'
 	@printf '  %-18s %s\n' 'GO_CACHE_DIR' 'Host Go build cache mounted into the container.'
 	@printf '  %-18s %s\n' 'GO_MOD_CACHE_DIR' 'Host Go module cache mounted into the container.'
+	@printf '  %-18s %s\n' 'NPM_CACHE_DIR' 'Host npm cache mounted into the minifier container.'
 	@printf '\n%s\n' 'Examples:'
 	@printf '  %s\n' 'make catalog AWS_PROFILE=default AWS_REGION=us-west-1'
 	@printf '  %s\n' 'make catalog CONCURRENCY=24'
@@ -89,9 +94,19 @@ check-vars:
 	esac
 
 prepare-cache:
-	@mkdir -p "$(GO_CACHE_DIR)" "$(GO_MOD_CACHE_DIR)"
+	@mkdir -p "$(GO_CACHE_DIR)" "$(GO_MOD_CACHE_DIR)" "$(NPM_CACHE_DIR)"
 
-catalog index generate-index generate-catalog: check-runtime check-vars prepare-cache
+minify-assets: check-runtime prepare-cache
+	$(CONTAINER_RUNTIME) run $(CONTAINER_FLAGS) \
+		-v "$(CURDIR):$(WORKDIR)" \
+		$(NPM_CACHE_MOUNT) \
+		-w "$(WORKDIR)" \
+		-e HOME=$(CONTAINER_HOME) \
+		-e npm_config_cache=/tmp/chordiebook-npm-cache \
+		"$(NODE_IMAGE)" \
+		sh -c 'npx --yes esbuild@latest js/script.js --bundle=false --minify --target=es2017 --outfile=js/script.min.js && npx --yes esbuild@latest css/style.css --bundle=false --minify --outfile=css/style.min.css'
+
+catalog index generate-index generate-catalog: check-runtime check-vars prepare-cache minify-assets
 	$(CONTAINER_RUNTIME) run $(CONTAINER_FLAGS) \
 		-v "$(CURDIR):$(WORKDIR)" \
 		$(AWS_MOUNT) \
@@ -99,7 +114,7 @@ catalog index generate-index generate-catalog: check-runtime check-vars prepare-
 		-w "$(WORKDIR)" \
 		$(AWS_ENV) \
 		"$(GO_IMAGE)" \
-		go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)"
+		go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)" -compact-json -css-path css/style.min.css -js-path js/script.min.js
 
 go-test: check-runtime prepare-cache
 	$(CONTAINER_RUNTIME) run $(CONTAINER_FLAGS) \
