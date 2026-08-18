@@ -173,6 +173,10 @@ body {
     font-weight: 700;
 }
 
+.mobile-sort-controls {
+    display: none;
+}
+
 #myInput {
     width: 100%;
     min-height: 46px;
@@ -294,6 +298,49 @@ body {
 .download-button:hover {
     background: #9f6318;
     border-color: #9f6318;
+}
+
+.mobile-sort-controls label {
+    display: block;
+    margin-bottom: 6px;
+    color: #3b4658;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.mobile-sort-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 72px;
+    gap: 8px;
+}
+
+.mobile-sort-select,
+.mobile-sort-direction {
+    min-height: 40px;
+    color: var(--ink);
+    font: inherit;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.mobile-sort-select {
+    width: 100%;
+    padding: 8px 36px 8px 12px;
+}
+
+.mobile-sort-direction {
+    padding: 8px 10px;
+    color: #fff;
+    font-weight: 750;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.mobile-sort-select:focus,
+.mobile-sort-direction:focus {
+    outline: 3px solid rgba(15, 118, 110, 0.2);
+    outline-offset: 2px;
 }
 
 .table-shell {
@@ -437,6 +484,10 @@ th[aria-sort="descending"] .sort-button::after {
 }
 
 @media (max-width: 760px) {
+    .mobile-sort-controls {
+        display: block;
+    }
+
     .table-shell {
         overflow-x: visible;
     }

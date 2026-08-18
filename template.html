@@ -33,6 +33,18 @@
             <input type="search" id="myInput" class="form-control" placeholder="Search by song name..." data-i18n-placeholder="searchPlaceholder">
             <div id="catalogStatus" class="catalog-status" data-i18n="loadingCatalog">Loading catalog...</div>
           </div>
+          <div class="mobile-sort-controls" aria-label="Sort songs">
+            <label for="mobileSortColumn" data-i18n="sortBy">Sort by</label>
+            <div class="mobile-sort-row">
+              <select id="mobileSortColumn" class="mobile-sort-select">
+                <option value="name" data-i18n="name">Name</option>
+                <option value="key" data-i18n="key">Key</option>
+                <option value="themes" data-i18n="themes">Themes</option>
+                <option value="authors" data-i18n="authors">Authors</option>
+              </select>
+              <button type="button" id="mobileSortDirection" class="mobile-sort-direction" data-i18n="sortAscending" aria-label="Sort direction">Asc</button>
+            </div>
+          </div>
           <div class="download-area">
             <div class="btn-group download-options" id="downloadType" role="group" aria-label="Download format">
 	    <input type="radio" class="btn-check" name="btnradio"

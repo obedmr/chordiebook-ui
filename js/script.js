@@ -47,6 +47,10 @@ var selected_songs = [];
             selectSong: "Select song",
             selectVisible: "Select visible songs",
             selected: "selected",
+            sortAscending: "Asc",
+            sortBy: "Sort by",
+            sortDescending: "Desc",
+            sortDirection: "Sort direction",
             themes: "Themes"
         },
         es: {
@@ -73,6 +77,10 @@ var selected_songs = [];
             selectSong: "Seleccionar cancion",
             selectVisible: "Seleccionar canciones visibles",
             selected: "seleccionadas",
+            sortAscending: "Asc",
+            sortBy: "Ordenar por",
+            sortDescending: "Desc",
+            sortDirection: "Direccion de ordenamiento",
             themes: "Temas"
         }
     };
@@ -216,6 +224,7 @@ var selected_songs = [];
 
         refreshCatalogStatus();
         localizeTableHeaders();
+        updateSortControls();
         renderSongs(catalogSongs);
     }
 
@@ -526,18 +535,37 @@ var selected_songs = [];
         updateSelectAllState();
     }
 
-    function setSort(columnKey) {
-        if (sortState.key === columnKey) {
+    function updateSortControls() {
+        var sortColumn = document.getElementById("mobileSortColumn");
+        var sortDirection = document.getElementById("mobileSortDirection");
+
+        Array.prototype.forEach.call(document.querySelectorAll("[aria-sort]"), function (header) {
+            header.setAttribute("aria-sort", header.dataset.column === sortState.key ? (sortState.direction === "asc" ? "ascending" : "descending") : "none");
+        });
+
+        if (sortColumn) {
+            sortColumn.value = sortState.key;
+        }
+
+        if (sortDirection) {
+            sortDirection.textContent = translate(sortState.direction === "asc" ? "sortAscending" : "sortDescending");
+            sortDirection.dataset.direction = sortState.direction;
+            sortDirection.setAttribute("aria-label", translate("sortDirection"));
+        }
+    }
+
+    function setSort(columnKey, direction) {
+        if (direction) {
+            sortState.key = columnKey;
+            sortState.direction = direction === "desc" ? "desc" : "asc";
+        } else if (sortState.key === columnKey) {
             sortState.direction = sortState.direction === "asc" ? "desc" : "asc";
         } else {
             sortState.key = columnKey;
             sortState.direction = "asc";
         }
 
-        Array.prototype.forEach.call(document.querySelectorAll("[aria-sort]"), function (header) {
-            header.setAttribute("aria-sort", header.dataset.column === sortState.key ? (sortState.direction === "asc" ? "ascending" : "descending") : "none");
-        });
-
+        updateSortControls();
         renderSongs(catalogSongs);
     }
 
@@ -578,6 +606,8 @@ var selected_songs = [];
         var table = getTable();
         var selectAll = document.getElementById("selectAllSongs");
         var searchInput = document.getElementById("myInput");
+        var mobileSortColumn = document.getElementById("mobileSortColumn");
+        var mobileSortDirection = document.getElementById("mobileSortDirection");
 
         if (table) {
             table.addEventListener("change", function (event) {
@@ -607,6 +637,18 @@ var selected_songs = [];
 
         if (searchInput) {
             searchInput.addEventListener("input", myFunction);
+        }
+
+        if (mobileSortColumn) {
+            mobileSortColumn.addEventListener("change", function () {
+                setSort(mobileSortColumn.value, "asc");
+            });
+        }
+
+        if (mobileSortDirection) {
+            mobileSortDirection.addEventListener("click", function () {
+                setSort(sortState.key, sortState.direction === "asc" ? "desc" : "asc");
+            });
         }
 
         Array.prototype.forEach.call(document.querySelectorAll("[data-language]"), function (button) {
