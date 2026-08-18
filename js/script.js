@@ -10,9 +10,11 @@ var selected_songs = [];
     var currentLanguage = "en";
     var catalogSongs = [];
     var catalogURLPrefix = "";
+    var downloadCatalogPromise = null;
     var selectedSongIds = {};
     var downloadReviewIds = [];
     var downloadReviewDrag = null;
+    var isPreparingDownload = false;
     var sortState = {
         key: "name",
         direction: "asc"
@@ -38,6 +40,7 @@ var selected_songs = [];
             downloadReviewEmpty: "No songs selected for download.",
             downloadReviewEyebrow: "Review download",
             downloadReviewTitle: "Selected songs",
+            downloadZipName: "chordiebook-{type}.zip",
             eyebrow: "Song library",
             formatChords: "PDF chords",
             formatLyrics: "PDF lyrics",
@@ -60,7 +63,10 @@ var selected_songs = [];
             sortBy: "Sort by",
             sortDescending: "Desc",
             sortDirection: "Sort direction",
-            themes: "Themes"
+            themes: "Themes",
+            zipError: "Unable to create the ZIP file. Please try again.",
+            zipMissing: "ZIP support is not available in this browser.",
+            zipProgress: "Preparing ZIP... {done}/{total}"
         },
         es: {
             authors: "Autores",
@@ -75,6 +81,7 @@ var selected_songs = [];
             downloadReviewEmpty: "No hay canciones seleccionadas para descargar.",
             downloadReviewEyebrow: "Revisar descarga",
             downloadReviewTitle: "Canciones seleccionadas",
+            downloadZipName: "chordiebook-{type}.zip",
             eyebrow: "Biblioteca de canciones",
             formatChords: "PDF acordes",
             formatLyrics: "PDF letras",
@@ -97,7 +104,10 @@ var selected_songs = [];
             sortBy: "Ordenar por",
             sortDescending: "Desc",
             sortDirection: "Direccion de ordenamiento",
-            themes: "Temas"
+            themes: "Temas",
+            zipError: "No se pudo crear el archivo ZIP. Intenta de nuevo.",
+            zipMissing: "El navegador no tiene soporte para crear ZIP.",
+            zipProgress: "Preparando ZIP... {done}/{total}"
         }
     };
 
@@ -383,13 +393,172 @@ var selected_songs = [];
         }).join("&");
     }
 
+    function downloadBlob(blob, filename) {
+        var link = document.createElement("a");
+        var objectURL = URL.createObjectURL(blob);
+
+        link.href = objectURL;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(function () {
+            URL.revokeObjectURL(objectURL);
+        }, 1000);
+    }
+
+    function getURLFileName(url, fallback) {
+        var pathname;
+        try {
+            pathname = new URL(url, window.location.href).pathname;
+        } catch (error) {
+            pathname = url || "";
+        }
+
+        return decodeURIComponent((pathname.split("/").pop() || fallback || "song").replace(/[?#].*$/, ""));
+    }
+
+    function getUniqueFileName(filename, usedNames) {
+        var safeName = (filename || "song").replace(/[\\/:*?"<>|]+/g, "-");
+        var dotIndex = safeName.lastIndexOf(".");
+        var base = dotIndex > 0 ? safeName.slice(0, dotIndex) : safeName;
+        var extension = dotIndex > 0 ? safeName.slice(dotIndex) : "";
+        var candidate = safeName;
+        var index = 2;
+
+        while (usedNames[candidate]) {
+            candidate = base + "-" + index + extension;
+            index += 1;
+        }
+
+        usedNames[candidate] = true;
+        return candidate;
+    }
+
+    function setDownloadReviewStatus(key, values, isError) {
+        var status = document.getElementById("downloadReviewStatus");
+        if (!status) {
+            return;
+        }
+
+        if (!key) {
+            status.hidden = true;
+            status.textContent = "";
+            status.classList.remove("is-error");
+            return;
+        }
+
+        status.hidden = false;
+        status.textContent = interpolate(key, values || {});
+        status.classList.toggle("is-error", !!isError);
+    }
+
+    function setDownloadReviewBusy(isBusy) {
+        var confirm = document.getElementById("confirmDownloadReview");
+        var cancel = document.getElementById("cancelDownloadReview");
+        var close = document.getElementById("closeDownloadReview");
+
+        isPreparingDownload = !!isBusy;
+        if (confirm) {
+            confirm.disabled = isPreparingDownload || downloadReviewIds.length === 0;
+        }
+        if (cancel) {
+            cancel.disabled = isPreparingDownload;
+        }
+        if (close) {
+            close.disabled = isPreparingDownload;
+        }
+    }
+
+    function shouldZipDownload(downloadType, songIds) {
+        return songIds.length > 1 && (downloadType === "openlp" || downloadType === "chordpro");
+    }
+
+    function getDownloadCatalogPath() {
+        var app = document.querySelector(".app-main");
+        return app && app.dataset.downloadCatalog ? app.dataset.downloadCatalog : "data/downloads.json";
+    }
+
+    function loadDownloadCatalog() {
+        if (!downloadCatalogPromise) {
+            downloadCatalogPromise = fetch(getDownloadCatalogPath())
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error(getDownloadCatalogPath() + " returned HTTP " + response.status);
+                    }
+                    return response.json();
+                });
+        }
+        return downloadCatalogPromise;
+    }
+
+    function createZipFromDownloadCatalog(downloadCatalog, songIds, downloadType) {
+        var zip;
+        var usedNames = {};
+        var completed = 0;
+        var files = downloadCatalog && downloadCatalog.files ? downloadCatalog.files : {};
+
+        if (!window.JSZip) {
+            return Promise.reject(new Error(translate("zipMissing")));
+        }
+
+        zip = new window.JSZip();
+        setDownloadReviewStatus("zipProgress", { done: completed, total: songIds.length });
+
+        songIds.forEach(function (songId) {
+            var song = getSongById(songId);
+            var url = getSongURL(song, downloadType);
+            var content = files[songId] ? files[songId][downloadType] : "";
+            var filename = getUniqueFileName(getURLFileName(url, song ? song.name : "song"), usedNames);
+
+            if (!content) {
+                throw new Error("missing download content for " + songId);
+            }
+
+            zip.file(filename, content);
+            completed += 1;
+            setDownloadReviewStatus("zipProgress", { done: completed, total: songIds.length });
+        });
+
+        return zip.generateAsync({
+            type: "blob",
+            compression: "DEFLATE",
+            compressionOptions: { level: 6 }
+        }).then(function (blob) {
+            downloadBlob(blob, interpolate("downloadZipName", { type: downloadType }));
+        });
+    }
+
+    function createZipDownload(songIds, downloadType) {
+        return loadDownloadCatalog().then(function (downloadCatalog) {
+            return createZipFromDownloadCatalog(downloadCatalog, songIds, downloadType);
+        });
+    }
+
     function runDownload(songIds, downloadType) {
-        var selectedURLs = songIds.map(function (songId) {
+        var downloadableSongIds = songIds.filter(function (songId) {
+            return !!getSongURL(getSongById(songId), downloadType);
+        });
+        var selectedURLs = downloadableSongIds.map(function (songId) {
             return getSongURL(getSongById(songId), downloadType);
-        }).filter(Boolean);
+        });
 
         if (!selectedURLs.length) {
             window.alert(translate("noSelection"));
+            return;
+        }
+
+        if (shouldZipDownload(downloadType, downloadableSongIds)) {
+            setDownloadReviewBusy(true);
+            createZipDownload(downloadableSongIds, downloadType)
+                .then(function () {
+                    closeDownloadReview(true);
+                })
+                .catch(function (error) {
+                    window.console.error("Unable to create ZIP", error);
+                    setDownloadReviewStatus(error && error.message === translate("zipMissing") ? "zipMissing" : "zipError", {}, true);
+                    setDownloadReviewBusy(false);
+                });
             return;
         }
 
@@ -628,12 +797,17 @@ var selected_songs = [];
         renderSongs(catalogSongs);
     }
 
-    function closeDownloadReview() {
+    function closeDownloadReview(force) {
         var modal = document.getElementById("downloadReviewModal");
+        if (isPreparingDownload && !force) {
+            return;
+        }
         if (modal) {
             modal.hidden = true;
         }
+        isPreparingDownload = false;
         downloadReviewIds = [];
+        setDownloadReviewStatus("");
     }
 
     function createRemoveReviewButton() {
@@ -696,7 +870,7 @@ var selected_songs = [];
         }
 
         if (confirm) {
-            confirm.disabled = downloadReviewIds.length === 0;
+            confirm.disabled = isPreparingDownload || downloadReviewIds.length === 0;
         }
     }
 
@@ -711,6 +885,8 @@ var selected_songs = [];
 
         downloadReviewIds = songIds.slice();
         modal.dataset.downloadType = downloadType;
+        setDownloadReviewStatus("");
+        setDownloadReviewBusy(false);
         renderDownloadReview();
         modal.hidden = false;
 
@@ -733,6 +909,10 @@ var selected_songs = [];
     function removeDownloadReviewSong(songId) {
         var song = getSongById(songId);
 
+        if (isPreparingDownload) {
+            return;
+        }
+
         removeSelectedSong(song);
         syncSongCheckbox(songId, false);
         downloadReviewIds = downloadReviewIds.filter(function (reviewSongId) {
@@ -743,6 +923,10 @@ var selected_songs = [];
     }
 
     function startDownloadReviewDrag(item, pointerId) {
+        if (isPreparingDownload) {
+            return;
+        }
+
         downloadReviewDrag = {
             item: item,
             pointerId: pointerId
@@ -919,11 +1103,15 @@ var selected_songs = [];
         }
 
         if (closeReview) {
-            closeReview.addEventListener("click", closeDownloadReview);
+            closeReview.addEventListener("click", function () {
+                closeDownloadReview();
+            });
         }
 
         if (cancelReview) {
-            cancelReview.addEventListener("click", closeDownloadReview);
+            cancelReview.addEventListener("click", function () {
+                closeDownloadReview();
+            });
         }
 
         if (confirmReview) {
@@ -932,7 +1120,9 @@ var selected_songs = [];
                 var songIds = downloadReviewIds.slice();
 
                 selected_songs = songIds.slice();
-                closeDownloadReview();
+                if (!shouldZipDownload(downloadType, songIds)) {
+                    closeDownloadReview();
+                }
                 runDownload(songIds, downloadType);
             });
         }

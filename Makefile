@@ -121,11 +121,11 @@ catalog index generate-index generate-catalog: check-runtime check-vars prepare-
 		-w "$(WORKDIR)" \
 		$(AWS_ENV) \
 		"$(GO_IMAGE)" \
-		go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)" -compact-json -css-path css/style.min.css -js-path js/script.min.js
+		go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)" -compact-json -css-path css/style.min.css -js-path js/script.min.js -download-data-output data/downloads.json -download-data-path data/downloads.json
 
 # Kept for another repository pipeline that provides host Go and Node.
 ci-index: check-vars minify-assets-local
-	go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)" -compact-json -css-path css/style.min.css -js-path js/script.min.js
+	go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)" -compact-json -css-path css/style.min.css -js-path js/script.min.js -download-data-output data/downloads.json -download-data-path data/downloads.json
 
 go-test: check-runtime prepare-cache
 	$(CONTAINER_RUNTIME) run $(CONTAINER_FLAGS) \

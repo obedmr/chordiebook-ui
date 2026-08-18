@@ -27,30 +27,34 @@ import (
 )
 
 const (
-	chordsPath  = "pdf-chords/"
-	lyricsPath  = "pdf-lyrics/"
-	openLPPath  = "openlp/"
-	defaultOut  = "data/data.json"
-	defaultHTML = "index.html"
+	chordsPath        = "pdf-chords/"
+	lyricsPath        = "pdf-lyrics/"
+	openLPPath        = "openlp/"
+	defaultOut        = "data/data.json"
+	defaultHTML       = "index.html"
+	getObjectAttempts = 3
 )
 
 type Config struct {
-	Bucket      string
-	URLPrefix   string
-	Output      string
-	Template    string
-	IndexOutput string
-	CSSPath     string
-	JSPath      string
-	Concurrency int
-	LogLevel    string
-	CompactJSON bool
+	Bucket             string
+	URLPrefix          string
+	Output             string
+	DownloadDataOutput string
+	Template           string
+	IndexOutput        string
+	DownloadDataPath   string
+	CSSPath            string
+	JSPath             string
+	Concurrency        int
+	LogLevel           string
+	CompactJSON        bool
 }
 
 type IndexData struct {
-	CatalogPath string
-	CSSPath     string
-	JSPath      string
+	CatalogPath      string
+	DownloadDataPath string
+	CSSPath          string
+	JSPath           string
 }
 
 type Catalog struct {
@@ -76,6 +80,16 @@ type SongFiles struct {
 	ChordPro string `json:"chordpro"`
 }
 
+type DownloadCatalog struct {
+	GeneratedAt time.Time                  `json:"generated_at"`
+	Files       map[string]DownloadContent `json:"files"`
+}
+
+type DownloadContent struct {
+	OpenLP   string `json:"openlp,omitempty"`
+	ChordPro string `json:"chordpro,omitempty"`
+}
+
 type SongMetadata struct {
 	XMLName xml.Name `xml:"song"`
 	Key     string   `xml:"properties>key"`
@@ -87,6 +101,12 @@ type songResult struct {
 	Song Song
 	Key  string
 	Err  error
+}
+
+type downloadResult struct {
+	SongID  string
+	Content DownloadContent
+	Err     error
 }
 
 type Summary struct {
@@ -174,16 +194,32 @@ func main() {
 	}
 	logger.Info("wrote catalog", "path", cfg.Output, "songs", len(songs))
 
+	downloadCatalog, downloadFailures := fetchDownloadCatalog(ctx, logger, svc, cfg, songs, generatedAt)
+	if len(downloadFailures) > 0 {
+		logger.Error("download catalog generation failed; output files were not updated",
+			"failed", len(downloadFailures),
+		)
+		os.Exit(1)
+	}
+
+	if err := writeDownloadCatalog(cfg.DownloadDataOutput, downloadCatalog, cfg.CompactJSON); err != nil {
+		logger.Error("failed to write download catalog", "path", cfg.DownloadDataOutput, "error", err)
+		os.Exit(1)
+	}
+	logger.Info("wrote download catalog", "path", cfg.DownloadDataOutput, "songs", len(downloadCatalog.Files))
+
 	if err := renderIndex(cfg.Template, cfg.IndexOutput, IndexData{
-		CatalogPath: cfg.Output,
-		CSSPath:     cfg.CSSPath,
-		JSPath:      cfg.JSPath,
+		CatalogPath:      cfg.Output,
+		DownloadDataPath: cfg.DownloadDataPath,
+		CSSPath:          cfg.CSSPath,
+		JSPath:           cfg.JSPath,
 	}); err != nil {
 		logger.Error("failed to render index", "template", cfg.Template, "output", cfg.IndexOutput, "error", err)
 		os.Exit(1)
 	}
 	logger.Info("rendered static index", "path", cfg.IndexOutput)
 
+	summary.Duration = time.Since(startedAt)
 	logger.Info("summary",
 		"total", summary.Total,
 		"added", summary.Added,
@@ -200,8 +236,10 @@ func parseConfig() Config {
 	flag.StringVar(&cfg.Bucket, "bucket", "chordiebook", "S3 bucket that contains the song files")
 	flag.StringVar(&cfg.URLPrefix, "url-prefix", "https://chordiebook.s3-us-west-1.amazonaws.com/", "public URL prefix for generated song links")
 	flag.StringVar(&cfg.Output, "output", defaultOut, "JSON catalog output path")
+	flag.StringVar(&cfg.DownloadDataOutput, "download-data-output", "data/downloads.json", "download JSON output path for client-side ZIP creation")
 	flag.StringVar(&cfg.Template, "template", "template.html", "static HTML template path")
 	flag.StringVar(&cfg.IndexOutput, "index-output", defaultHTML, "rendered static index output path")
+	flag.StringVar(&cfg.DownloadDataPath, "download-data-path", "data/downloads.json", "download JSON path referenced by the rendered index")
 	flag.StringVar(&cfg.CSSPath, "css-path", "css/style.css", "CSS path referenced by the rendered index")
 	flag.StringVar(&cfg.JSPath, "js-path", "js/script.js", "JavaScript path referenced by the rendered index")
 	flag.IntVar(&cfg.Concurrency, "concurrency", 12, "number of parallel S3 metadata downloads")
@@ -322,6 +360,73 @@ func fetchSongs(ctx context.Context, logger *slog.Logger, svc *s3.S3, cfg Config
 	return songs, failures
 }
 
+func fetchDownloadCatalog(ctx context.Context, logger *slog.Logger, svc *s3.S3, cfg Config, songs []Song, generatedAt time.Time) (DownloadCatalog, []downloadResult) {
+	jobs := make(chan Song)
+	results := make(chan downloadResult)
+	var wg sync.WaitGroup
+
+	workers := cfg.Concurrency
+	if workers > len(songs) && len(songs) > 0 {
+		workers = len(songs)
+	}
+
+	for i := 0; i < workers; i++ {
+		wg.Add(1)
+		go func(workerID int) {
+			defer wg.Done()
+			for song := range jobs {
+				content, err := getDownloadContent(ctx, svc, cfg.Bucket, song)
+				results <- downloadResult{SongID: song.ID, Content: content, Err: err}
+				if err == nil {
+					logger.Debug("prepared download content", "worker", workerID, "id", song.ID)
+				}
+			}
+		}(i + 1)
+	}
+
+	go func() {
+		for _, song := range songs {
+			jobs <- song
+		}
+		close(jobs)
+		wg.Wait()
+		close(results)
+	}()
+
+	catalog := DownloadCatalog{
+		GeneratedAt: generatedAt,
+		Files:       map[string]DownloadContent{},
+	}
+	var failures []downloadResult
+	for result := range results {
+		if result.Err != nil {
+			logger.Warn("failed to prepare download content", "id", result.SongID, "error", result.Err)
+			failures = append(failures, result)
+			continue
+		}
+		catalog.Files[result.SongID] = result.Content
+	}
+
+	return catalog, failures
+}
+
+func getDownloadContent(ctx context.Context, svc *s3.S3, bucket string, song Song) (DownloadContent, error) {
+	openLP, err := getObjectText(ctx, svc, bucket, song.Files.OpenLP)
+	if err != nil {
+		return DownloadContent{}, err
+	}
+
+	chordPro, err := getObjectText(ctx, svc, bucket, song.Files.ChordPro)
+	if err != nil {
+		return DownloadContent{}, err
+	}
+
+	return DownloadContent{
+		OpenLP:   openLP,
+		ChordPro: chordPro,
+	}, nil
+}
+
 func buildSong(ctx context.Context, svc *s3.S3, bucket, key string) (Song, error) {
 	metadata, err := getSongMetadata(ctx, svc, bucket, key)
 	if err != nil {
@@ -345,16 +450,7 @@ func buildSong(ctx context.Context, svc *s3.S3, bucket, key string) (Song, error
 }
 
 func getSongMetadata(ctx context.Context, svc *s3.S3, bucket, key string) (SongMetadata, error) {
-	rawObject, err := svc.GetObjectWithContext(ctx, &s3.GetObjectInput{
-		Bucket: aws.String(bucket),
-		Key:    aws.String(key),
-	})
-	if err != nil {
-		return SongMetadata{}, err
-	}
-	defer rawObject.Body.Close()
-
-	body, err := io.ReadAll(rawObject.Body)
+	body, err := getObjectBytes(ctx, svc, bucket, key)
 	if err != nil {
 		return SongMetadata{}, err
 	}
@@ -365,6 +461,49 @@ func getSongMetadata(ctx context.Context, svc *s3.S3, bucket, key string) (SongM
 	}
 
 	return metadata, nil
+}
+
+func getObjectText(ctx context.Context, svc *s3.S3, bucket, key string) (string, error) {
+	body, err := getObjectBytes(ctx, svc, bucket, key)
+	if err != nil {
+		return "", err
+	}
+	return string(body), nil
+}
+
+func getObjectBytes(ctx context.Context, svc *s3.S3, bucket, key string) ([]byte, error) {
+	var lastErr error
+
+	for attempt := 1; attempt <= getObjectAttempts; attempt++ {
+		rawObject, err := svc.GetObjectWithContext(ctx, &s3.GetObjectInput{
+			Bucket: aws.String(bucket),
+			Key:    aws.String(key),
+		})
+		if err == nil {
+			body, readErr := io.ReadAll(rawObject.Body)
+			closeErr := rawObject.Body.Close()
+			if readErr == nil && closeErr == nil {
+				return body, nil
+			}
+			if readErr != nil {
+				lastErr = readErr
+			} else {
+				lastErr = closeErr
+			}
+		} else {
+			lastErr = err
+		}
+
+		if attempt < getObjectAttempts {
+			select {
+			case <-ctx.Done():
+				return nil, ctx.Err()
+			case <-time.After(time.Duration(attempt) * 200 * time.Millisecond):
+			}
+		}
+	}
+
+	return nil, lastErr
 }
 
 func songIDFromKey(key string) string {
@@ -424,6 +563,28 @@ func readCatalog(path string) (Catalog, error) {
 }
 
 func writeCatalog(path string, catalog Catalog, compact bool) error {
+	if err := os.MkdirAll(filepathDir(path), 0o755); err != nil {
+		return err
+	}
+
+	var (
+		payload []byte
+		err     error
+	)
+	if compact {
+		payload, err = json.Marshal(catalog)
+	} else {
+		payload, err = json.MarshalIndent(catalog, "", "  ")
+	}
+	if err != nil {
+		return err
+	}
+	payload = append(payload, '\n')
+
+	return os.WriteFile(path, payload, 0o644)
+}
+
+func writeDownloadCatalog(path string, catalog DownloadCatalog, compact bool) error {
 	if err := os.MkdirAll(filepathDir(path), 0o755); err != nil {
 		return err
 	}

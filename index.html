@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
-    <main role="main" class="container-fluid app-main">
+    <main role="main" class="container-fluid app-main" data-download-catalog="data/downloads.json">
       <section class="top-bar" aria-labelledby="page-title">
         <div class="top-bar-copy">
           <p class="eyebrow" data-i18n="eyebrow">Song library</p>
@@ -96,12 +96,14 @@
           </div>
           <ol id="downloadReviewList" class="download-review-list"></ol>
           <p id="downloadReviewEmpty" class="download-review-empty" data-i18n="downloadReviewEmpty" hidden>No songs selected for download.</p>
+          <p id="downloadReviewStatus" class="download-review-status" aria-live="polite" hidden></p>
           <div class="download-review-actions">
             <button type="button" class="btn review-cancel-button" id="cancelDownloadReview" data-i18n="cancel">Cancel</button>
             <button type="button" class="btn review-confirm-button" id="confirmDownloadReview" data-i18n="confirmDownload">Confirm download</button>
           </div>
         </section>
       </div>
+	<script src="js/vendor/jszip.min.js"></script>
 	<script src="js/script.min.js"></script>
     </main>
   </body>
