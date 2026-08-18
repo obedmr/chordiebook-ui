@@ -85,6 +85,23 @@
         </div>
       </section>
       <div id="result"></div>
+      <div id="downloadReviewModal" class="modal-backdrop" hidden>
+        <section class="download-review" role="dialog" aria-modal="true" aria-labelledby="downloadReviewTitle">
+          <div class="download-review-header">
+            <div>
+              <p class="download-review-eyebrow" data-i18n="downloadReviewEyebrow">Review download</p>
+              <h2 id="downloadReviewTitle" data-i18n="downloadReviewTitle">Selected songs</h2>
+            </div>
+            <button type="button" class="modal-icon-button" id="closeDownloadReview" aria-label="Close" data-i18n-aria-label="close">&times;</button>
+          </div>
+          <ol id="downloadReviewList" class="download-review-list"></ol>
+          <p id="downloadReviewEmpty" class="download-review-empty" data-i18n="downloadReviewEmpty" hidden>No songs selected for download.</p>
+          <div class="download-review-actions">
+            <button type="button" class="btn review-cancel-button" id="cancelDownloadReview" data-i18n="cancel">Cancel</button>
+            <button type="button" class="btn review-confirm-button" id="confirmDownloadReview" data-i18n="confirmDownload">Confirm download</button>
+          </div>
+        </section>
+      </div>
 	<script src="{{ .JSPath }}"></script>
     </main>
   </body>

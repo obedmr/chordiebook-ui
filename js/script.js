@@ -11,6 +11,8 @@ var selected_songs = [];
     var catalogSongs = [];
     var catalogURLPrefix = "";
     var selectedSongIds = {};
+    var downloadReviewIds = [];
+    var downloadReviewDrag = null;
     var sortState = {
         key: "name",
         direction: "asc"
@@ -29,7 +31,13 @@ var selected_songs = [];
             catalogLoaded: "{count} songs loaded.",
             chords: "Chords",
             chordpro: "ChordPro",
+            cancel: "Cancel",
+            close: "Close",
+            confirmDownload: "Confirm download",
             downloadSelected: "Download selected",
+            downloadReviewEmpty: "No songs selected for download.",
+            downloadReviewEyebrow: "Review download",
+            downloadReviewTitle: "Selected songs",
             eyebrow: "Song library",
             formatChords: "PDF chords",
             formatLyrics: "PDF lyrics",
@@ -42,6 +50,7 @@ var selected_songs = [];
             open: "Open",
             openMany: "Are you sure that you want to open {count} documents?",
             openlp: "OpenLP",
+            remove: "Remove",
             searchLabel: "Search songs",
             searchPlaceholder: "Search by song name...",
             selectSong: "Select song",
@@ -59,7 +68,13 @@ var selected_songs = [];
             catalogLoaded: "{count} canciones cargadas.",
             chords: "Acordes",
             chordpro: "ChordPro",
+            cancel: "Cancelar",
+            close: "Cerrar",
+            confirmDownload: "Confirmar descarga",
             downloadSelected: "Descargar seleccionadas",
+            downloadReviewEmpty: "No hay canciones seleccionadas para descargar.",
+            downloadReviewEyebrow: "Revisar descarga",
+            downloadReviewTitle: "Canciones seleccionadas",
             eyebrow: "Biblioteca de canciones",
             formatChords: "PDF acordes",
             formatLyrics: "PDF letras",
@@ -72,6 +87,7 @@ var selected_songs = [];
             open: "Abrir",
             openMany: "Seguro que quieres abrir {count} documentos?",
             openlp: "OpenLP",
+            remove: "Eliminar",
             searchLabel: "Buscar canciones",
             searchPlaceholder: "Buscar por nombre...",
             selectSong: "Seleccionar cancion",
@@ -208,6 +224,13 @@ var selected_songs = [];
             }
         });
 
+        Array.prototype.forEach.call(document.querySelectorAll("[data-i18n-aria-label]"), function (element) {
+            var value = translate(element.getAttribute("data-i18n-aria-label"));
+            if (value) {
+                element.setAttribute("aria-label", value);
+            }
+        });
+
         Array.prototype.forEach.call(document.querySelectorAll("[data-language]"), function (element) {
             var active = element.getAttribute("data-language") === currentLanguage;
             element.classList.toggle("is-active", active);
@@ -226,6 +249,9 @@ var selected_songs = [];
         localizeTableHeaders();
         updateSortControls();
         renderSongs(catalogSongs);
+        if (document.getElementById("downloadReviewModal") && !document.getElementById("downloadReviewModal").hidden) {
+            renderDownloadReview();
+        }
     }
 
     function getTable() {
@@ -278,6 +304,15 @@ var selected_songs = [];
         }
     }
 
+    function syncSongCheckbox(songId, checked) {
+        getRows().forEach(function (row) {
+            var checkbox = row.dataset.songId === songId ? row.querySelector(".song-select") : null;
+            if (checkbox) {
+                checkbox.checked = checked;
+            }
+        });
+    }
+
     function updateSelectAllState() {
         var selectAll = document.getElementById("selectAllSongs");
         var visibleRows = getRows().filter(function (row) {
@@ -317,6 +352,12 @@ var selected_songs = [];
         updateSelectionCount();
     }
 
+    function getSelectedSongIds() {
+        return selected_songs.filter(function (songId) {
+            return !!getSongById(songId);
+        });
+    }
+
     function getSongById(songId) {
         for (var i = 0; i < catalogSongs.length; i += 1) {
             if (catalogSongs[i].id === songId) {
@@ -340,6 +381,24 @@ var selected_songs = [];
         return PDF_JOINER_URL + urls.map(function (url) {
             return "urls[]=" + encodeURIComponent(url);
         }).join("&");
+    }
+
+    function runDownload(songIds, downloadType) {
+        var selectedURLs = songIds.map(function (songId) {
+            return getSongURL(getSongById(songId), downloadType);
+        }).filter(Boolean);
+
+        if (!selectedURLs.length) {
+            window.alert(translate("noSelection"));
+            return;
+        }
+
+        if (downloadType === "openlp" || downloadType === "chordpro") {
+            selectedURLs.forEach(openURL);
+            return;
+        }
+
+        openURL(buildPDFJoinerURL(selectedURLs));
     }
 
     function createTextCell(value, labelKey, className) {
@@ -569,27 +628,176 @@ var selected_songs = [];
         renderSongs(catalogSongs);
     }
 
+    function closeDownloadReview() {
+        var modal = document.getElementById("downloadReviewModal");
+        if (modal) {
+            modal.hidden = true;
+        }
+        downloadReviewIds = [];
+    }
+
+    function createRemoveReviewButton() {
+        var button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "review-remove-button";
+        button.dataset.reviewAction = "remove";
+        button.textContent = "X";
+        button.setAttribute("aria-label", translate("remove"));
+        return button;
+    }
+
+    function createDownloadReviewItem(song) {
+        var item = document.createElement("li");
+        var songInfo = document.createElement("div");
+        var name = document.createElement("span");
+        var meta = document.createElement("span");
+
+        item.className = "download-review-item";
+        item.dataset.songId = song.id;
+        item.setAttribute("draggable", "false");
+        songInfo.className = "download-review-song";
+        name.className = "download-review-name";
+        meta.className = "download-review-meta";
+
+        name.textContent = song.name || "";
+        meta.textContent = [song.key, Array.isArray(song.authors) ? song.authors.join(", ") : ""].filter(Boolean).join(" - ");
+        songInfo.appendChild(name);
+        songInfo.appendChild(meta);
+
+        item.appendChild(songInfo);
+        item.appendChild(createRemoveReviewButton());
+        return item;
+    }
+
+    function renderDownloadReview() {
+        var list = document.getElementById("downloadReviewList");
+        var empty = document.getElementById("downloadReviewEmpty");
+        var confirm = document.getElementById("confirmDownloadReview");
+        var fragment = document.createDocumentFragment();
+
+        if (!list) {
+            return;
+        }
+
+        downloadReviewIds = downloadReviewIds.filter(function (songId) {
+            return !!selectedSongIds[songId] && !!getSongById(songId);
+        });
+
+        downloadReviewIds.forEach(function (songId) {
+            fragment.appendChild(createDownloadReviewItem(getSongById(songId)));
+        });
+
+        list.textContent = "";
+        list.appendChild(fragment);
+
+        if (empty) {
+            empty.hidden = downloadReviewIds.length > 0;
+        }
+
+        if (confirm) {
+            confirm.disabled = downloadReviewIds.length === 0;
+        }
+    }
+
+    function openDownloadReview(songIds, downloadType) {
+        var modal = document.getElementById("downloadReviewModal");
+        var confirm = document.getElementById("confirmDownloadReview");
+
+        if (!modal) {
+            runDownload(songIds, downloadType);
+            return;
+        }
+
+        downloadReviewIds = songIds.slice();
+        modal.dataset.downloadType = downloadType;
+        renderDownloadReview();
+        modal.hidden = false;
+
+        if (confirm) {
+            confirm.focus();
+        }
+    }
+
+    function syncDownloadReviewOrderFromDOM() {
+        var list = document.getElementById("downloadReviewList");
+        if (!list) {
+            return;
+        }
+        downloadReviewIds = Array.prototype.map.call(list.querySelectorAll(".download-review-item"), function (item) {
+            return item.dataset.songId;
+        });
+        selected_songs = downloadReviewIds.slice();
+    }
+
+    function removeDownloadReviewSong(songId) {
+        var song = getSongById(songId);
+
+        removeSelectedSong(song);
+        syncSongCheckbox(songId, false);
+        downloadReviewIds = downloadReviewIds.filter(function (reviewSongId) {
+            return reviewSongId !== songId;
+        });
+        updateSelectAllState();
+        renderDownloadReview();
+    }
+
+    function startDownloadReviewDrag(item, pointerId) {
+        downloadReviewDrag = {
+            item: item,
+            pointerId: pointerId
+        };
+        item.classList.add("is-dragging");
+        if (item.setPointerCapture) {
+            item.setPointerCapture(pointerId);
+        }
+    }
+
+    function moveDownloadReviewDrag(clientX, clientY) {
+        var list = document.getElementById("downloadReviewList");
+        var target = document.elementFromPoint(clientX, clientY);
+        var targetItem = target ? target.closest(".download-review-item") : null;
+        var draggingItem = downloadReviewDrag ? downloadReviewDrag.item : null;
+        var targetRect;
+
+        if (!list || !draggingItem || !targetItem || targetItem === draggingItem || targetItem.parentNode !== list) {
+            return;
+        }
+
+        targetRect = targetItem.getBoundingClientRect();
+        if (clientY > targetRect.top + targetRect.height / 2) {
+            list.insertBefore(draggingItem, targetItem.nextSibling);
+        } else {
+            list.insertBefore(draggingItem, targetItem);
+        }
+
+        syncDownloadReviewOrderFromDOM();
+    }
+
+    function endDownloadReviewDrag() {
+        if (!downloadReviewDrag) {
+            return;
+        }
+        downloadReviewDrag.item.classList.remove("is-dragging");
+        downloadReviewDrag = null;
+        syncDownloadReviewOrderFromDOM();
+    }
+
     function download() {
         var downloadType = getDownloadType();
-        var selectedURLs = selected_songs.map(function (song) {
-            return getSongURL(getSongById(song), downloadType);
-        }).filter(Boolean);
+        var selectedSongIdsForDownload = getSelectedSongIds();
 
-        if (!selectedURLs.length) {
+        if (!selectedSongIdsForDownload.length) {
             window.alert(translate("noSelection"));
             return;
         }
 
-        if (selectedURLs.length > 10 && !window.confirm(translate("openMany").replace("{count}", selectedURLs.length))) {
+        if (selectedSongIdsForDownload.length > 1) {
+            openDownloadReview(selectedSongIdsForDownload, downloadType);
             return;
         }
 
-        if (downloadType === "openlp" || downloadType === "chordpro") {
-            selectedURLs.forEach(openURL);
-            return;
-        }
-
-        openURL(buildPDFJoinerURL(selectedURLs));
+        runDownload(selectedSongIdsForDownload, downloadType);
     }
 
     function openSongAction(button) {
@@ -608,6 +816,11 @@ var selected_songs = [];
         var searchInput = document.getElementById("myInput");
         var mobileSortColumn = document.getElementById("mobileSortColumn");
         var mobileSortDirection = document.getElementById("mobileSortDirection");
+        var reviewModal = document.getElementById("downloadReviewModal");
+        var reviewList = document.getElementById("downloadReviewList");
+        var closeReview = document.getElementById("closeDownloadReview");
+        var cancelReview = document.getElementById("cancelDownloadReview");
+        var confirmReview = document.getElementById("confirmDownloadReview");
 
         if (table) {
             table.addEventListener("change", function (event) {
@@ -650,6 +863,85 @@ var selected_songs = [];
                 setSort(sortState.key, sortState.direction === "asc" ? "desc" : "asc");
             });
         }
+
+        if (reviewList) {
+            reviewList.addEventListener("click", function (event) {
+                var button = event.target.closest("[data-review-action='remove']");
+                var item = button ? button.closest(".download-review-item") : null;
+                var songId = item ? item.dataset.songId : "";
+
+                if (!button || !songId) {
+                    return;
+                }
+
+                removeDownloadReviewSong(songId);
+            });
+
+            reviewList.addEventListener("pointerdown", function (event) {
+                var item = event.target.closest(".download-review-item");
+
+                if (!item || event.target.closest("[data-review-action]")) {
+                    return;
+                }
+
+                event.preventDefault();
+                startDownloadReviewDrag(item, event.pointerId);
+            });
+
+            reviewList.addEventListener("pointermove", function (event) {
+                if (!downloadReviewDrag || downloadReviewDrag.pointerId !== event.pointerId) {
+                    return;
+                }
+
+                event.preventDefault();
+                moveDownloadReviewDrag(event.clientX, event.clientY);
+            });
+
+            reviewList.addEventListener("pointerup", function (event) {
+                if (downloadReviewDrag && downloadReviewDrag.pointerId === event.pointerId) {
+                    endDownloadReviewDrag();
+                }
+            });
+
+            reviewList.addEventListener("pointercancel", function (event) {
+                if (downloadReviewDrag && downloadReviewDrag.pointerId === event.pointerId) {
+                    endDownloadReviewDrag();
+                }
+            });
+        }
+
+        if (reviewModal) {
+            reviewModal.addEventListener("click", function (event) {
+                if (event.target === reviewModal) {
+                    closeDownloadReview();
+                }
+            });
+        }
+
+        if (closeReview) {
+            closeReview.addEventListener("click", closeDownloadReview);
+        }
+
+        if (cancelReview) {
+            cancelReview.addEventListener("click", closeDownloadReview);
+        }
+
+        if (confirmReview) {
+            confirmReview.addEventListener("click", function () {
+                var downloadType = reviewModal ? reviewModal.dataset.downloadType : getDownloadType();
+                var songIds = downloadReviewIds.slice();
+
+                selected_songs = songIds.slice();
+                closeDownloadReview();
+                runDownload(songIds, downloadType);
+            });
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && reviewModal && !reviewModal.hidden) {
+                closeDownloadReview();
+            }
+        });
 
         Array.prototype.forEach.call(document.querySelectorAll("[data-language]"), function (button) {
             button.addEventListener("click", function () {
