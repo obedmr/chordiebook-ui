@@ -46,6 +46,7 @@ var selected_songs = [];
             formatLyrics: "PDF lyrics",
             heroDescription: "Search, select, and download worship songs in the format your team needs.",
             key: "Key",
+            lastUpdated: "Last updated",
             loadingCatalog: "Loading catalog...",
             lyrics: "Lyrics",
             name: "Name",
@@ -87,6 +88,7 @@ var selected_songs = [];
             formatLyrics: "PDF letras",
             heroDescription: "Busca, selecciona y descarga canciones en el formato que tu equipo necesita.",
             key: "Tono",
+            lastUpdated: "Ultima actualizacion",
             loadingCatalog: "Cargando catalogo...",
             lyrics: "Letras",
             name: "Nombre",
@@ -216,6 +218,32 @@ var selected_songs = [];
         });
     }
 
+    function localizeContentUpdatedAt() {
+        var element = document.getElementById("contentUpdatedAt");
+        var isoValue = element ? element.getAttribute("datetime") : "";
+        var updatedAt;
+
+        if (!element || !isoValue || typeof Intl === "undefined" || !Intl.DateTimeFormat) {
+            return;
+        }
+
+        updatedAt = new Date(isoValue);
+        if (Number.isNaN(updatedAt.getTime())) {
+            return;
+        }
+
+        element.textContent = new Intl.DateTimeFormat(currentLanguage, {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            timeZoneName: "short"
+        }).format(updatedAt);
+    }
+
     function applyLocalization(language, persist) {
         currentLanguage = normalizeLanguage(language) || "en";
         document.documentElement.lang = currentLanguage;
@@ -256,6 +284,7 @@ var selected_songs = [];
         }
 
         refreshCatalogStatus();
+        localizeContentUpdatedAt();
         localizeTableHeaders();
         updateSortControls();
         renderSongs(catalogSongs);

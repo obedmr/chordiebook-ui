@@ -51,10 +51,12 @@ type Config struct {
 }
 
 type IndexData struct {
-	CatalogPath      string
-	DownloadDataPath string
-	CSSPath          string
-	JSPath           string
+	CatalogPath             string
+	DownloadDataPath        string
+	CSSPath                 string
+	JSPath                  string
+	ContentUpdatedAtISO     string
+	ContentUpdatedAtDisplay string
 }
 
 type Catalog struct {
@@ -209,10 +211,12 @@ func main() {
 	logger.Info("wrote download catalog", "path", cfg.DownloadDataOutput, "songs", len(downloadCatalog.Files))
 
 	if err := renderIndex(cfg.Template, cfg.IndexOutput, IndexData{
-		CatalogPath:      cfg.Output,
-		DownloadDataPath: cfg.DownloadDataPath,
-		CSSPath:          cfg.CSSPath,
-		JSPath:           cfg.JSPath,
+		CatalogPath:             cfg.Output,
+		DownloadDataPath:        cfg.DownloadDataPath,
+		CSSPath:                 cfg.CSSPath,
+		JSPath:                  cfg.JSPath,
+		ContentUpdatedAtISO:     generatedAt.Format(time.RFC3339),
+		ContentUpdatedAtDisplay: formatContentUpdatedAt(generatedAt),
 	}); err != nil {
 		logger.Error("failed to render index", "template", cfg.Template, "output", cfg.IndexOutput, "error", err)
 		os.Exit(1)
@@ -627,6 +631,10 @@ func renderIndex(templatePath, outputPath string, data IndexData) error {
 	defer out.Close()
 
 	return tpl.Execute(out, data)
+}
+
+func formatContentUpdatedAt(updatedAt time.Time) string {
+	return updatedAt.UTC().Format("Monday, January 2, 2006 15:04:05 UTC")
 }
 
 func compareCatalogs(oldSongs, newSongs []Song) Summary {

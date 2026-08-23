@@ -76,6 +76,35 @@ body {
 
 .top-bar-meta {
     display: grid;
+    align-self: stretch;
+    align-content: space-between;
+    justify-items: end;
+    gap: 16px;
+}
+
+.content-updated {
+    display: grid;
+    gap: 3px;
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 0.78rem;
+    line-height: 1.25;
+    text-align: right;
+}
+
+.content-updated span {
+    color: #8bd3cb;
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.content-updated time {
+    font-weight: 650;
+}
+
+.top-bar-actions {
+    display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     justify-content: end;
@@ -686,6 +715,16 @@ th[aria-sort="descending"] .sort-button::after {
     .top-bar-meta {
         justify-content: flex-start;
         min-width: 0;
+        width: 100%;
+    }
+
+    .content-updated {
+        justify-self: start;
+        text-align: left;
+    }
+
+    .top-bar-actions {
+        justify-content: flex-start;
     }
 
     .selection-meter {
@@ -897,10 +936,19 @@ th[aria-sort="descending"] .sort-button::after {
 
     .top-bar-meta {
         display: grid;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .top-bar-actions {
         grid-template-columns: minmax(0, 1fr) 88px;
         align-items: stretch;
         gap: 8px;
         width: 100%;
+    }
+
+    .content-updated {
+        font-size: 0.72rem;
     }
 
     .language-switch,
