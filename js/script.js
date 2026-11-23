@@ -311,6 +311,10 @@ var selected_songs = [];
         return (value || "").toString().trim().toUpperCase();
     }
 
+    function normalizeSearchText(value) {
+        return normalizeText(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
     function normalizeURLPrefix(prefix) {
         if (!prefix) {
             return "";
@@ -665,7 +669,7 @@ var selected_songs = [];
     }
 
     function getSongSearchText(song) {
-        return normalizeText([
+        return normalizeSearchText([
             song.name,
             song.key,
             Array.isArray(song.themes) ? song.themes.join(" ") : "",
@@ -709,7 +713,7 @@ var selected_songs = [];
 
     function myFunction() {
         var input = document.getElementById("myInput");
-        var filter = normalizeText(input ? input.value : "");
+        var filter = normalizeSearchText(input ? input.value : "");
 
         getRows().forEach(function (row) {
             row.style.display = !filter || row.dataset.searchText.indexOf(filter) > -1 ? "" : "none";
