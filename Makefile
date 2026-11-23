@@ -37,10 +37,13 @@ GO_CACHE_MOUNTS := -v "$(GO_CACHE_DIR):/tmp/chordiebook-go-cache" -v "$(GO_MOD_C
 NPM_CACHE_MOUNT := -v "$(NPM_CACHE_DIR):/tmp/chordiebook-npm-cache"
 CONTAINER_FLAGS := --rm --user "$(CONTAINER_USER)"
 
-.PHONY: help check-runtime check-vars prepare-cache minify-assets minify-assets-local catalog index generate-index generate-catalog ci-index go-test serve container-shell
+.PHONY: help check-runtime check-vars prepare-cache minify-assets minify-assets-local catalog index generate-index generate-catalog publish-catalog submit ci-index go-test serve container-shell
 
 help:
 	@printf '%s\n' 'ChordieBook UI automation'
+	@printf '\n%s\n' 'Publishing:'
+	@printf '  %-22s %s\n' 'make publish-catalog' 'Generate the catalog, commit generated files if changed, and push to the upstream branch.'
+	@printf '  %-22s %s\n' 'make submit' 'Alias for publish-catalog.'
 	@printf '\n%s\n' 'Generator variables:'
 	@printf '  %-18s %s\n' 'BUCKET' 'S3 bucket that contains openlp/, pdf-chords/, pdf-lyrics/, and .cho files.'
 	@printf '  %-18s %s\n' 'URL_PREFIX' 'Public S3 URL prefix used in generated links. Must end with /.'
@@ -122,6 +125,25 @@ catalog index generate-index generate-catalog: check-runtime check-vars prepare-
 		$(AWS_ENV) \
 		"$(GO_IMAGE)" \
 		go run ./main.go -bucket "$(BUCKET)" -url-prefix "$(URL_PREFIX)" -concurrency "$(CONCURRENCY)" -compact-json -css-path css/style.min.css -js-path js/script.min.js -download-data-output data/downloads.json -download-data-path data/downloads.json
+
+submit: publish-catalog
+
+publish-catalog:
+	@set -eu; \
+	git rev-parse --verify HEAD >/dev/null; \
+	git rev-parse --verify '@{upstream}' >/dev/null; \
+	if ! git diff --cached --quiet; then \
+		printf '%s\n' 'ERROR: Commit or unstage existing staged changes before publishing the catalog.' >&2; \
+		exit 1; \
+	fi; \
+	$(MAKE) catalog; \
+	git add -- data/data.json data/downloads.json index.html css/style.min.css js/script.min.js; \
+	if git diff --cached --quiet; then \
+		printf '%s\n' 'Catalog unchanged; no new commit needed.'; \
+	else \
+		git commit -m "Update song catalog"; \
+	fi; \
+	git push
 
 # Kept for another repository pipeline that provides host Go and Node.
 ci-index: check-vars minify-assets-local
