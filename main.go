@@ -161,27 +161,40 @@ func main() {
 	}
 
 	songs, failures := fetchSongs(ctx, logger, svc, cfg, keys)
+	if len(failures) > 0 {
+		logger.Error("catalog generation failed; output files were not updated",
+			"failed", len(failures),
+			"duration", time.Since(startedAt).Round(time.Millisecond),
+		)
+		os.Exit(1)
+	}
+
+	downloadCatalog, downloadFailures := fetchDownloadCatalog(ctx, logger, svc, cfg, songs, time.Time{})
+	if len(downloadFailures) > 0 {
+		logger.Error("download catalog generation failed; output files were not updated",
+			"failed", len(downloadFailures),
+		)
+		os.Exit(1)
+	}
+
+	for i := range songs {
+		if title := titleFromChordPro(downloadCatalog.Files[songs[i].ID].ChordPro); title != "" {
+			songs[i].Name = title
+		}
+	}
 	sort.Slice(songs, func(i, j int) bool {
 		return strings.ToLower(songs[i].Name) < strings.ToLower(songs[j].Name)
 	})
 
 	summary := compareCatalogs(previousCatalog.Songs, songs)
 	summary.Total = len(songs)
-	summary.Failed = len(failures)
 	summary.Duration = time.Since(startedAt)
-
-	if len(failures) > 0 {
-		logger.Error("catalog generation failed; output files were not updated",
-			"failed", len(failures),
-			"duration", summary.Duration.Round(time.Millisecond),
-		)
-		os.Exit(1)
-	}
 
 	generatedAt := previousCatalog.GeneratedAt
 	if generatedAt.IsZero() || summary.Added+summary.Updated+summary.Removed > 0 {
 		generatedAt = time.Now().UTC()
 	}
+	downloadCatalog.GeneratedAt = generatedAt
 
 	catalog := Catalog{
 		GeneratedAt: generatedAt,
@@ -195,14 +208,6 @@ func main() {
 		os.Exit(1)
 	}
 	logger.Info("wrote catalog", "path", cfg.Output, "songs", len(songs))
-
-	downloadCatalog, downloadFailures := fetchDownloadCatalog(ctx, logger, svc, cfg, songs, generatedAt)
-	if len(downloadFailures) > 0 {
-		logger.Error("download catalog generation failed; output files were not updated",
-			"failed", len(downloadFailures),
-		)
-		os.Exit(1)
-	}
 
 	if err := writeDownloadCatalog(cfg.DownloadDataOutput, downloadCatalog, cfg.CompactJSON); err != nil {
 		logger.Error("failed to write download catalog", "path", cfg.DownloadDataOutput, "error", err)
@@ -521,6 +526,28 @@ func titleFromID(id string) string {
 		words[i] = titleWord(word)
 	}
 	return strings.Join(words, " ")
+}
+
+// titleFromChordPro preserves the title's spelling and capitalization.
+// An empty result lets callers fall back to the filename for untitled songs.
+func titleFromChordPro(content string) string {
+	for _, line := range strings.Split(strings.TrimPrefix(content, "\uFEFF"), "\n") {
+		line = strings.TrimSpace(line)
+		if !strings.HasPrefix(line, "{") || !strings.HasSuffix(line, "}") {
+			continue
+		}
+		directive, value, ok := strings.Cut(line[1:len(line)-1], ":")
+		if !ok {
+			continue
+		}
+		directive = strings.ToLower(strings.TrimSpace(directive))
+		if directive == "title" || directive == "t" {
+			if title := strings.TrimSpace(value); title != "" {
+				return title
+			}
+		}
+	}
+	return ""
 }
 
 func titleWord(word string) string {
